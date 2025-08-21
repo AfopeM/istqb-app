@@ -1,0 +1,46 @@
+{
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "Fundamentals of Testing",
+      "img": "home_card_image_1.jpg",
+      "isComingSoon": false,
+      "description": "Learn the core principles and fundamentals of software testing"
+    },
+    {
+      "id": "chapter-2",
+      "title": "Testing Throughout the Software Development Lifecycle",
+      "img": "home_card_image_2.jpg",
+      "isComingSoon": true,
+      "description": "Understand how testing integrates across development phases"
+    },
+    {
+      "id": "chapter-3",
+      "title": "Static Testing",
+      "img": "home_card_image_3.jpg",
+      "isComingSoon": true,
+      "description": "Master static analysis techniques and code reviews"
+    },
+    {
+      "id": "chapter-4",
+      "title": "Test Analysis and Design",
+      "img": "home_card_image_4.jpg",
+      "isComingSoon": true,
+      "description": "Learn systematic approaches to test case design"
+    },
+    {
+      "id": "chapter-5",
+      "title": "Managing the Test Activities",
+      "img": "home_card_image_5.jpg",
+      "isComingSoon": true,
+      "description": "Explore test planning, monitoring and control strategies"
+    },
+    {
+      "id": "chapter-6",
+      "title": "Test Tools",
+      "img": "home_card_image_6.jpg",
+      "isComingSoon": true,
+      "description": "Discover essential testing tools and automation"
+    }
+  ]
+}

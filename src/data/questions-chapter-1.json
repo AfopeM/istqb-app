@@ -1,0 +1,979 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "chapterSection": "1.1",
+      "questionText": "What is a common misconception about testing?",
+      "options": [
+        "Testing should be aligned with SDLC",
+        "Testing assesses software quality",
+        "Testing only consists of executing tests",
+        "Testing includes verification and validation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A common misconception is that testing only consists of executing tests (running software and checking results). Testing actually includes other activities and must be aligned with the software development lifecycle."
+    },
+    {
+      "id": "q002",
+      "chapterSection": "1.1",
+      "questionText": "What distinguishes verification from validation?",
+      "options": [
+        "Verification checks requirements, validation checks user needs",
+        "Verification is automated, validation is manual",
+        "There is no difference between them",
+        "Verification is dynamic, validation is static"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Verification checks whether the system meets specified requirements, while validation checks whether the system meets users' and stakeholders' needs in its operational environment."
+    },
+    {
+      "id": "q003",
+      "chapterSection": "1.1",
+      "questionText": "Static testing is characterized by:",
+      "options": [
+        "Testing performed only at the end of development",
+        "Testing that does not involve execution of software",
+        "Testing that involves execution of software",
+        "Testing performed by static analysis tools only"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Static testing does not involve the execution of software. It includes reviews and static analysis, while dynamic testing involves executing the software."
+    },
+    {
+      "id": "q004",
+      "chapterSection": "1.1.1",
+      "questionText": "Which is NOT a typical test objective?",
+      "options": [
+        "Ensuring required coverage of a test object",
+        "Building confidence in the quality of the test object",
+        "Guaranteeing zero defects in production",
+        "Triggering failures and finding defects"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Testing cannot guarantee zero defects in production. The typical objectives include evaluating work products, finding defects, ensuring coverage, reducing risk, and building confidence."
+    },
+    {
+      "id": "q005",
+      "chapterSection": "1.1.2",
+      "questionText": "The debugging process sequence when dynamic testing triggers a failure is:",
+      "options": [
+        "Diagnosis, reproduction, fixing",
+        "Reproduction, diagnosis, fixing",
+        "Fixing, reproduction, diagnosis",
+        "Reproduction, fixing, diagnosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The typical debugging process involves: 1) Reproduction of a failure, 2) Diagnosis (finding the root cause), 3) Fixing the cause."
+    },
+    {
+      "id": "q006",
+      "chapterSection": "1.1.2",
+      "questionText": "Confirmation testing is performed to:",
+      "options": [
+        "Confirm the system works correctly",
+        "Confirm requirements are properly written",
+        "Check if fixes resolved the problem",
+        "Confirm test cases are well-designed"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Confirmation testing checks whether the fixes resolved the problem. It should preferably be done by the same person who performed the initial test."
+    },
+    {
+      "id": "q007",
+      "chapterSection": "1.2.1",
+      "questionText": "Testing contributes to success by:",
+      "options": [
+        "Eliminating all project risks completely",
+        "Providing cost-effective defect detection",
+        "Directly removing defects from software",
+        "Replacing the need for debugging activities"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Testing provides a cost-effective means of detecting defects. These defects can then be removed by debugging, so testing indirectly contributes to higher quality test objects."
+    },
+    {
+      "id": "q008",
+      "chapterSection": "1.2.2",
+      "questionText": "The relationship between QA and QC is:",
+      "options": [
+        "QA is process-oriented and preventive, QC is product-oriented and corrective",
+        "QA is for testing, QC is for development",
+        "There is no difference between QA and QC",
+        "QA is product-oriented, QC is process-oriented"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "QA is process-oriented and preventive (focuses on process implementation and improvement), while QC is product-oriented and corrective (focuses on activities supporting appropriate quality levels)."
+    },
+    {
+      "id": "q009",
+      "chapterSection": "1.2.3",
+      "questionText": "The chain of causation in software problems is:",
+      "options": [
+        "Failures produce defects, which cause errors",
+        "Errors cause failures, which produce defects",
+        "Human errors produce defects, which may result in failures",
+        "Defects cause errors, which result in failures"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Human beings make errors (mistakes), which produce defects (faults, bugs), which in turn may result in failures."
+    },
+    {
+      "id": "q010",
+      "chapterSection": "1.2.3",
+      "questionText": "A root cause is best defined as:",
+      "options": [
+        "The most critical failure in the system",
+        "The first defect found in testing",
+        "The main test objective for the project",
+        "A fundamental reason for the occurrence of a problem"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A root cause is a fundamental reason for the occurrence of a problem (e.g., a situation that leads to an error). Root causes are identified through root cause analysis."
+    },
+    {
+      "id": "q011",
+      "chapterSection": "1.3",
+      "questionText": "The first testing principle states that testing:",
+      "options": [
+        "Shows the presence, not the absence of defects",
+        "Can prove complete correctness of software",
+        "Shows the absence of defects when done thoroughly",
+        "Will eventually find all defects if given enough time"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Testing shows the presence, not the absence of defects. Testing can show that defects are present but cannot prove that there are no defects."
+    },
+    {
+      "id": "q012",
+      "chapterSection": "1.3",
+      "questionText": "Exhaustive testing is impossible because:",
+      "options": [
+        "It's too expensive for most projects",
+        "Available tools don't support comprehensive testing",
+        "Testing everything is not feasible except in trivial cases",
+        "It takes too much time to complete"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Exhaustive testing is impossible because testing everything is not feasible except in trivial cases. Instead, test techniques, prioritization, and risk-based testing should be used."
+    },
+    {
+      "id": "q013",
+      "chapterSection": "1.3",
+      "questionText": "'Early testing saves time and money' means:",
+      "options": [
+        "Testing should only be done early in projects",
+        "Early testing is always cheaper than late testing",
+        "Testing should start after development is complete",
+        "Defects removed early will not cause subsequent defects"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Defects that are removed early in the process will not cause subsequent defects in derived work products. The cost of quality will be reduced since fewer failures will occur later."
+    },
+    {
+      "id": "q014",
+      "chapterSection": "1.3",
+      "questionText": "Defect clustering illustrates which principle?",
+      "options": [
+        "The V-model approach",
+        "Agile development methodology",
+        "The Pareto principle",
+        "The waterfall model"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The defect clustering principle illustrates the Pareto principle - a small number of system components usually contain most of the defects discovered or are responsible for most operational failures."
+    },
+    {
+      "id": "q015",
+      "chapterSection": "1.3",
+      "questionText": "The 'Tests wear out' principle means:",
+      "options": [
+        "Test equipment degrades with constant use",
+        "Testers become tired from repetitive work",
+        "If the same tests are repeated, they become less effective at detecting new defects",
+        "Test cases become obsolete as requirements change"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "If the same tests are repeated many times, they become increasingly ineffective in detecting new defects. Existing tests may need to be modified and new tests written."
+    },
+    {
+      "id": "q016",
+      "chapterSection": "1.3",
+      "questionText": "The 'Absence-of-defects fallacy' refers to:",
+      "options": [
+        "Thinking that defects are unimportant to users",
+        "Expecting that software verification alone will ensure system success",
+        "Believing that no defects exist in tested systems",
+        "Assuming testing can eventually find all defects"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "It's a fallacy to expect that software verification alone will ensure system success. Even thoroughly testing specified requirements and fixing all defects could still produce a system that doesn't fulfill users' needs."
+    },
+    {
+      "id": "q017",
+      "chapterSection": "1.4.1",
+      "questionText": "Test analysis primarily answers which question?",
+      "options": [
+        "When should we test?",
+        "How should we test?",
+        "Who should perform testing?",
+        "What should we test?"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Test analysis answers the question 'what to test?' in terms of measurable coverage criteria. It involves analyzing the test basis to identify testable features and define test conditions."
+    },
+    {
+      "id": "q018",
+      "chapterSection": "1.4.1",
+      "questionText": "Test design addresses which primary question?",
+      "options": [
+        "What to test in the system?",
+        "When to start testing?",
+        "Why is testing necessary?",
+        "How to test the system?"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Test design answers the question 'how to test?'. It involves elaborating test conditions into test cases, identifying coverage items, and defining test data requirements."
+    },
+    {
+      "id": "q019",
+      "chapterSection": "1.4.1",
+      "questionText": "Test implementation involves:",
+      "options": [
+        "Defining test objectives and strategy",
+        "Analyzing requirements for testability",
+        "Creating testware necessary for execution",
+        "Running tests and comparing results"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Test implementation includes creating or acquiring the testware necessary for test execution, such as test data. It also involves creating test scripts and building the test environment."
+    },
+    {
+      "id": "q020",
+      "chapterSection": "1.4.1",
+      "questionText": "During test execution, the primary activities include:",
+      "options": [
+        "Designing test cases for coverage",
+        "Planning the test environment setup",
+        "Identifying testable features in requirements",
+        "Running tests and comparing actual vs expected results"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Test execution includes running the tests, comparing actual results with expected results, logging test results, and analyzing anomalies to identify their likely causes."
+    },
+    {
+      "id": "q021",
+      "chapterSection": "1.4.3",
+      "questionText": "Test planning work products typically include:",
+      "options": [
+        "Test logs and defect reports",
+        "Test plan, test schedule, risk register, entry/exit criteria",
+        "Test procedures and automated scripts",
+        "Test cases and test data requirements"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Test planning work products include test plan, test schedule, risk register, and entry and exit criteria. The latter three are often part of the test plan."
+    },
+    {
+      "id": "q022",
+      "chapterSection": "1.4.3",
+      "questionText": "A risk register contains:",
+      "options": [
+        "A schedule of all testing activities",
+        "A list of all test cases to execute",
+        "Risk likelihood, impact and mitigation information",
+        "Results from completed test runs"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A risk register is a list of risks together with risk likelihood, risk impact and information about risk mitigation."
+    },
+    {
+      "id": "q023",
+      "chapterSection": "1.4.4",
+      "questionText": "Traceability between test basis and testware is important for:",
+      "options": [
+        "Effective test monitoring and control",
+        "Making testing execution faster",
+        "Reducing overall testing costs",
+        "Enabling test automation implementation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Traceability is important to implement effective test monitoring and control. It supports coverage evaluation, impact analysis, and helps meet IT governance criteria."
+    },
+    {
+      "id": "q024",
+      "chapterSection": "1.4.4",
+      "questionText": "Traceability from test cases to requirements enables:",
+      "options": [
+        "Faster test execution cycles",
+        "Reduction in the total number of defects",
+        "Verification that requirements are covered by test cases",
+        "Elimination of the need for detailed test planning"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Traceability of test cases to requirements can verify that the requirements are covered by test cases, supporting coverage evaluation."
+    },
+    {
+      "id": "q025",
+      "chapterSection": "1.4.5",
+      "questionText": "The test management role primarily focuses on:",
+      "options": [
+        "Test planning, monitoring, control and completion",
+        "Test analysis, design, implementation and execution",
+        "Only test execution and result analysis",
+        "Only defect reporting and tracking"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The test management role is mainly focused on the activities of test planning, test monitoring and control, and test completion."
+    },
+    {
+      "id": "q026",
+      "chapterSection": "1.4.5",
+      "questionText": "The testing role is primarily responsible for:",
+      "options": [
+        "Project management and stakeholder communication",
+        "Test planning and resource allocation",
+        "Requirements analysis and business liaison",
+        "Test analysis, design, implementation and execution"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The testing role takes overall responsibility for the engineering (technical) aspect of testing and is mainly focused on test analysis, test design, test implementation and test execution."
+    },
+    {
+      "id": "q027",
+      "chapterSection": "1.5.1",
+      "questionText": "Essential skills for testers include:",
+      "options": [
+        "Only advanced programming capabilities",
+        "Only strong communication and interpersonal skills",
+        "Testing knowledge, thoroughness, communication, analytical thinking, technical and domain knowledge",
+        "Only deep technical knowledge of testing tools"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Testers should possess testing knowledge, thoroughness and attention to detail, good communication skills, analytical and critical thinking, technical knowledge, and domain knowledge."
+    },
+    {
+      "id": "q028",
+      "chapterSection": "1.5.1",
+      "questionText": "Communication skills are crucial for testers because:",
+      "options": [
+        "Testers work independently most of the time",
+        "Testers are often the bearers of bad news",
+        "Testers need to write extensive documentation",
+        "Testers don't need to interact with developers"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Testers are often the bearers of bad news, and it's a common human trait to blame the bearer of bad news. This makes communication skills crucial for testers."
+    },
+    {
+      "id": "q029",
+      "chapterSection": "1.5.2",
+      "questionText": "In the whole team approach:",
+      "options": [
+        "Any team member with necessary knowledge can perform any task, and everyone is responsible for quality",
+        "Each team member has completely fixed responsibilities",
+        "Only testers are responsible for quality assurance",
+        "Only developers are allowed to write code"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In the whole team approach, any team member with necessary knowledge and skills can perform any task, and everyone is responsible for quality."
+    },
+    {
+      "id": "q030",
+      "chapterSection": "1.5.3",
+      "questionText": "The main benefit of testing independence is:",
+      "options": [
+        "Independent testers are likely to recognize different failures and defects compared to developers",
+        "Independent testers always work faster than developers",
+        "Independent testers require less training and oversight",
+        "Independent testers cost significantly less than internal resources"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Independent testers are likely to recognize different kinds of failures and defects compared to developers because of their different backgrounds, technical perspectives, and biases."
+    },
+    {
+      "id": "q031",
+      "chapterSection": "1.5.3",
+      "questionText": "Testing independence levels include:",
+      "options": [
+        "Only very high independence should be used in all projects",
+        "Independence levels are not relevant to testing effectiveness",
+        "No independence, some independence, high independence, very high independence",
+        "Only high independence is useful for finding defects"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Work products can be tested by their author (no independence), by peers from same team (some independence), by testers outside the team but within organization (high independence), or by testers outside the organization (very high independence)."
+    },
+    {
+      "id": "q032",
+      "chapterSection": "1.2.3",
+      "questionText": "Regarding defects and failures:",
+      "options": [
+        "Defects never cause failures in well-designed systems",
+        "Some defects always result in failure, others only in specific circumstances, some may never result in failure",
+        "All defects always cause immediate failures",
+        "Only critical defects cause failures during execution"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Some defects will always result in a failure if executed, while others will only result in a failure in specific circumstances, and some may never result in a failure."
+    },
+    {
+      "id": "q033",
+      "chapterSection": "1.3",
+      "questionText": "Testing being context dependent means:",
+      "options": [
+        "Testing approaches can be standardized across all contexts",
+        "Context only matters in safety-critical systems",
+        "There is no single universally applicable approach to testing",
+        "Context dependency only applies to agile projects"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Testing is context dependent. There is no single universally applicable approach to testing. Testing is done differently in different contexts."
+    },
+    {
+      "id": "q034",
+      "chapterSection": "1.4.2",
+      "questionText": "Contextual factors that affect testing include:",
+      "options": [
+        "Only technical and project constraint factors",
+        "Only organizational and business factors",
+        "Only stakeholder requirements and expectations",
+        "Stakeholders, team members, business domain, technical factors, project constraints, organizational factors, SDLC, and tools"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Testing depends on multiple contextual factors including stakeholders, team members, business domain, technical factors, project constraints, organizational factors, SDLC, and tools."
+    },
+    {
+      "id": "q035",
+      "chapterSection": "1.1.2",
+      "questionText": "Debugging differs between dynamic and static testing because:",
+      "options": [
+        "There is no difference in debugging approaches",
+        "Dynamic testing debugging needs reproduction and diagnosis, static testing debugging doesn't need reproduction",
+        "Static testing debugging is always more complex",
+        "Dynamic testing debugging is consistently faster"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "When dynamic testing triggers a failure, debugging involves reproduction, diagnosis, and fixing. When static testing identifies a defect, debugging only involves removing it - no reproduction or diagnosis needed since static testing directly finds defects."
+    },
+    {
+      "id": "q036",
+      "chapterSection": "1.1",
+      "questionText": "Software testing can best be described as:",
+      "options": [
+        "Testing is the same as debugging defects",
+        "Testing is only about finding bugs in executable code",
+        "Testing is performed only after development completion",
+        "A set of activities to discover defects and evaluate software artifact quality"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Software testing is a set of activities to discover defects and evaluate the quality of software artifacts. It's not just about finding bugs or limited to post-development activities."
+    },
+    {
+      "id": "q037",
+      "chapterSection": "1.1",
+      "questionText": "Test objects refer to:",
+      "options": [
+        "Testing tools and testing equipment used",
+        "Artifacts that are being tested",
+        "Only executable software components and modules",
+        "Test cases and associated test data"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Test objects are the artifacts that are being tested. These can include requirements, code, documentation, or any other work products subject to testing."
+    },
+    {
+      "id": "q038",
+      "chapterSection": "1.1.1",
+      "questionText": "A compliance-related test objective involves:",
+      "options": [
+        "Increasing overall team productivity levels",
+        "Verifying contractual, legal, and regulatory requirement compliance",
+        "Reducing total development time and costs",
+        "Minimizing overall testing effort and costs"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "One of the typical test objectives is verifying that a test object complies with contractual, legal, and regulatory requirements."
+    },
+    {
+      "id": "q039",
+      "chapterSection": "1.1.1",
+      "questionText": "Test objectives are influenced by:",
+      "options": [
+        "Only the specific testing tools available",
+        "Only the test manager's personal preferences",
+        "Solely the project timeline and budget constraints",
+        "Context including work product, test level, risks, SDLC, and business factors"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Objectives of testing can vary depending on the context, which includes the work product being tested, test level, risks, SDLC being followed, and business context factors."
+    },
+    {
+      "id": "q040",
+      "chapterSection": "1.1.2",
+      "questionText": "Regression testing is performed:",
+      "options": [
+        "As the initial testing of new features",
+        "Only during the final testing phase",
+        "As a type of static analysis technique",
+        "After confirmation testing to check if fixes cause failures elsewhere"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Regression testing is performed to check whether the fixes are causing failures in other parts of the test object, typically done after confirmation testing."
+    },
+    {
+      "id": "q041",
+      "chapterSection": "1.2",
+      "questionText": "Testing as quality control helps by:",
+      "options": [
+        "Eliminating the need for quality assurance processes",
+        "Helping achieve agreed goals within scope, time, quality, and budget constraints",
+        "Preventing all defects from ever occurring",
+        "Replacing the need for comprehensive project management"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Testing, as a form of quality control, helps in achieving the agreed upon goals within the set scope, time, quality, and budget constraints."
+    },
+    {
+      "id": "q042",
+      "chapterSection": "1.2.1",
+      "questionText": "Testing provides user representation by:",
+      "options": [
+        "Having actual users perform all testing activities",
+        "Testers ensuring their understanding of users' needs are considered throughout development",
+        "Replacing user requirements with comprehensive test cases",
+        "Users are not relevant to testing processes"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Testing provides users with indirect representation by having testers ensure that their understanding of users' needs are considered throughout the development lifecycle."
+    },
+    {
+      "id": "q043",
+      "chapterSection": "1.2.2",
+      "questionText": "Quality Control (QC) is focused on:",
+      "options": [
+        "Process implementation and continuous improvement",
+        "Only automated testing tool implementation",
+        "Only management and oversight activities",
+        "Activities supporting achievement of appropriate quality levels"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "QC is a product-oriented, corrective approach that focuses on those activities supporting the achievement of appropriate levels of quality."
+    },
+    {
+      "id": "q044",
+      "chapterSection": "1.2.2",
+      "questionText": "Test results are used differently in QA versus QC:",
+      "options": [
+        "They are used identically in both approaches",
+        "In QC they fix defects, in QA they provide feedback on process performance",
+        "QA doesn't utilize test results effectively",
+        "QC doesn't require test results for decisions"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In QC, test results are used to fix defects, while in QA they provide feedback on how well the development and test processes are performing."
+    },
+    {
+      "id": "q045",
+      "chapterSection": "1.2.2",
+      "questionText": "Quality Assurance (QA) is the responsibility of:",
+      "options": [
+        "Only the dedicated QA team members",
+        "Only professional software testers",
+        "Everyone on a project",
+        "Only project managers and team leads"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "QA applies to both the development and testing processes, and is the responsibility of everyone on a project."
+    },
+    {
+      "id": "q046",
+      "chapterSection": "1.2.3",
+      "questionText": "Besides errors and defects, failures can be caused by:",
+      "options": [
+        "Environmental conditions such as radiation or electromagnetic fields",
+        "Only human errors cause system failures",
+        "Only defective code causes system failures",
+        "Nothing else causes failures in software"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Errors and defects are not the only cause of failures. Failures can also be caused by environmental conditions, such as when radiation or electromagnetic fields cause defects in firmware."
+    },
+    {
+      "id": "q047",
+      "chapterSection": "1.2.3",
+      "questionText": "Humans make errors due to:",
+      "options": [
+        "Only when working with highly complex systems",
+        "Only due to insufficient training programs",
+        "Humans don't make errors in software development",
+        "Various reasons including time pressure, complexity, tiredness, or inadequate training"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Humans make errors for various reasons, such as time pressure, complexity of work products, processes, infrastructure or interactions, or simply because they are tired or lack adequate training."
+    },
+    {
+      "id": "q048",
+      "chapterSection": "1.3",
+      "questionText": "Instead of exhaustive testing, focus should be on:",
+      "options": [
+        "Test techniques, test case prioritization, and risk-based testing",
+        "Random testing approaches only",
+        "Automated testing solutions only",
+        "Manual testing approaches only"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Rather than attempting to test exhaustively, test techniques, test case prioritization, and risk-based testing should be used to focus test efforts."
+    },
+    {
+      "id": "q049",
+      "chapterSection": "1.3",
+      "questionText": "According to early testing principles, static and dynamic testing should start:",
+      "options": [
+        "After requirements are completely finalized",
+        "Only during the dedicated testing phase",
+        "After development activities are completed",
+        "As early as possible"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "To find defects early, both static testing and dynamic testing should be started as early as possible in the development lifecycle."
+    },
+    {
+      "id": "q050",
+      "chapterSection": "1.3",
+      "questionText": "Risk-based testing uses as important input:",
+      "options": [
+        "Predicted and actual defect clusters observed during testing",
+        "Test execution time estimates",
+        "Number of available test cases",
+        "Available testing tools and technologies"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Predicted defect clusters, and actual defect clusters observed during testing or in operation, are an important input for risk-based testing."
+    },
+    {
+      "id": "q051",
+      "chapterSection": "1.3",
+      "questionText": "Repeating the same tests can be beneficial in:",
+      "options": [
+        "Never, tests always wear out completely",
+        "Only in manual testing scenarios",
+        "Automated regression testing",
+        "Only for performance testing activities"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "While tests generally wear out when repeated, in some cases repeating the same tests can have a beneficial outcome, such as in automated regression testing."
+    },
+    {
+      "id": "q052",
+      "chapterSection": "1.3",
+      "questionText": "To avoid the absence-of-defects fallacy, what should be performed in addition to verification?",
+      "options": [
+        "Validation",
+        "More comprehensive verification activities",
+        "Additional testing phases and cycles",
+        "Better technical documentation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "To avoid the absence-of-defects fallacy, validation should be carried out in addition to verification to ensure the system meets users' needs and business goals."
+    },
+    {
+      "id": "q053",
+      "chapterSection": "1.4.1",
+      "questionText": "Test activities are typically implemented:",
+      "options": [
+        "Always in a strict sequential order",
+        "Only in waterfall project methodologies",
+        "Often iteratively or in parallel",
+        "Only in agile project approaches"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although many test activities may appear to follow a logical sequence, they are often implemented iteratively or in parallel, and usually need to be tailored to the system and project."
+    },
+    {
+      "id": "q054",
+      "chapterSection": "1.4.1",
+      "questionText": "Test monitoring involves:",
+      "options": [
+        "Only checking final test execution results",
+        "Only monitoring discovered defects",
+        "Only monitoring test coverage metrics",
+        "Ongoing checking of all test activities and comparing progress against the plan"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Test monitoring involves the ongoing checking of all test activities and the comparison of actual progress against the plan."
+    },
+    {
+      "id": "q055",
+      "chapterSection": "1.4.1",
+      "questionText": "Test control involves:",
+      "options": [
+        "Taking actions necessary to meet testing objectives",
+        "Controlling test execution speed and timing",
+        "Controlling access to test environments",
+        "Controlling test documentation versions"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Test control involves taking the actions necessary to meet the objectives of testing, based on the monitoring information."
+    },
+    {
+      "id": "q056",
+      "chapterSection": "1.4.1",
+      "questionText": "Coverage items in test design are used to:",
+      "options": [
+        "Count the total number of tests",
+        "Measure test execution time accurately",
+        "Serve as a guide to specify test case inputs",
+        "Identify appropriate testing tools"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In test design, coverage items are identified and serve as a guide to specify test case inputs."
+    },
+    {
+      "id": "q057",
+      "chapterSection": "1.4.1",
+      "questionText": "During test implementation, test procedures are:",
+      "options": [
+        "Designed from scratch using requirements",
+        "Executed according to schedule",
+        "Reviewed for accuracy and completeness",
+        "Test cases organized into procedures and assembled into suites"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "During test implementation, test cases can be organized into test procedures and are often assembled into test suites."
+    },
+    {
+      "id": "q058",
+      "chapterSection": "1.4.1",
+      "questionText": "Test execution can take various forms including:",
+      "options": [
+        "Only manual execution by testers",
+        "Only automated execution using tools",
+        "Manual or automated, including continuous testing or pair testing sessions",
+        "Only continuous testing approaches"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Test execution may be manual or automated and can take many forms, including continuous testing or pair testing sessions."
+    },
+    {
+      "id": "q059",
+      "chapterSection": "1.4.1",
+      "questionText": "Test completion activities typically occur:",
+      "options": [
+        "At project milestones such as release, end of iteration, or test level completion",
+        "Only at the final end of projects",
+        "Only when critical defects are discovered",
+        "Only when testing activities fail"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Test completion activities usually occur at project milestones such as release, end of iteration, or test level completion."
+    },
+    {
+      "id": "q060",
+      "chapterSection": "1.4.2",
+      "questionText": "Stakeholder factors influence testing through:",
+      "options": [
+        "Stakeholders don't directly influence testing",
+        "Only through budget allocation decisions",
+        "Only through timeline and schedule decisions",
+        "Their needs, expectations, requirements, and willingness to cooperate"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Stakeholder factors that influence testing include their needs, expectations, requirements, willingness to cooperate, and other related aspects."
+    },
+    {
+      "id": "q061",
+      "chapterSection": "1.4.2",
+      "questionText": "Business domain factors affecting testing include:",
+      "options": [
+        "Only the specific industry type",
+        "Criticality of test object, identified risks, market needs, and legal regulations",
+        "Only competitive market pressures",
+        "Only organizational company size"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Business domain factors include criticality of the test object, identified risks, market needs, specific legal regulations, and other domain-specific considerations."
+    },
+    {
+      "id": "q062",
+      "chapterSection": "1.4.3",
+      "questionText": "Consistency and integrity of testware is ensured by:",
+      "options": [
+        "Proper configuration management",
+        "Regular manual testing activities",
+        "Automated testing tools only",
+        "Manual review processes only"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Proper configuration management ensures consistency and integrity of work products, including testware."
+    },
+    {
+      "id": "q063",
+      "chapterSection": "1.4.3",
+      "questionText": "Test environment elements include:",
+      "options": [
+        "Only physical hardware components",
+        "Stubs, drivers, simulators, and service virtualizations",
+        "Only network configuration settings",
+        "Only database setup configurations"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Examples of test environment elements include stubs, drivers, simulators, and service virtualizations."
+    },
+    {
+      "id": "q064",
+      "chapterSection": "1.4.3",
+      "questionText": "Test completion work products consist of:",
+      "options": [
+        "Only final comprehensive test reports",
+        "Test completion report, improvement action items, lessons learned, and change requests",
+        "Only detailed defect reports",
+        "Only test execution logs"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Test completion work products include test completion report, action items for improvement of subsequent projects or iterations, documented lessons learned, and change requests."
+    },
+    {
+      "id": "q065",
+      "chapterSection": "1.4.4",
+      "questionText": "Traceability supports impact analysis by:",
+      "options": [
+        "Making it possible to determine the impact of changes",
+        "It doesn't help with impact analysis",
+        "Only for defect tracking purposes",
+        "Only for test execution activities"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Good traceability makes it possible to determine the impact of changes, facilitates test audits, and helps meet IT governance criteria."
+    },
+    {
+      "id": "q066",
+      "chapterSection": "1.4.4",
+      "questionText": "Traceability improves stakeholder communication by:",
+      "options": [
+        "It doesn't affect communication processes",
+        "Only through formal written reports",
+        "Only in scheduled formal meetings",
+        "Helping communicate technical aspects of testing understandably"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Good traceability can assist in communicating the technical aspects of testing to stakeholders in an understandable manner."
+    },
+    {
+      "id": "q067",
+      "chapterSection": "1.4.5",
+      "questionText": "Regarding testing and test management roles:",
+      "options": [
+        "It is possible for one person to take on both roles simultaneously",
+        "They must always be separate people",
+        "Combined roles only work in small projects",
+        "Combined roles only work in large projects"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Different people may take on these roles at different times, and it is possible for one person to take on the roles of testing and test management at the same time."
+    },
+    {
+      "id": "q068",
+      "chapterSection": "1.4.5",
+      "questionText": "In Agile development, test management tasks:",
+      "options": [
+        "Are only handled by dedicated test managers",
+        "Some may be handled by the Agile team",
+        "Are only performed by the Scrum Master",
+        "Are only performed by the Product Owner"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In Agile software development, some of the test management tasks may be handled by the Agile team, while tasks spanning multiple teams may be performed by test managers outside the development team."
+    },
+    {
+      "id": "q069",
+      "chapterSection": "1.5.1",
+      "questionText": "Domain knowledge is important for testers because it enables:",
+      "options": [
+        "It's not important for testing effectiveness",
+        "Only for technical testing activities",
+        "Only for automated testing implementation",
+        "Understanding and communicating with end users and business representatives"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Domain knowledge is important for testers to be able to understand and to communicate with end users and business representatives."
+    },
+    {
+      "id": "q070",
+      "chapterSection": "1.5.1",
+      "questionText": "Accepting information that disagrees with current beliefs can be difficult due to:",
+      "options": [
+        "Technical system complexity",
+        "Confirmation bias",
+        "Time pressure constraints",
+        "Tool and technology limitations"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Confirmation bias can make it difficult to accept information that disagrees with currently held beliefs, which is why good communication skills are crucial for testers."
+    },
+    {
+      "id": "q071",
+      "chapterSection": "1.5.2",
+      "questionText": "The whole team approach originates from:",
+      "options": [
+        "Waterfall development methodology",
+        "Extreme Programming practices",
+        "V-Model development approach",
+        "Spiral development model"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The whole team approach is a practice coming from Extreme Programming that builds upon the skill of working effectively in a team context."
+    },
+    {
+      "id": "q072",
+      "chapterSection": "1.5.2",
+      "questionText": "In the whole team approach, testers collaborate with business representatives to:",
+      "options": [
+        "Help them create suitable acceptance tests",
+        "They don't interact with business representatives",
+        "Only through formal documentation processes",
+        "Only in structured formal meetings"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In the whole team approach, testers collaborate with business representatives to help them create suitable acceptance tests."
+    },
+    {
+      "id": "q073",
+      "chapterSection": "1.5.2",
+      "questionText": "The whole team approach may not be appropriate in:",
+      "options": [
+        "Agile development projects",
+        "Small development projects",
+        "Safety-critical situations requiring high test independence",
+        "Automated testing projects"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Depending on the context, the whole team approach may not always be appropriate. For instance, in safety-critical situations, a high level of test independence may be needed."
+    },
+    {
+      "id": "q074",
+      "chapterSection": "1.5.3",
+      "questionText": "Independence makes testers more effective due to:",
+      "options": [
+        "Differences between author's and tester's cognitive biases",
+        "Independent testers work with more dedication",
+        "Independent testers have more available time",
+        "Independent testers use superior testing tools"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A certain degree of independence makes the tester more effective at finding defects due to differences between the author's and the tester's cognitive biases."
+    },
+    {
+      "id": "q075",
+      "chapterSection": "1.5.3",
+      "questionText": "A potential drawback of independent testing is:",
+      "options": [
+        "Independent testers may be isolated from development team, causing communication problems",
+        "It's always significantly more expensive",
+        "It takes much longer to execute tests",
+        "Independent testers consistently find fewer defects"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A drawback is that independent testers may be isolated from the development team, which may lead to a lack of collaboration, communication problems, or an adversarial relationship."
+    }
+  ]
+}
