@@ -16,7 +16,7 @@ export default function ProgressBar({ current, total }: ProgressBarProps) {
         <div
           className="bg-blue-600 h-full rounded-full transition-all duration-300"
           style={{
-            width: `${(current / total) * 100}%`,
+            width: `${(current + 1 / total) * 100}%`,
           }}
         />
       </div>

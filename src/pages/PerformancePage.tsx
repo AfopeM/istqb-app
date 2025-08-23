@@ -1,10 +1,10 @@
 import { useMemo } from "react";
-import { useParams, useLocation } from "react-router-dom";
-import { Button, CircularProgress } from "../components/ui";
-import { useLocalStorage } from "../hooks/useLocalStorage";
-import chaptersData from "../data/chapters.json";
-
 import type { Question } from "../types/quiz";
+import chaptersData from "../data/chapters.json";
+import { ScoreGauge } from "../components/performance";
+import { useParams, useLocation } from "react-router-dom";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { Button, SectionWrapper, Tagline } from "../components/ui";
 
 interface PerformanceState {
   questions: Question[];
@@ -20,15 +20,15 @@ export default function PerformancePage() {
   // re-compute on every render when data is absent.
   const questions = useMemo(
     () => performance.questions ?? [],
-    [performance.questions]
+    [performance.questions],
   );
   const results = useMemo(
     () => performance.results ?? [],
-    [performance.results]
+    [performance.results],
   );
 
   // Memoize expensive/computed state to avoid recalculations on re-render
-  const { totalQuestions, correctCount, percentage } = useMemo(() => {
+  const { percentage } = useMemo(() => {
     const total = questions.length;
     const correct = results.filter((r) => r.isCorrect).length;
     return {
@@ -39,16 +39,35 @@ export default function PerformancePage() {
     // Depend on raw arrays only length and correctness influences result
   }, [questions, results]);
 
+  // Generate score gauge color
+  const scoreGaugeColor = useMemo(() => {
+    if (percentage >= 90) return "#05df72";
+    if (percentage >= 80) return "#cddc39";
+    if (percentage >= 70) return "#ffeb3b";
+    if (percentage >= 60) return "#ffc107";
+    if (percentage >= 50) return "#f97316";
+    if (percentage >= 40) return "#fb2c36";
+    return "#111827";
+  }, [percentage]);
+
   // Incorrectly answered questions are stored in MindVault
   const [MindVault] = useLocalStorage<string[]>("MindVault", []);
   const weakAreasCount = MindVault.length;
 
   // Generate suggestion text
   const suggestions = useMemo(() => {
+    if (percentage >= 90)
+      return "Outstanding! You’ve nearly mastered this section. Aim for 100% by refining small details.";
     if (percentage >= 80)
       return "Excellent work! Keep practicing to maintain your mastery.";
+    if (percentage >= 70)
+      return "Solid effort! Review the tricky areas to push yourself into the top tier.";
     if (percentage >= 60)
       return "Good job! Focus on the questions saved in your Challenge Bank to improve further.";
+    if (percentage >= 50)
+      return "You're getting there. Revisit your weaker topics and try a mixed practice session.";
+    if (percentage >= 40)
+      return "You’ve made progress, but a deeper review will help. Break concepts into smaller parts.";
     return "Consider revisiting the study material and practising the questions you missed.";
   }, [percentage]);
 
@@ -56,8 +75,8 @@ export default function PerformancePage() {
 
   if (!state) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center space-y-4">
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="space-y-4 bg-lime-500 text-center">
           <p>No performance data available. Please complete a session first.</p>
           <Button to="/">Go Home</Button>
         </div>
@@ -66,119 +85,70 @@ export default function PerformancePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex flex-col relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -inset-[100%] bg-gradient-to-br from-blue-100/20 via-indigo-200/20 to-purple-300/20 animate-gradient-slow" />
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2" />
-      </div>
-
-      <div className="container mx-auto px-6 py-12 flex-grow relative">
-        {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 tracking-tight">
+    <SectionWrapper className="flex items-center justify-center">
+      <div className="relative container mx-auto flex-grow px-6 py-12">
+        {/* HEADER*/}
+        <header className="mb-12 text-center">
+          {chapter && (
+            <Tagline>
+              {chapter.id.replace("-", " ")}: {chapter.title}
+            </Tagline>
+          )}
+          <h1 className="text-4xl font-black text-gray-900 md:text-5xl">
             Performance Summary
           </h1>
-          {chapter && (
-            <div className="inline-flex items-center px-4 py-1 mt-4 rounded-full bg-gradient-to-r from-blue-100/80 to-purple-100/80 backdrop-blur-sm border border-white/20 shadow-sm">
-              <span className="text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
-                {chapter.title}
-              </span>
-            </div>
-          )}
         </header>
 
-        {/* Statistics */}
-        <section className="max-w-2xl mx-auto rounded-2xl p-8 transition-all duration-500 transform hover:scale-[1.02] backdrop-blur-xl bg-white/30 border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.1)] relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-100/10 to-purple-100/10 pointer-events-none" />
+        {/* STATS */}
+        <main className="mx-auto flex max-w-2xl flex-col items-center gap-2 rounded-2xl bg-white p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)] sm:items-center">
+          {/* SCORE GAUGE*/}
+          <ScoreGauge
+            width={250}
+            strokeWidth={45}
+            value={percentage}
+            progressColor={scoreGaugeColor}
+          />
 
-          <div className="flex flex-col items-center sm:flex-row sm:items-center gap-10 relative">
-            {/* Circular Progress */}
-            <CircularProgress
-              value={percentage}
-              className="flex-shrink-0 w-32 h-32 animate-fade-in"
-              primaryColor="#4f46e5"
-              secondaryColor="#7c3aed"
-            />
+          {/* SUGGESTIONS */}
+          <section className="flex w-full flex-col items-center rounded-xl bg-blue-500/10 p-6 text-center">
+            <span className="text-4xl">💡</span>
+            <h2 className="mt-4 mb-1 flex items-center gap-2 text-xl font-bold">
+              Suggestions
+            </h2>
+            <p className="text-gray-900/60">{suggestions}</p>
+          </section>
 
-            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Numeric Stats */}
-              <div className="backdrop-blur-md bg-white/20 rounded-xl p-6 border border-white/30 shadow-inner animate-slide-up">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-2xl">📊</span>
-                  <p className="text-sm font-medium text-blue-900/70">Score</p>
-                </div>
-                <p className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {correctCount} / {totalQuestions}
-                </p>
-              </div>
-
-              {/* Weak Areas Count */}
-              <div
-                className="backdrop-blur-md bg-white/20 rounded-xl p-6 border border-white/30 shadow-inner animate-slide-up"
-                style={{ animationDelay: "100ms" }}
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-2xl">🎯</span>
-                  <p className="text-sm font-medium text-blue-900/70">
-                    Areas to Focus
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <p className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {weakAreasCount}
-                  </p>
-                  <span className="px-2 py-1 text-sm rounded-full bg-purple-100/50 text-purple-700 font-medium border border-purple-200/50">
-                    In Mind Vault
-                  </span>
-                </div>
-              </div>
-
-              {/* Suggestions */}
-              <div
-                className="sm:col-span-2 relative animate-slide-up"
-                style={{ animationDelay: "200ms" }}
-              >
-                <div className="absolute -left-4 top-1/2 w-8 h-8 bg-gradient-to-br from-blue-100 to-purple-100 transform rotate-45 -translate-y-1/2" />
-                <div className="backdrop-blur-md bg-gradient-to-r from-blue-100/80 to-purple-100/80 rounded-2xl p-6 border border-white/30 shadow-lg relative">
-                  <h2 className="text-xl font-semibold flex items-center gap-2 mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    <span className="text-2xl">💡</span> Suggestions
-                  </h2>
-                  <p className="text-blue-900/80 leading-relaxed">
-                    {suggestions}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          {/* QUESTIONS IN MIND VAULT */}
+          <p className="flex w-full flex-col items-center justify-center gap-1 rounded-lg bg-blue-500/10 p-6">
+            <span className="text-sm font-bold text-gray-900 capitalize">
+              questions in Mind Vault
+            </span>
+            <span className="text-3xl font-black text-blue-500">
+              {weakAreasCount}
+            </span>
+          </p>
+        </main>
 
         {/* BUTTONS */}
-        <section
-          className="max-w-2xl mx-auto mt-12 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up"
-          style={{ animationDelay: "300ms" }}
-        >
+        <section className="mx-auto mt-12 flex max-w-2xl flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            variant="filled"
             to={`/session/${chapterId}`}
-            className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+            className="font-bold tracking-wider"
           >
-            <span className="text-xl">🎯</span>
             Start New Session
           </Button>
           <Button
             size="lg"
+            variant="outline"
             to={`/review/${chapterId}`}
             state={{ questions, results }}
-            className="flex items-center gap-2 bg-white/80 hover:bg-white/90 text-blue-900 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
+            className="font-bold tracking-wider"
           >
-            <span className="text-xl">📝</span>
             Review Questions
           </Button>
         </section>
       </div>
-    </div>
+    </SectionWrapper>
   );
 }

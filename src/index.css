@@ -41,28 +41,6 @@
   animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
-/* Button Base */
-.btn {
-  @apply inline-flex items-center justify-center font-medium rounded-lg cursor-pointer transition-all duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60;
-}
-
-/* Button Variants */
-.btn-default {
-  @apply bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 hover:border-gray-400 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200;
-}
-
-.btn-outline {
-  @apply bg-transparent text-blue-500 border border-blue-500 hover:bg-blue-50 hover:text-gray-900 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-transparent disabled:text-gray-400 disabled:border-gray-200;
-}
-
-.btn-filled {
-  @apply bg-blue-500 text-white border border-blue-500 hover:bg-transparent hover:text-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-blue-300 disabled:border-blue-300;
-}
-
-.btn-ghost {
-  @apply bg-transparent text-gray-500 border-transparent hover:bg-blue-500/10 hover:backdrop-blur-sm focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-transparent disabled:text-gray-400;
-}
-
 /* Performance Page Animations */
 @keyframes gradient-shift {
   0% {
@@ -108,15 +86,4 @@
 
 .animate-slide-up {
   animation: slide-up 0.5s ease-out forwards;
-}
-
-/* Button Sizes */
-.btn-sm {
-  @apply px-3 py-1.5 text-sm;
-}
-.btn-md {
-  @apply px-4 py-2 text-sm;
-}
-.btn-lg {
-  @apply px-6 py-3 text-base;
 }

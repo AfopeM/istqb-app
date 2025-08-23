@@ -2,8 +2,8 @@ import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import chaptersData from "../data/chapters.json";
 import { ExamSection, HomeCard } from "../components/home";
-import { Clock, BookOpen } from "lucide-react";
-import { SectionWrapper } from "../components/ui";
+import { Clock } from "lucide-react";
+import { SectionWrapper, Tagline } from "../components/ui";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -24,39 +24,29 @@ export default function HomePage() {
   }, [navigate]);
 
   return (
-    <SectionWrapper>
+    <SectionWrapper className="px-8 md:px-0">
       <div className="relative">
         {/* HERO SECTION */}
-        <header className="relative z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-            <div className="inline-flex items-center gap-2 capitalize bg-white/80 backdrop-blur-sm text-blue-500 px-6 py-3 rounded-md text-sm font-medium tracking-wider mb-8 shadow-sm">
-              <BookOpen className="w-4 h-4" />
-              international software testing qualifications board
-            </div>
+        <header className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <h1 className="relative mb-4 max-w-lg md:max-w-xl mx-auto text-gray-900">
+            <Tagline className="text-[10px] md:text-xs md:rounded-md mb-4 w-fit mx-auto">version 4.0</Tagline>
+            <span className="block text-4xl md:text-6xl font-black">
+              Certified Tester Foundation Level
+            </span>
+          </h1>
 
-            <h1 className="relative text-5xl md:text-6xl font-bold mb-6 max-w-lg md:max-w-xl mx-auto bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">
-              <span>
-                Certified Tester <br /> Foundation Level
-              </span>
-              <span className="absolute top-0 right-0 text-[10px] md:text-xs px-3 py-1 rounded-sm md:rounded-md ml-2 text-white bg-blue-500/90 align-top">
-                v 4.0
-              </span>
-            </h1>
-
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed">
-              Practice with purpose. Get exam-style questions, instant feedback,
-              and personalized insights to ace your certification without the
-              hassle of sign-ups.
-            </p>
-          </div>
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed">
+            Practice with purpose. Get exam-style questions, instant feedback,
+            and personalized insights to ace your certification without the
+            hassle of sign-ups.
+          </p>
         </header>
 
         {/* CHAPTER SECTION */}
-        <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-16">
+        <main className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-16">
           {/* AVAILABLE CHAPTERS SECTION */}
           <section>
             <div className="flex flex-wrap gap-8 justify-center">
-              {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"> */}
               {availableChapters.map((chapter) => (
                 <HomeCard
                   key={chapter.id}

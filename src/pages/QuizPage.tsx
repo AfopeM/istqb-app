@@ -24,7 +24,7 @@ export default function QuizPage() {
   // Track questions that the user has already answered in this chapter
   const [answeredQuestions, setAnsweredQuestions] = useLocalStorage<string[]>(
     `answeredQuestions-${chapterId}`,
-    []
+    [],
   );
 
   if (!chapter) {
@@ -82,14 +82,14 @@ export default function QuizPage() {
   return (
     <SectionWrapper>
       {/* BACK BUTTON */}
-      <div className="w-full max-w-3xl mx-auto px-4 py-8 relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-3xl px-4 py-8">
         <Button
           to={`/session/${chapterId}`}
           variant="ghost"
-          className="space-x-2 group"
+          className="group space-x-2"
         >
           <ArrowLeft
-            className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1"
+            className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1"
             aria-hidden="true"
           />
           <span>Back</span>
@@ -97,10 +97,10 @@ export default function QuizPage() {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex-grow flex items-center justify-center relative z-10">
-        <div className="max-w-3xl mx-auto p-4 w-full">
+      <div className="relative z-10 flex flex-grow items-center justify-center">
+        <div className="mx-auto w-full max-w-3xl p-4">
           {/* PROGRESS BAR AND CHALLENGE BANK BUTTON */}
-          <div className="flex gap-2 items-center mb-4">
+          <div className="mb-4 flex items-center gap-2">
             <ProgressBar
               current={currentQuestionIndex}
               total={questions.length}
@@ -118,12 +118,12 @@ export default function QuizPage() {
           </div>
 
           {/* BUTTON */}
-          <div className="flex justify-end mt-4">
+          <div className="mt-4 flex justify-center">
             {selectedAnswer !== null && (
               <Button
-                variant="filled"
+                size="lg"
                 onClick={handleNext}
-                className="px-6 py-6"
+                className="w-1/2 font-bold tracking-wider uppercase"
               >
                 {currentQuestionIndex === questions.length - 1
                   ? "Finish"
