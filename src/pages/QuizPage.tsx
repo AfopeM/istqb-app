@@ -97,7 +97,7 @@ export default function QuizPage() {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative z-10 flex flex-grow items-center justify-center">
+      <main className="relative z-10 mb-16 flex flex-grow items-center justify-center">
         <div className="mx-auto w-full max-w-3xl p-4">
           {/* PROGRESS BAR AND CHALLENGE BANK BUTTON */}
           <div className="mb-4 flex items-center gap-2">
@@ -132,7 +132,7 @@ export default function QuizPage() {
             )}
           </div>
         </div>
-      </div>
+      </main>
     </SectionWrapper>
   );
 }

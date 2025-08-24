@@ -7,16 +7,16 @@ export default function ProgressBar({ current, total }: ProgressBarProps) {
   return (
     <div className="mb-4 flex-grow">
       {/* Counter */}
-      <div className="text-sm font-medium text-gray-700 mb-1">
+      <div className="mb-1 text-sm font-medium text-gray-700">
         Question {current + 1} / {total}
       </div>
 
       {/* Bar */}
-      <div className="w-full bg-gray-300 rounded-full h-1 overflow-hidden">
+      <div className="h-1 w-full overflow-hidden rounded-full bg-gray-300">
         <div
-          className="bg-blue-600 h-full rounded-full transition-all duration-300"
+          className="h-full rounded-full bg-blue-600 transition-all duration-300"
           style={{
-            width: `${(current + 1 / total) * 100}%`,
+            width: `${((current + 1) / total) * 100}%`,
           }}
         />
       </div>
