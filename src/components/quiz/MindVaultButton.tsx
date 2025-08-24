@@ -34,28 +34,22 @@ export default function MindVaultButton({ questionId }: Props) {
       <Button
         className="group"
         onClick={toggleChallenge}
-        // variant={isSelected ? "filled" : "default"}
-        variant={isSelected ? "filled" : "ghost"}
+        variant={isSelected ? "default" : "ghost"}
       >
         <Bookmark
           className={`size-5 transition-colors duration-200 ${
-            isSelected ? "text-white fill-white" : "text-blue-500"
+            isSelected ? "fill-white text-white" : "text-blue-500"
           }`}
         />
       </Button>
 
       {/* Toast Notification */}
       <div
-        className={`
-          fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-3 rounded-lg shadow-lg
-          transform transition-all duration-300 ease-in-out
-          flex items-center space-x-2
-          ${
-            showToast
-              ? "translate-y-0 opacity-100"
-              : "translate-y-8 opacity-0 pointer-events-none"
-          }
-        `}
+        className={`fixed right-4 bottom-4 flex transform items-center space-x-2 rounded-lg bg-blue-500 px-4 py-3 text-white shadow-lg transition-all duration-300 ease-in-out ${
+          showToast
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-8 opacity-0"
+        } `}
       >
         <Bookmark className="size-5 fill-white" />
         <span>Added to MindVault!</span>
