@@ -46,7 +46,6 @@ export default function ReviewPage() {
 
   return (
     <SectionWrapper className="flex flex-col items-center justify-center">
-      {/* <div className="relative"> */}
       {/* BACK BUTTON */}
       <div className="relative mx-auto w-full max-w-3xl p-4">
         <Button
@@ -62,7 +61,7 @@ export default function ReviewPage() {
         </Button>
       </div>
 
-      <main className="relative container mx-auto flex-grow px-4 py-6">
+      <main className="relative container mx-auto my-10 flex-grow px-4 py-6">
         {/* NUMBERED BUTTONS */}
         <div className="mb-6 flex flex-wrap justify-center gap-2">
           {questions.map((_, idx) => {

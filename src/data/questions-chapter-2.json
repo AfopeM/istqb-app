@@ -1,0 +1,953 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "chapterSection": "2.1",
+      "questionText": "Which statement best describes the primary difference between sequential and iterative SDLC models regarding dynamic testing?",
+      "options": [
+        "Sequential models require more test automation than iterative models",
+        "Iterative models allow dynamic testing in early phases while sequential models typically defer it to later phases",
+        "Sequential models focus on unit testing while iterative models emphasize integration testing",
+        "Iterative models require less documentation than sequential models"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In sequential models, executable code is usually created in later phases, so dynamic testing cannot be performed early. Iterative models deliver working prototypes in each iteration, allowing both static and dynamic testing at all levels throughout the development process."
+    },
+    {
+      "id": "q002",
+      "chapterSection": "2.1",
+      "questionText": "What is the primary purpose of a Software Development Lifecycle (SDLC) model?",
+      "options": [
+        "To define the programming languages and tools used in development",
+        "To provide an abstract, high-level representation of how development phases relate logically and chronologically",
+        "To specify the exact timeline and budget for software projects",
+        "To determine the team structure and roles for development"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A SDLC model is an abstract, high-level representation of the software development process that defines how different development phases and types of activities relate to each other, both logically and chronologically."
+    },
+    {
+      "id": "q003",
+      "chapterSection": "2.1",
+      "questionText": "Which of the following is an example of an incremental development model?",
+      "options": [
+        "Waterfall model",
+        "V-model",
+        "Unified Process",
+        "Spiral model"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The Unified Process is mentioned as an example of incremental development models. Sequential models include waterfall and V-model, while spiral model is an example of iterative development models."
+    },
+    {
+      "id": "q004",
+      "chapterSection": "2.1.1",
+      "questionText": "In Agile software development, which testing approach is primarily favored due to the assumption that change may occur throughout the project?",
+      "options": [
+        "Extensive prior test analysis with detailed documentation",
+        "Experience-based test techniques with lightweight documentation",
+        "Formal verification methods with comprehensive traceability",
+        "Risk-based testing with predictive analysis models"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Agile projects favor lightweight work product documentation and extensive test automation. Most manual testing uses experience-based test techniques that don't require extensive prior test analysis and design, allowing for flexibility as requirements change."
+    },
+    {
+      "id": "q005",
+      "chapterSection": "2.1.1",
+      "questionText": "Which aspect is NOT directly impacted by the choice of SDLC model on testing?",
+      "options": [
+        "The programming language used for development",
+        "The scope and timing of test activities",
+        "The extent of test automation required",
+        "The role and responsibilities of a tester"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The programming language is a technical implementation choice that is not directly impacted by the SDLC model selection. The SDLC model impacts testing scope, timing, automation extent, documentation detail, techniques, approach, and tester roles, but not the underlying programming language."
+    },
+    {
+      "id": "q006",
+      "chapterSection": "2.1.1",
+      "questionText": "What is a key characteristic of testing in iterative and incremental development models?",
+      "options": [
+        "Testing is only performed at the end of all iterations",
+        "Both static and dynamic testing may be performed at all test levels in each iteration",
+        "Only automated testing is allowed in iterative models",
+        "Testing documentation must be completed before any iteration begins"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In iterative and incremental development models, it is assumed that each iteration delivers a working prototype or product increment. This implies that both static and dynamic testing may be performed at all test levels in each iteration."
+    },
+    {
+      "id": "q007",
+      "chapterSection": "2.1.1",
+      "questionText": "Why do iterative and incremental models require extensive regression testing?",
+      "options": [
+        "Because they use more complex programming languages",
+        "Due to frequent delivery of increments requiring fast feedback",
+        "Because they have longer development cycles",
+        "Due to the need for comprehensive documentation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Frequent delivery of increments in iterative and incremental models requires fast feedback and extensive regression testing to ensure that new changes don't break existing functionality while providing quick insights on quality."
+    },
+    {
+      "id": "q008",
+      "chapterSection": "2.1.2",
+      "questionText": "According to good testing practices independent of SDLC model, when should test analysis and design for a given test level begin?",
+      "options": [
+        "After the corresponding development phase is completed",
+        "During the corresponding development phase of the SDLC",
+        "Only when executable code becomes available",
+        "At the end of each development iteration"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Test analysis and design should begin during the corresponding development phase to adhere to the principle of early testing. This allows testing activities to start as early as possible rather than waiting for development to complete."
+    },
+    {
+      "id": "q009",
+      "chapterSection": "2.1.2",
+      "questionText": "According to good testing practices, what should be the relationship between software development activities and test activities?",
+      "options": [
+        "Test activities should only begin after all development activities are complete",
+        "For every software development activity, there should be a corresponding test activity",
+        "Test activities should be independent and run in parallel without correspondence",
+        "Test activities should focus only on the final deliverable"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Good testing practices state that for every software development activity, there should be a corresponding test activity, ensuring all development activities are subject to quality control throughout the development process."
+    },
+    {
+      "id": "q010",
+      "chapterSection": "2.1.2",
+      "questionText": "Why should testers be involved in reviewing work products as soon as drafts become available?",
+      "options": [
+        "To ensure testers have enough time to write comprehensive test documentation",
+        "To support the shift-left strategy through earlier testing and defect detection",
+        "To reduce the workload of developers in the review process",
+        "To eliminate the need for formal testing phases later"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Testers should be involved in reviewing work products as soon as drafts are available to support the shift-left strategy through earlier testing and defect detection, finding issues before they become more expensive to fix in later phases."
+    },
+    {
+      "id": "q011",
+      "chapterSection": "2.1.2",
+      "questionText": "What is the purpose of having different test levels with specific and different test objectives?",
+      "options": [
+        "To ensure all testers have specialized roles",
+        "To allow testing to be appropriately comprehensive while avoiding redundancy",
+        "To match the organizational structure of development teams",
+        "To comply with regulatory requirements"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Different test levels have specific and different test objectives, which allows for testing to be appropriately comprehensive while avoiding redundancy. This ensures thorough coverage without unnecessary duplication of testing efforts."
+    },
+    {
+      "id": "q012",
+      "chapterSection": "2.1.3",
+      "questionText": "What is the key characteristic that distinguishes Behavior-Driven Development (BDD) from Test-Driven Development (TDD)?",
+      "options": [
+        "BDD focuses on unit tests while TDD focuses on acceptance tests",
+        "BDD uses Given/When/Then format in natural language understandable by stakeholders",
+        "BDD requires less refactoring than TDD",
+        "BDD is used only in waterfall models while TDD is used in agile"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "BDD expresses desired behavior with test cases written in simple natural language using the Given/When/Then format, making it easily understandable by stakeholders. This differentiates it from TDD, which directs coding through test cases but doesn't necessarily use stakeholder-friendly language."
+    },
+    {
+      "id": "q013",
+      "chapterSection": "2.1.3",
+      "questionText": "In Acceptance Test-Driven Development (ATDD), when are the tests written relative to application development?",
+      "options": [
+        "After the application functionality is fully developed",
+        "Simultaneously with the application development",
+        "Before the part of the application is developed to satisfy the tests",
+        "Only during the integration phase"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In ATDD, tests are derived from acceptance criteria as part of the system design process and are written before the part of the application is developed to satisfy those tests. This follows the shift-left approach and early testing principle."
+    },
+    {
+      "id": "q014",
+      "chapterSection": "2.1.3",
+      "questionText": "What do TDD, ATDD, and BDD have in common regarding their approach to development?",
+      "options": [
+        "They all require extensive upfront documentation",
+        "They all implement early testing principles and follow a shift-left approach with tests defined before code",
+        "They all focus exclusively on automated testing",
+        "They all work only with object-oriented programming languages"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "TDD, ATDD, and BDD are similar in that they all implement the principle of early testing and follow a shift-left approach, since tests are defined before the code is written in all three approaches."
+    },
+    {
+      "id": "q015",
+      "chapterSection": "2.1.3",
+      "questionText": "In Test-Driven Development (TDD), what is the typical sequence of activities?",
+      "options": [
+        "Write extensive design documentation, then write tests, then write code",
+        "Write tests first, then write code to satisfy tests, then refactor tests and code",
+        "Write code first, then write tests, then refactor the code",
+        "Write tests and code simultaneously, then perform integration testing"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "TDD directs coding through test cases instead of extensive software design. The sequence is: tests are written first, then code is written to satisfy the tests, and then both tests and code are refactored."
+    },
+    {
+      "id": "q016",
+      "chapterSection": "2.1.3",
+      "questionText": "What happens to tests in TDD, ATDD, and BDD approaches after the initial development?",
+      "options": [
+        "Tests are discarded once the code is working",
+        "Tests are archived for documentation purposes only",
+        "Tests may persist as automated tests to ensure code quality in future adaptations and refactoring",
+        "Tests are only kept if they find defects"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "For all these approaches (TDD, ATDD, BDD), tests may persist as automated tests to ensure the code quality in future adaptations and refactoring, providing ongoing value beyond initial development."
+    },
+    {
+      "id": "q017",
+      "chapterSection": "2.1.4",
+      "questionText": "What is the primary organizational goal of DevOps?",
+      "options": [
+        "To eliminate the need for separate development and operations teams",
+        "To create synergy by getting development and operations to work together toward common goals",
+        "To automate all software development and deployment processes",
+        "To reduce the cost of software development and maintenance"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "DevOps is an organizational approach aiming to create synergy by getting development (including testing) and operations to work together to achieve a set of common goals, requiring a cultural shift to bridge gaps while treating both functions with equal value."
+    },
+    {
+      "id": "q018",
+      "chapterSection": "2.1.4",
+      "questionText": "From a testing perspective, which benefit of DevOps specifically relates to encouraging developers to submit high-quality code?",
+      "options": [
+        "Continuous delivery reduces manual testing needs",
+        "Automated regression tests minimize regression risk",
+        "CI promotes shift-left by encouraging component tests and static analysis with code submission",
+        "Stable test environments are established through automated processes"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Continuous Integration (CI) promotes a shift-left approach specifically by encouraging developers to submit high-quality code accompanied by component tests and static analysis, ensuring quality checks happen early in the development process."
+    },
+    {
+      "id": "q019",
+      "chapterSection": "2.1.4",
+      "questionText": "Which statement about manual testing in a DevOps environment is most accurate?",
+      "options": [
+        "Manual testing is completely eliminated in mature DevOps implementations",
+        "Manual testing is only needed during the initial DevOps setup phase",
+        "Manual testing, especially from the user's perspective, will still be needed despite high automation",
+        "Manual testing should be limited to non-functional testing only"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Even though DevOps comes with a high level of automated testing, manual testing—especially from the user's perspective—will still be needed. Automation cannot completely replace the human perspective in evaluating user experience and exploratory testing scenarios."
+    },
+    {
+      "id": "q020",
+      "chapterSection": "2.1.4",
+      "questionText": "Which challenge is specifically associated with implementing DevOps from a testing perspective?",
+      "options": [
+        "Elimination of all manual testing processes",
+        "Test automation requires additional resources and may be difficult to establish and maintain",
+        "Reduced focus on non-functional testing requirements",
+        "Increased need for extensive test documentation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "One of the specific challenges of DevOps is that test automation requires additional resources and may be difficult to establish and maintain. While automation is beneficial, it comes with implementation and maintenance overhead that organizations must plan for."
+    },
+    {
+      "id": "q021",
+      "chapterSection": "2.1.4",
+      "questionText": "What does DevOps promote to achieve faster, higher-quality code delivery?",
+      "options": [
+        "Individual accountability and isolated team workflows",
+        "Team autonomy, fast feedback, integrated toolchains, and technical practices like CI and CD",
+        "Extensive documentation and formal approval processes",
+        "Centralized decision-making and standardized development environments"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "DevOps promotes team autonomy, fast feedback, integrated toolchains, and technical practices like continuous integration (CI) and continuous delivery (CD) to enable teams to build, test, and release high-quality code faster through a DevOps delivery pipeline."
+    },
+    {
+      "id": "q022",
+      "chapterSection": "2.1.5",
+      "questionText": "Which practice best exemplifies the shift-left approach in testing?",
+      "options": [
+        "Increasing test automation in production environments",
+        "Writing test cases before code implementation and running code in test harness during development",
+        "Conducting user acceptance testing earlier in the timeline",
+        "Performing load testing only after system integration"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Writing test cases before code is written and having the code run in a test harness during implementation exemplifies shift-left by moving testing activities to the earliest possible point in development, before code even exists."
+    },
+    {
+      "id": "q023",
+      "chapterSection": "2.1.5",
+      "questionText": "What is an important consideration for successfully implementing a shift-left approach?",
+      "options": [
+        "Stakeholders must be convinced and bought into the concept",
+        "All testing must be automated from the beginning",
+        "Development teams must work in isolation from testing teams",
+        "Documentation requirements should be significantly reduced"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "For shift-left approach to be successful, it's important that stakeholders are convinced and bought into the concept. Without stakeholder buy-in, the necessary changes in process, timing, and resource allocation cannot be effectively implemented."
+    },
+    {
+      "id": "q024",
+      "chapterSection": "2.1.5",
+      "questionText": "Which statement about the shift-left approach is most accurate?",
+      "options": [
+        "It means completely eliminating testing later in the SDLC",
+        "It suggests testing should be done earlier but doesn't mean testing later in SDLC should be neglected",
+        "It only applies to automated testing activities",
+        "It requires all test cases to be written before any code development begins"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Shift-left suggests that testing should be done earlier (not waiting for code implementation or component integration), but it does not mean that testing later in the SDLC should be neglected. It's about starting testing activities earlier while maintaining appropriate testing throughout the lifecycle."
+    },
+    {
+      "id": "q025",
+      "chapterSection": "2.1.5",
+      "questionText": "Which of the following is NOT mentioned as a good practice to achieve shift-left in testing?",
+      "options": [
+        "Reviewing specifications from the testing perspective",
+        "Using CI and CD with fast feedback and automated component tests",
+        "Increasing the number of testers assigned to each project",
+        "Completing static analysis of source code prior to dynamic testing"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The good practices for shift-left include: reviewing specifications from testing perspective, writing test cases before code, using CI/CD, completing static analysis prior to dynamic testing, and performing non-functional testing starting at component level. Increasing the number of testers is not mentioned as a shift-left practice."
+    },
+    {
+      "id": "q026",
+      "chapterSection": "2.1.5",
+      "questionText": "Why might performing non-functional testing starting at the component test level be considered a form of shift-left?",
+      "options": [
+        "Component testing is always faster than system testing",
+        "Non-functional test types tend to be performed later in the SDLC when complete systems are available",
+        "Component testing requires less skilled testers",
+        "Non-functional testing is easier to automate at component level"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Performing non-functional testing starting at the component test level is a form of shift-left because these non-functional test types tend to be performed later in the SDLC when a complete system and representative test environment are available. Moving them earlier represents a shift-left."
+    },
+    {
+      "id": "q027",
+      "chapterSection": "2.1.5",
+      "questionText": "What is a potential trade-off of implementing a shift-left approach?",
+      "options": [
+        "Reduced overall software quality",
+        "Extra training, effort, and/or costs earlier in the process, but expected savings later",
+        "Increased dependency on external tools and vendors",
+        "Longer overall development timelines"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A shift-left approach might result in extra training, effort, and/or costs earlier in the process but is expected to save efforts and/or costs later in the process. This represents an investment upfront for greater efficiency and cost savings downstream."
+    },
+    {
+      "id": "q028",
+      "chapterSection": "2.1.6",
+      "questionText": "What is the primary purpose of retrospectives in the context of testing and SDLC?",
+      "options": [
+        "To assign blame for defects found in production",
+        "To discuss what was successful and what could be improved for future iterations",
+        "To plan the next release's testing strategy exclusively",
+        "To evaluate individual team member performance"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Retrospectives are held to discuss what was successful and should be retained, what was not successful and could be improved, and how to incorporate improvements in the future. They focus on process improvement rather than individual blame or performance evaluation."
+    },
+    {
+      "id": "q029",
+      "chapterSection": "2.1.6",
+      "questionText": "What should typically be included in the output of retrospectives according to good testing practices?",
+      "options": [
+        "Individual performance ratings and salary recommendations",
+        "Results recorded as part of the test completion report",
+        "Detailed technical specifications for the next release",
+        "Budget allocations for future testing tools"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The results of retrospectives should be recorded and are normally part of the test completion report. This ensures that lessons learned and improvement recommendations are formally documented and can be referenced for future projects."
+    },
+    {
+      "id": "q030",
+      "chapterSection": "2.1.6",
+      "questionText": "Who should participate in retrospectives according to the syllabus?",
+      "options": [
+        "Only testers and test managers",
+        "Only development team members",
+        "Not only testers, but also developers, architects, product owners, and business analysts",
+        "Only senior management and project stakeholders"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Retrospectives should include participants not only testers, but also developers, architects, product owner, business analysts, and other relevant stakeholders. This cross-functional participation ensures comprehensive process improvement discussions."
+    },
+    {
+      "id": "q031",
+      "chapterSection": "2.1.6",
+      "questionText": "Which of the following is mentioned as a typical benefit of retrospectives for testing?",
+      "options": [
+        "Reduced testing costs through tool optimization",
+        "Increased test effectiveness/efficiency through process improvement suggestions",
+        "Elimination of manual testing requirements",
+        "Standardization of all testing processes across projects"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Typical benefits for testing include increased test effectiveness/efficiency by implementing suggestions for process improvement, increased quality of testware, team bonding and learning, improved quality of test basis, and better cooperation between development and testing."
+    },
+    {
+      "id": "q032",
+      "chapterSection": "2.1.6",
+      "questionText": "Why are retrospectives considered critical for successful implementation of continuous improvement?",
+      "options": [
+        "They provide formal documentation required by quality standards",
+        "They ensure recommended improvements are followed up and implemented",
+        "They reduce the need for other quality assurance activities",
+        "They eliminate the risk of repeating past mistakes"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Retrospectives are critical for successful implementation of continuous improvement, and it is important that any recommended improvements are followed up. Without proper follow-up, the insights gained from retrospectives cannot translate into actual process improvements."
+    },
+    {
+      "id": "q033",
+      "chapterSection": "2.1.6",
+      "questionText": "When can retrospectives be held according to the timing described in the syllabus?",
+      "options": [
+        "Only at the end of a complete project",
+        "Exclusively at regular monthly intervals",
+        "At the end of a project or iteration, at release milestones, or when needed",
+        "Only when major defects are discovered"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Retrospectives can be held at the end of a project or an iteration, at a release milestone, or can be held when needed. The timing and organization depend on the particular SDLC model being followed, providing flexibility in when they occur."
+    },
+    {
+      "id": "q034",
+      "chapterSection": "2.2.1",
+      "questionText": "What is the primary focus of component integration testing compared to component testing?",
+      "options": [
+        "Testing individual components in complete isolation",
+        "Testing the interfaces and interactions between components",
+        "Testing the overall system behavior and capabilities",
+        "Testing components using specific development frameworks"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Component integration testing focuses specifically on testing the interfaces and interactions between components, while component testing focuses on testing components in isolation. This testing is heavily dependent on integration strategy approaches like bottom-up, top-down, or big-bang."
+    },
+    {
+      "id": "q035",
+      "chapterSection": "2.2.1",
+      "questionText": "Which test level is most appropriate for testing end-to-end tasks and non-functional quality characteristics in a complete system?",
+      "options": [
+        "Component testing with unit test frameworks",
+        "Component integration testing with test harnesses",
+        "System testing in a representative test environment",
+        "Acceptance testing by intended users"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "System testing focuses on the overall behavior and capabilities of an entire system, including functional testing of end-to-end tasks and non-functional testing of quality characteristics. For some non-functional characteristics like usability, it's preferable to test them on a complete system in a representative environment."
+    },
+    {
+      "id": "q036",
+      "chapterSection": "2.2.1",
+      "questionText": "What is the main distinction between system testing and system integration testing?",
+      "options": [
+        "System testing focuses on internal system behavior while system integration testing focuses on external interfaces",
+        "System testing is performed by developers while system integration testing is performed by users",
+        "System testing uses white-box techniques while system integration testing uses black-box techniques",
+        "System testing requires less documentation than system integration testing"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "System testing focuses on the overall behavior and capabilities of an entire system or product, while system integration testing specifically focuses on testing the interfaces of the system under test with other systems and external services, requiring test environments similar to the operational environment."
+    },
+    {
+      "id": "q037",
+      "chapterSection": "2.2.1",
+      "questionText": "Which statement about acceptance testing is most accurate?",
+      "options": [
+        "It should always be performed by the development team to ensure technical correctness",
+        "It focuses on validation and demonstrating readiness for deployment to fulfill user business needs",
+        "It is primarily concerned with finding defects in system architecture",
+        "It replaces the need for system testing in agile environments"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Acceptance testing focuses on validation and demonstrating readiness for deployment, meaning the system fulfills the user's business needs. Ideally, it should be performed by the intended users and includes forms like UAT, operational acceptance testing, contractual and regulatory acceptance testing, alpha and beta testing."
+    },
+    {
+      "id": "q038",
+      "chapterSection": "2.2.2",
+      "questionText": "What is the main objective of functional testing?",
+      "options": [
+        "Checking how well the system performs under load conditions",
+        "Checking the functional completeness, correctness, and appropriateness",
+        "Covering the underlying code structure to an acceptable level",
+        "Validating the system's behavior against user expectations"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Functional testing evaluates the functions that a component or system should perform - the 'what' the test object should do. Its main objective is checking functional completeness, functional correctness, and functional appropriateness."
+    },
+    {
+      "id": "q039",
+      "chapterSection": "2.2.2",
+      "questionText": "According to ISO/IEC 25010, which of the following is NOT listed as a non-functional software quality characteristic?",
+      "options": [
+        "Performance efficiency and compatibility",
+        "Functional completeness and correctness",
+        "Security and maintainability",
+        "Reliability and portability"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Functional completeness and correctness are functional characteristics, not non-functional ones. The ISO/IEC 25010 standard lists performance efficiency, compatibility, usability, reliability, security, maintainability, and portability as non-functional software quality characteristics."
+    },
+    {
+      "id": "q040",
+      "chapterSection": "2.2.2",
+      "questionText": "Why might late discovery of non-functional defects pose a serious threat to project success?",
+      "options": [
+        "Non-functional defects are always more complex to fix than functional defects",
+        "Non-functional testing requires specialized environments that are expensive to set up late",
+        "Late discovery can significantly impact project timelines and may require major architectural changes",
+        "Non-functional defects can only be fixed by the original developers"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Late discovery of non-functional defects can pose a serious threat because these issues often require significant changes to architecture, design, or infrastructure, which become much more expensive and time-consuming to address later in the development cycle."
+    },
+    {
+      "id": "q041",
+      "chapterSection": "2.2.2",
+      "questionText": "What is the primary difference between black-box and white-box testing approaches?",
+      "options": [
+        "Black-box testing is automated while white-box testing is manual",
+        "Black-box testing is specification-based while white-box testing is structure-based",
+        "Black-box testing is performed by testers while white-box testing is performed by developers",
+        "Black-box testing focuses on functionality while white-box testing focuses on performance"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Black-box testing is specification-based and derives tests from documentation external to the test object, focusing on checking behavior against specifications. White-box testing is structure-based and derives tests from the system's internal structure (code, architecture, workflows, data flows) to cover the underlying structure."
+    },
+    {
+      "id": "q042",
+      "chapterSection": "2.2.3",
+      "questionText": "What is the primary purpose of confirmation testing?",
+      "options": [
+        "To ensure no adverse consequences have been caused by a change",
+        "To confirm that an original defect has been successfully fixed",
+        "To validate that new features meet business requirements",
+        "To verify system performance under expected load conditions"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Confirmation testing specifically confirms that an original defect has been successfully fixed. This can involve executing test cases that previously failed due to the defect or adding new tests to cover changes needed to fix the defect."
+    },
+    {
+      "id": "q043",
+      "chapterSection": "2.2.3",
+      "questionText": "Which approach is recommended to optimize the extent of regression testing?",
+      "options": [
+        "Run all existing test cases regardless of the change made",
+        "Only test the specific component where changes were made",
+        "Perform impact analysis to identify potentially affected parts",
+        "Focus regression testing only on high-priority features"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "It is advisable to first perform an impact analysis to optimize the extent of regression testing. Impact analysis shows which parts of the software could be affected by the change, allowing for more targeted and efficient regression testing."
+    },
+    {
+      "id": "q044",
+      "chapterSection": "2.2.3",
+      "questionText": "Why is regression testing considered a strong candidate for automation?",
+      "options": [
+        "Regression tests are simpler to automate than other test types",
+        "Regression test suites are run many times and generally increase with each iteration",
+        "Automated regression tests always find more defects than manual tests",
+        "Regression testing requires less maintenance than other automated tests"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Regression test suites are run many times and generally the number of regression test cases increases with each iteration or release, making automation beneficial for efficiency. The repetitive nature and growing volume make regression testing a strong candidate for automation."
+    },
+    {
+      "id": "q045",
+      "chapterSection": "2.2.1",
+      "questionText": "Which characteristic is used to distinguish test levels and avoid overlapping of test activities?",
+      "options": [
+        "Test techniques and test automation tools used",
+        "Test object, objectives, basis, defects/failures, and approach/responsibilities",
+        "Programming languages and development frameworks",
+        "Budget allocation and resource availability"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Test levels are distinguished by attributes including test object, test objectives, test basis, defects and failures, and approach and responsibilities. These attributes help avoid overlapping of test activities between different test levels."
+    },
+    {
+      "id": "q046",
+      "chapterSection": "2.2.1",
+      "questionText": "Who typically performs component testing and in what environment?",
+      "options": [
+        "Independent test team in a production-like environment",
+        "End users in their operational environment",
+        "Developers in their development environments",
+        "System administrators in staging environments"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Component testing (unit testing) is normally performed by developers in their development environments. It focuses on testing components in isolation and often requires specific support such as test harnesses or unit test frameworks."
+    },
+    {
+      "id": "q047",
+      "chapterSection": "2.2.2",
+      "questionText": "When is it appropriate for non-functional testing to start in the software development lifecycle?",
+      "options": [
+        "Only after all functional testing has been completed",
+        "Exclusively during system testing phase",
+        "Early in the life cycle, as part of reviews, component testing, or system testing",
+        "Only during user acceptance testing"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "It is sometimes appropriate for non-functional testing to start early in the life cycle, such as part of reviews and component testing or system testing. Early non-functional testing helps avoid late discovery of defects that could seriously threaten project success."
+    },
+    {
+      "id": "q048",
+      "chapterSection": "2.2.2",
+      "questionText": "How do many non-functional tests relate to functional tests?",
+      "options": [
+        "Non-functional tests completely replace functional tests",
+        "Non-functional tests are derived from functional tests, using the same functions but checking non-functional constraints",
+        "Non-functional tests must be designed independently of functional tests",
+        "Non-functional tests only validate functional test results"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Many non-functional tests are derived from functional tests as they use the same functional tests but check that while performing the function, a non-functional constraint is satisfied (e.g., checking that a function performs within specified time or can be ported to a new platform)."
+    },
+    {
+      "id": "q049",
+      "chapterSection": "2.2",
+      "questionText": "What is the key difference between test levels and test types?",
+      "options": [
+        "Test levels are performed by different teams while test types use different tools",
+        "Test levels are organized by development stage while test types are related to specific quality characteristics",
+        "Test levels focus on automation while test types focus on manual testing",
+        "Test levels are sequential while test types are performed in parallel"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Test levels are groups of test activities organized and managed together, performed in relation to software at a given stage of development. Test types are groups of test activities related to specific quality characteristics, and most test types can be performed at every test level."
+    },
+    {
+      "id": "q050",
+      "chapterSection": "2.2.3",
+      "questionText": "In what scenarios might confirmation testing be restricted to a simpler approach?",
+      "options": [
+        "When the defect is in a critical system component",
+        "When time or money is short when fixing defects",
+        "When the defect affects multiple system interfaces",
+        "When regulatory compliance is required"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "When time or money is short when fixing defects, confirmation testing might be restricted to simply exercising the steps that should reproduce the failure caused by the defect and checking that the failure does not occur, rather than running all previously failed test cases or adding new comprehensive tests."
+    },
+    {
+      "id": "q051",
+      "chapterSection": "2.2.3",
+      "questionText": "What scope can regression testing cover beyond the immediate test object?",
+      "options": [
+        "Only the component where changes were made",
+        "The same component, other components in the same system, or even other connected systems and the environment",
+        "Only user interface components",
+        "Exclusively database-related components"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Regression testing confirms that no adverse consequences have been caused by a change. These adverse consequences could affect the same component where the change was made, other components in the same system, or even other connected systems. Regression testing may also be related to the environment."
+    },
+    {
+      "id": "q052",
+      "chapterSection": "2.2.1",
+      "questionText": "What types of testing are included in the main forms of acceptance testing?",
+      "options": [
+        "Unit testing, integration testing, and system testing",
+        "Functional testing, performance testing, and security testing",
+        "User acceptance testing, operational acceptance testing, contractual and regulatory acceptance testing, alpha and beta testing",
+        "Black-box testing, white-box testing, and gray-box testing"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The main forms of acceptance testing specifically include user acceptance testing (UAT), operational acceptance testing, contractual and regulatory acceptance testing, alpha testing, and beta testing. These all focus on demonstrating readiness for deployment and fulfilling business needs."
+    },
+    {
+      "id": "q053",
+      "chapterSection": "2.2",
+      "questionText": "How do test levels relate to each other in sequential SDLC models versus iterative models?",
+      "options": [
+        "Both models require the same test level relationships",
+        "Sequential models define exit criteria of one level as entry criteria for the next, while this may not apply in iterative models",
+        "Iterative models have more test levels than sequential models",
+        "Sequential models skip certain test levels that iterative models include"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In sequential SDLC models, test levels are often defined such that the exit criteria of one level are part of the entry criteria for the next level. In some iterative models, this may not apply, and development activities may span through multiple test levels with possible overlap in time."
+    },
+    {
+      "id": "q054",
+      "chapterSection": "2.3",
+      "questionText": "According to ISO/IEC 14764, which of the following represents the different categories of maintenance?",
+      "options": [
+        "Preventive, predictive, and reactive maintenance",
+        "Corrective, adaptive to environment changes, and performance/maintainability improvements",
+        "Planned, unplanned, and emergency maintenance",
+        "Functional, non-functional, and structural maintenance"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "ISO/IEC 14764 defines maintenance categories as corrective (fixing defects), adaptive (adapting to changes in the environment), and improvements to performance or maintainability. These categories can involve both planned releases/deployments and unplanned releases/deployments (hot fixes)."
+    },
+    {
+      "id": "q055",
+      "chapterSection": "2.3",
+      "questionText": "What is the primary purpose of conducting impact analysis before making a change?",
+      "options": [
+        "To estimate the cost and timeline for implementing the change",
+        "To help decide if the change should be made based on potential consequences in other system areas",
+        "To determine which testing techniques should be used",
+        "To identify the specific team members who should implement the change"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Impact analysis is done before a change is made to help decide if the change should be made, based on the potential consequences in other areas of the system. This helps in making informed decisions about whether the benefits justify the risks and effort involved."
+    },
+    {
+      "id": "q056",
+      "chapterSection": "2.3",
+      "questionText": "When testing changes to a system in production, what are the two main aspects that should be evaluated?",
+      "options": [
+        "Performance efficiency and security compliance",
+        "User acceptance and regulatory compliance",
+        "The success of the implementation and checking for possible regressions in unchanged parts",
+        "Functional correctness and non-functional characteristics"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Testing changes to a system in production includes both evaluating the success of the implementation of the change and checking for possible regressions in parts of the system that remain unchanged (which is usually most of the system)."
+    },
+    {
+      "id": "q057",
+      "chapterSection": "2.3",
+      "questionText": "Which factor does NOT typically influence the scope of maintenance testing?",
+      "options": [
+        "The degree of risk of the change",
+        "The programming language used in the system",
+        "The size of the existing system",
+        "The size of the change"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The scope of maintenance testing typically depends on the degree of risk of the change, the size of the existing system, and the size of the change. The programming language, while potentially relevant to implementation, is not listed as a primary factor determining maintenance testing scope."
+    },
+    {
+      "id": "q058",
+      "chapterSection": "2.3",
+      "questionText": "Which of the following best describes hot fixes in the context of maintenance?",
+      "options": [
+        "Planned enhancements delivered in regular release cycles",
+        "Performance improvements implemented during scheduled maintenance",
+        "Unplanned releases/deployments to address urgent issues",
+        "Routine updates to improve system maintainability"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hot fixes are mentioned as examples of unplanned releases/deployments, contrasted with planned releases/deployments. They are typically urgent corrective changes that cannot wait for the next planned release cycle."
+    },
+    {
+      "id": "q059",
+      "chapterSection": "2.3",
+      "questionText": "What type of maintenance testing might be required when an application reaches the end of its life?",
+      "options": [
+        "Performance testing to optimize final operations",
+        "Security testing to prevent data breaches during shutdown",
+        "Testing of data archiving and restore/retrieval procedures",
+        "Integration testing with replacement systems"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "When a system is retired, this can require testing of data archiving if long data-retention periods are required. Testing of restore and retrieval procedures after archiving may also be needed in the event that certain data is required during the archiving period."
+    },
+    {
+      "id": "q060",
+      "chapterSection": "2.3",
+      "questionText": "During platform migration, what aspects typically need to be tested?",
+      "options": [
+        "Only the new platform capabilities and features",
+        "Tests associated with the new environment, changed software, and data conversion when applicable",
+        "Exclusively the data migration and conversion processes",
+        "Only the compatibility between old and new platforms"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Upgrades or migrations of the operational environment, such as from one platform to another, can require tests associated with the new environment as well as of the changed software, or tests of data conversion when data from another application is migrated into the system being maintained."
+    },
+    {
+      "id": "q061",
+      "chapterSection": "2.3",
+      "questionText": "Which statement best describes the relationship between change size and maintenance testing scope?",
+      "options": [
+        "Larger changes always require proportionally more testing",
+        "Change size is one of the factors that typically determines maintenance testing scope",
+        "Small changes never require regression testing",
+        "Change size only affects the timeline, not the testing scope"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The size of the change is explicitly mentioned as one of the factors that typically determines the scope of maintenance testing, along with the degree of risk of the change and the size of the existing system."
+    },
+    {
+      "id": "q062",
+      "chapterSection": "2.3",
+      "questionText": "What is a key consideration when testing data archiving during system retirement?",
+      "options": [
+        "Ensuring archived data can be restored and retrieved when needed during the archiving period",
+        "Verifying that all data is permanently deleted after archiving",
+        "Confirming that archived data is compressed to minimum size",
+        "Testing that archived data is accessible by the replacement system"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Testing of restore and retrieval procedures after archiving may be needed in the event that certain data is required during the archiving period. This ensures that archived data remains accessible when needed, even after the original system is retired."
+    },
+    {
+      "id": "q063",
+      "chapterSection": "2.3",
+      "questionText": "Which scenario best exemplifies adaptive maintenance?",
+      "options": [
+        "Fixing a bug that causes system crashes",
+        "Adding a new feature requested by users",
+        "Updating the system to work with a new operating system version",
+        "Optimizing database queries to improve response time"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Adaptive maintenance involves adapting to changes in the environment. Updating the system to work with a new operating system version is a clear example of adapting the system to environmental changes, rather than corrective fixes or performance improvements."
+    },
+    {
+      "id": "q064",
+      "chapterSection": "2.3",
+      "questionText": "Why is regression testing particularly important in maintenance testing?",
+      "options": [
+        "Maintenance changes typically affect the entire system architecture",
+        "Most of the system remains unchanged and needs to be verified for adverse effects",
+        "Maintenance testing always involves multiple system integrations",
+        "Regression testing is faster than other testing types in maintenance"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Testing changes to a system in production includes checking for possible regressions in parts of the system that remain unchanged, which is usually most of the system. This makes regression testing crucial to ensure no adverse consequences occur in unchanged areas."
+    },
+    {
+      "id": "q065",
+      "chapterSection": "2.3",
+      "questionText": "What distinguishes planned enhancements from hot fixes in maintenance triggers?",
+      "options": [
+        "Planned enhancements are release-based while hot fixes are unplanned deployments",
+        "Planned enhancements require less testing than hot fixes",
+        "Hot fixes only address security issues while planned enhancements add functionality",
+        "Planned enhancements are always larger in scope than hot fixes"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The triggers for maintenance include planned enhancements (release-based), corrective changes, or hot fixes. The key distinction is that planned enhancements follow a release cycle, while hot fixes are unplanned releases/deployments to address urgent issues."
+    },
+    {
+      "id": "q066",
+      "chapterSection": "2.3",
+      "questionText": "When might data conversion testing be necessary during maintenance?",
+      "options": [
+        "Only when fixing critical defects in data processing",
+        "When data from another application is migrated into the system being maintained",
+        "Exclusively during performance optimization activities",
+        "Only when retiring legacy systems"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Data conversion testing is specifically mentioned in the context of upgrades or migrations, particularly when data from another application is migrated into the system being maintained. This ensures the data is correctly converted and integrated."
+    },
+    {
+      "id": "q067",
+      "chapterSection": "2.3",
+      "questionText": "How does the size of the existing system influence maintenance testing scope?",
+      "options": [
+        "Larger systems always require complete regression testing",
+        "System size determines which testing tools should be used",
+        "System size is one of the factors that typically influences the scope of maintenance testing",
+        "Smaller systems require more intensive testing than larger systems"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The size of the existing system is explicitly mentioned as one of the three main factors that typically determine the scope of maintenance testing, along with the degree of risk of the change and the size of the change."
+    },
+    {
+      "id": "q068",
+      "chapterSection": "2.3",
+      "questionText": "What type of maintenance involves improving performance or maintainability without adding new functionality?",
+      "options": [
+        "Corrective maintenance",
+        "Adaptive maintenance",
+        "Perfective maintenance (performance/maintainability improvements)",
+        "Preventive maintenance"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "According to ISO/IEC 14764, one category of maintenance involves improvements to performance or maintainability. This type of maintenance focuses on enhancing existing capabilities rather than fixing defects (corrective) or adapting to environmental changes (adaptive)."
+    },
+    {
+      "id": "q069",
+      "chapterSection": "2.3",
+      "questionText": "In the context of system retirement, why might long data-retention periods require specific testing considerations?",
+      "options": [
+        "Long retention periods require more storage optimization testing",
+        "Data archiving testing is needed to ensure proper preservation and accessibility",
+        "Extended periods necessitate more frequent backup testing",
+        "Long retention periods require enhanced security testing"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "When a system is retired, testing of data archiving may be required if long data-retention periods are needed. This ensures that data is properly preserved and that restore and retrieval procedures work correctly during the archiving period."
+    },
+    {
+      "id": "q070",
+      "chapterSection": "2.3",
+      "questionText": "What is the primary focus when evaluating the success of implementing a change in production?",
+      "options": [
+        "Verifying that the change meets original business requirements",
+        "Confirming that the change was implemented correctly and works as intended",
+        "Ensuring the change improves overall system performance",
+        "Validating that the change follows coding standards"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Testing changes to a system in production includes evaluating the success of the implementation of the change, which means confirming that the change was implemented correctly and functions as intended in the production environment."
+    },
+    {
+      "id": "q071",
+      "chapterSection": "2.3",
+      "questionText": "Which factor would most likely increase the degree of risk associated with a maintenance change?",
+      "options": [
+        "The change affects multiple interconnected system components",
+        "The change uses a newer programming framework",
+        "The change is implemented by an external vendor",
+        "The change requires additional hardware resources"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The degree of risk of a change is one of the factors determining maintenance testing scope. Changes affecting multiple interconnected components typically carry higher risk due to potential widespread impact and the complexity of interactions that could be affected."
+    },
+    {
+      "id": "q072",
+      "chapterSection": "2.3",
+      "questionText": "What makes environment-related testing particularly important during platform upgrades?",
+      "options": [
+        "New platforms always have better performance characteristics",
+        "The software may behave differently in the new environment",
+        "Platform upgrades always require code modifications",
+        "Environment changes only affect non-functional characteristics"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Upgrades or migrations of the operational environment require tests associated with the new environment because the software may behave differently in the new environment. This testing ensures compatibility and proper functioning in the changed operational context."
+    },
+    {
+      "id": "q073",
+      "chapterSection": "2.3",
+      "questionText": "How do the three main triggers for maintenance testing differ in their characteristics?",
+      "options": [
+        "They require different testing techniques and tools",
+        "Modifications involve changes to code, upgrades involve environment changes, and retirement involves data preservation",
+        "They have different priority levels and approval processes",
+        "They affect different types of system components"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The three triggers are: modifications (planned enhancements, corrective changes, hot fixes), upgrades/migrations (operational environment changes, platform changes), and retirement (end-of-life activities including data archiving). Each has distinct characteristics and testing needs."
+    }
+  ]
+}

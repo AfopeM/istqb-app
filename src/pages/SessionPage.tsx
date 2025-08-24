@@ -84,7 +84,7 @@ export default function SessionPage() {
         difficulty: "advanced",
       },
     ],
-    []
+    [],
   );
 
   // Load questions from JSON file based on chapter ID
@@ -123,8 +123,8 @@ export default function SessionPage() {
           Array.isArray(questionsModule.default)
             ? questionsModule.default
             : Array.isArray(questionsModule.questions)
-            ? questionsModule.questions
-            : questionsModule
+              ? questionsModule.questions
+              : questionsModule
         ) as Question[];
 
         if (!questions || questions.length === 0) {
@@ -149,13 +149,13 @@ export default function SessionPage() {
               Array.isArray(questionsModule.default)
                 ? questionsModule.default
                 : Array.isArray(questionsModule.questions)
-                ? questionsModule.questions
-                : questionsModule
+                  ? questionsModule.questions
+                  : questionsModule
             ) as Question[];
 
             if (questions && questions.length > 0) {
               console.log(
-                `Successfully loaded ${questions.length} questions from fallback`
+                `Successfully loaded ${questions.length} questions from fallback`,
               );
               setAllQuestions(questions);
               return;
@@ -166,7 +166,7 @@ export default function SessionPage() {
         } catch (fallbackErr) {
           console.error("Fallback import also failed:", fallbackErr);
           setError(
-            `Failed to load questions for ${chapterId}. Please check that the questions file exists.`
+            `Failed to load questions for ${chapterId}. Please check that the questions file exists.`,
           );
         }
       } finally {
@@ -206,10 +206,10 @@ export default function SessionPage() {
 
         // Separate unseen and previously seen questions
         const unseenQuestions = allQuestions.filter(
-          (q) => !answeredIds.includes(q.id)
+          (q) => !answeredIds.includes(q.id),
         );
         const seenQuestions = allQuestions.filter((q) =>
-          answeredIds.includes(q.id)
+          answeredIds.includes(q.id),
         );
 
         // Shuffle both pools
@@ -219,7 +219,7 @@ export default function SessionPage() {
         // Assemble the session: prioritise unseen, then top-up with seen if necessary
         const selectedQuestions = [...shuffledUnseen, ...shuffledSeen].slice(
           0,
-          option.questionCount
+          option.questionCount,
         );
 
         if (selectedQuestions.length === 0) {
@@ -227,7 +227,7 @@ export default function SessionPage() {
         }
 
         console.log(
-          `Starting ${type} session with ${selectedQuestions.length} questions`
+          `Starting ${type} session with ${selectedQuestions.length} questions`,
         );
 
         // Small delay to show loading state
@@ -243,7 +243,7 @@ export default function SessionPage() {
         setIsStartingSession(false);
       }
     },
-    [sessionOptions, chapterId, navigate, allQuestions, shuffleArray]
+    [sessionOptions, chapterId, navigate, allQuestions, shuffleArray],
   );
 
   // Handle retry
@@ -257,7 +257,7 @@ export default function SessionPage() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6 py-8">
           <Button to="/">Home</Button>
-          <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="flex min-h-[60vh] items-center justify-center">
             <LoadingSpinner size="lg" text="Loading questions..." />
           </div>
         </div>
@@ -271,7 +271,7 @@ export default function SessionPage() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6 py-8">
           <Button to="/">Home</Button>
-          <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="flex min-h-[60vh] items-center justify-center">
             <ErrorMessage
               message={error || "Chapter not found"}
               onRetry={error ? handleRetry : undefined}
@@ -284,12 +284,12 @@ export default function SessionPage() {
 
   return (
     <SectionWrapper>
-      <div className="container mx-auto px-6 min-h-screen flex flex-col relative z-10">
+      <div className="relative z-10 container mx-auto flex min-h-screen flex-col px-6">
         {/* BACK BUTTON */}
         <div className="py-8">
-          <Button to="/" variant="ghost" className="space-x-2 group">
+          <Button to="/" variant="ghost" className="group space-x-2">
             <ArrowLeft
-              className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1"
+              className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1"
               aria-hidden="true"
             />
             <span>Home</span>
@@ -297,35 +297,32 @@ export default function SessionPage() {
         </div>
 
         {/* MAIN CONTENT */}
-        <main className="max-w-4xl mx-auto flex-1 flex flex-col justify-center">
+        <main className="mx-auto flex max-w-4xl flex-1 flex-col justify-center">
           {/* HEADER */}
-          <header className="text-center mb-2">
+          <header className="mb-2 text-center">
             {/* BADGE */}
-            <div
-              className="inline-flex backdrop-blur-sm items-center gap-2 bg-blue-100 
-              text-blue-500 px-4 py-2 rounded-md uppercase text-xs md:text-sm font-medium mb-2"
-            >
+            <div className="mb-2 inline-flex items-center gap-2 rounded-md bg-blue-100 px-4 py-2 text-xs font-medium text-blue-500 uppercase backdrop-blur-sm md:text-sm">
               <BookOpen className="size-4" />
               {formatChapterTitle(chapter.id)}
             </div>
 
             {/* TITLE */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight">
+            <h1 className="mb-2 text-4xl leading-tight font-bold text-gray-900 md:text-5xl">
               {chapter.title}
             </h1>
 
             {/* DESCRIPTION */}
-            <p className="md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+            <p className="mx-auto mb-6 max-w-2xl leading-relaxed text-gray-600 md:text-lg">
               {chapter.description}
             </p>
           </header>
 
           {/* SESSION OPTIONS */}
-          <section className="flex flex-wrap gap-4 justify-center max-w-5xl mx-auto">
+          <section className="mx-auto flex max-w-5xl flex-wrap justify-center gap-4">
             {sessionOptions.map((option) => {
               const availableQuestions = Math.min(
                 option.questionCount,
-                allQuestions.length
+                allQuestions.length,
               );
               const isLimited = availableQuestions < option.questionCount;
 
@@ -345,7 +342,7 @@ export default function SessionPage() {
 
                   {isLimited && (
                     <div className="absolute top-4 right-4">
-                      <span className="bg-yellow-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                      <span className="rounded-full bg-yellow-500 px-2 py-1 text-xs font-medium text-white">
                         Limited
                       </span>
                     </div>
@@ -356,7 +353,7 @@ export default function SessionPage() {
           </section>
 
           {/* ADDITIONAL INFO */}
-          <p className="text-gray-600 mt-6 text-center text-sm opacity-70">
+          <p className="mt-6 text-center text-sm text-gray-600 opacity-70">
             Questions are randomly selected from a pool of {allQuestions.length}{" "}
             available questions
           </p>

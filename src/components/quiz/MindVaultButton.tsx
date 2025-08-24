@@ -5,13 +5,26 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface Props {
   questionId: string;
+  chapterId?: string;
 }
 
-export default function MindVaultButton({ questionId }: Props) {
-  const [MindVault, setMindVault] = useLocalStorage<string[]>("MindVault", []);
+interface MindVaultItem {
+  chapterId: string;
+  questionId: string;
+}
+
+export default function MindVaultButton({ questionId, chapterId }: Props) {
+  const [mindVault, setMindVault] = useLocalStorage<MindVaultItem[]>(
+    "MindVault",
+    [],
+  );
   const [showToast, setShowToast] = useState(false);
 
-  const isSelected = MindVault.includes(questionId);
+  const isSelected = mindVault.some(
+    (item) =>
+      (typeof item === "string" && item === questionId) ||
+      (typeof item === "object" && item.questionId === questionId),
+  );
 
   useEffect(() => {
     if (showToast) {
@@ -22,10 +35,24 @@ export default function MindVaultButton({ questionId }: Props) {
 
   const toggleChallenge = () => {
     if (isSelected) {
-      setMindVault(MindVault.filter((id) => id !== questionId));
+      // Remove from vault
+      setMindVault((prev) =>
+        prev.filter(
+          (item) =>
+            (typeof item === "string" && item !== questionId) ||
+            (typeof item === "object" && item.questionId !== questionId),
+        ),
+      );
     } else {
-      setMindVault([...MindVault, questionId]);
-      setShowToast(true);
+      // Add to vault with chapter information
+      if (chapterId) {
+        const newItem: MindVaultItem = {
+          chapterId,
+          questionId,
+        };
+        setMindVault((prev) => [...prev, newItem]);
+        setShowToast(true);
+      }
     }
   };
 

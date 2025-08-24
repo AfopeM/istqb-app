@@ -11,7 +11,7 @@
       "id": "chapter-2",
       "title": "Testing Throughout the Software Development Lifecycle",
       "img": "home_card_image_2.jpg",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "description": "Understand how testing integrates across development phases"
     },
     {

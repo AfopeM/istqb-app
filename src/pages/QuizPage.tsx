@@ -7,6 +7,11 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { ProgressBar, QuestionCard, MindVaultButton } from "../components/quiz";
 
+interface MindVaultItem {
+  chapterId: string;
+  questionId: string;
+}
+
 export default function QuizPage() {
   const { state } = useLocation();
   const { questions = [] } = state || {};
@@ -16,7 +21,10 @@ export default function QuizPage() {
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [MindVault, setMindVault] = useLocalStorage<string[]>("MindVault", []);
+  const [mindVault, setMindVault] = useLocalStorage<MindVaultItem[]>(
+    "MindVault",
+    [],
+  );
   const [results, setResults] = useState<
     { questionId: string; selectedIndex: number; isCorrect: boolean }[]
   >([]);
@@ -54,11 +62,20 @@ export default function QuizPage() {
       setAnsweredQuestions([...answeredQuestions, currentQuestion.id]);
     }
 
+    // Add to MindVault if answer is incorrect and not already in vault
     if (
       selectedIndex !== currentQuestion.correctAnswerIndex &&
-      !MindVault.includes(currentQuestion.id)
+      !mindVault.some(
+        (item) =>
+          (typeof item === "string" && item === currentQuestion.id) ||
+          (typeof item === "object" && item.questionId === currentQuestion.id),
+      )
     ) {
-      setMindVault([...MindVault, currentQuestion.id]);
+      const newItem: MindVaultItem = {
+        chapterId: chapterId!,
+        questionId: currentQuestion.id,
+      };
+      setMindVault([...mindVault, newItem]);
     }
   };
 
@@ -97,7 +114,7 @@ export default function QuizPage() {
       </div>
 
       {/* MAIN CONTENT */}
-      <main className="relative z-10 mb-16 flex flex-grow items-center justify-center">
+      <main className="relative z-10 my-10 flex flex-grow items-center justify-center">
         <div className="mx-auto w-full max-w-3xl p-4">
           {/* PROGRESS BAR AND CHALLENGE BANK BUTTON */}
           <div className="mb-4 flex items-center gap-2">
@@ -105,7 +122,10 @@ export default function QuizPage() {
               current={currentQuestionIndex}
               total={questions.length}
             />
-            <MindVaultButton questionId={currentQuestion.id} />
+            <MindVaultButton
+              questionId={currentQuestion.id}
+              chapterId={chapterId}
+            />
           </div>
 
           {/* QUESTION CARD */}
@@ -117,8 +137,8 @@ export default function QuizPage() {
             />
           </div>
 
-          {/* BUTTON */}
-          <div className="mt-4 flex justify-center">
+          {/* NAVIGATION BUTTON */}
+          <nav className="mt-4 flex justify-center">
             {selectedAnswer !== null && (
               <Button
                 size="lg"
@@ -130,7 +150,7 @@ export default function QuizPage() {
                   : "Next"}
               </Button>
             )}
-          </div>
+          </nav>
         </div>
       </main>
     </SectionWrapper>
