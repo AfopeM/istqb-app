@@ -5,9 +5,9 @@ interface ProgressBarProps {
 
 export default function ProgressBar({ current, total }: ProgressBarProps) {
   return (
-    <div className="mb-4 flex-grow">
+    <div className="mt-2 mb-4 flex-grow">
       {/* Counter */}
-      <div className="mb-1 text-sm font-medium text-gray-700">
+      <div className="mb-2 text-sm font-medium text-gray-500">
         Question {current + 1} / {total}
       </div>
 

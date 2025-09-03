@@ -4,8 +4,8 @@ import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
+  variant?: "default" | "outline" | "ghost" | "blank";
   isLoading?: boolean;
   to?: string;
   state?: unknown;
@@ -36,7 +36,6 @@ const Button = forwardRef<HTMLButtonElement, Props>(
     const baseStyles = cn(
       "inline-flex items-center justify-center",
       "rounded-lg transition-all duration-200 cursor-pointer",
-      "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
       "disabled:cursor-not-allowed disabled:opacity-60",
     );
 
@@ -44,16 +43,23 @@ const Button = forwardRef<HTMLButtonElement, Props>(
       default: cn(
         "bg-blue-500 text-white border-2 border-blue-500",
         "hover:bg-transparent hover:text-blue-500 backdrop-blur-lg",
+        "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
         "disabled:bg-blue-300 disabled:border-blue-300",
       ),
       outline: cn(
         "bg-blue-100 border-2 text-blue-400 border-blue-300",
         "hover:text-blue-700 hover:bg-blue-200 border-blue-500 backdrop-blur-lg ",
+        "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
         "disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200",
       ),
       ghost: cn(
         "bg-transparent text-blue-400 border-transparent font-medium",
         "hover:bg-blue-200 hover:text-blue-900 hover:backdrop-blur-lg hover:tracking-wider",
+        "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
+        "disabled:bg-transparent disabled:text-gray-300",
+      ),
+      blank: cn(
+        "focus:outline-none focus:ring-0 focus:ring-offset-0",
         "disabled:bg-transparent disabled:text-gray-300",
       ),
     };

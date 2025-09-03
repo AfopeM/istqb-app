@@ -20,7 +20,7 @@ export default function QuestionCard({
       return {
         container: "hover:bg-gray-100 cursor-pointer hover:-translate-y-0.5",
         circle: "bg-white border-gray-300",
-        text: "",
+        text: "text-sm md:text-base",
         opacity: "opacity-100",
       };
     }
@@ -36,7 +36,7 @@ export default function QuestionCard({
         circle: isSelected
           ? "bg-green-500 border-green-500 shadow-lg shadow-green-200"
           : "bg-white border-gray-300",
-        text: isSelected ? "text-lg" : "",
+        text: isSelected ? "" : "",
         opacity: "opacity-100",
       };
     }
@@ -45,7 +45,7 @@ export default function QuestionCard({
       return {
         container: "bg-red-100 border-red-200 animate-shake",
         circle: "bg-red-500 border-red-500 shadow-lg shadow-red-200",
-        text: "line-through ",
+        text: "line-through text-sm md:text-base",
         opacity: "opacity-100",
       };
     }
@@ -53,7 +53,7 @@ export default function QuestionCard({
     return {
       container: "",
       circle: "bg-white border-gray-300",
-      text: "",
+      text: "text-sm md:text-base",
       opacity: "opacity-50",
     };
   };
@@ -79,9 +79,20 @@ export default function QuestionCard({
     <div className="rounded-xl bg-white p-8 shadow-lg">
       <Tagline>section {question.chapterSection}</Tagline>
 
-      <p className="mb-4 text-3xl leading-tight font-bold">
-        {question.questionText}
-      </p>
+      <div className="mb-6 font-bold whitespace-pre-line lg:text-xl">
+        {question.questionText
+          .split(".")
+          .filter(Boolean)
+          .map((line, index) => (
+            <p key={index} className="mb-4 text-lg leading-6">
+              {line.trim()}
+              {index <
+              question.questionText.split(".").filter(Boolean).length - 1
+                ? "."
+                : ""}
+            </p>
+          ))}
+      </div>
 
       <ul role="list" className="space-y-2">
         {question.options.map((option, index) => {
@@ -93,7 +104,7 @@ export default function QuestionCard({
                 type="button"
                 onClick={() => onAnswerSelect(index)}
                 disabled={hasAnswered}
-                className={`w-full transform rounded-lg border-2 border-transparent px-4 py-5 transition-all duration-300 ease-in-out md:py-6 ${styles.container} ${styles.opacity} ${
+                className={`w-full transform rounded-lg border-2 border-transparent px-4 py-3 transition-all duration-300 ease-in-out md:py-6 ${styles.container} ${styles.opacity} ${
                   hasAnswered ? "cursor-default" : ""
                 }`}
                 aria-pressed={
@@ -102,8 +113,8 @@ export default function QuestionCard({
               >
                 <span className="flex items-center space-x-4 text-left">
                   <span
-                    className={`flex size-7 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-300 ${styles.circle}`}
                     aria-hidden="true"
+                    className={`flex size-5 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors duration-300 lg:size-7 ${styles.circle}`}
                   >
                     {renderIcon(index)}
                   </span>
@@ -114,7 +125,7 @@ export default function QuestionCard({
                 {hasAnswered && index === question.correctAnswerIndex && (
                   <p
                     role="note"
-                    className="mt-1 ml-11 text-left text-base font-normal text-green-800 transition-all duration-300"
+                    className="mt-1 ml-11 text-left text-sm font-normal text-green-800 transition-all duration-300 md:text-base"
                   >
                     {question.explanation}
                   </p>

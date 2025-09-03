@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button, SectionWrapper } from "../components/ui";
 import type { Question } from "../types/quiz";
@@ -19,15 +18,19 @@ export default function QuizPage() {
 
   const chapter = chaptersData.chapters.find((c) => c.id === chapterId);
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] =
+    useLocalStorage<number>(`currentQuestionIndex-${chapterId}`, 0);
+  const [selectedAnswer, setSelectedAnswer] = useLocalStorage<number | null>(
+    `selectedAnswer-${chapterId}`,
+    null,
+  );
   const [mindVault, setMindVault] = useLocalStorage<MindVaultItem[]>(
     "MindVault",
     [],
   );
-  const [results, setResults] = useState<
+  const [results, setResults] = useLocalStorage<
     { questionId: string; selectedIndex: number; isCorrect: boolean }[]
-  >([]);
+  >(`quizResults-${chapterId}`, []);
   const navigate = useNavigate();
   // Track questions that the user has already answered in this chapter
   const [answeredQuestions, setAnsweredQuestions] = useLocalStorage<string[]>(
@@ -79,12 +82,20 @@ export default function QuizPage() {
     }
   };
 
+  const clearQuizState = () => {
+    // Clear all quiz-related state
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setResults([]);
+  };
+
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(null);
     } else {
       // Quiz complete – navigate to summary page with results
+      clearQuizState(); // Clear state before navigating
       navigate(`/performance/${chapterId}`, {
         state: {
           questions,
@@ -94,16 +105,17 @@ export default function QuizPage() {
     }
   };
 
-  // Removed back navigation within a session – users always move forward only.
-
   return (
     <SectionWrapper>
       {/* BACK BUTTON */}
       <div className="relative z-10 mx-auto w-full max-w-3xl px-4 py-8">
         <Button
-          to={`/session/${chapterId}`}
           variant="ghost"
           className="group space-x-2"
+          onClick={() => {
+            clearQuizState();
+            navigate(`/session/${chapterId}`);
+          }}
         >
           <ArrowLeft
             className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1"
@@ -114,10 +126,10 @@ export default function QuizPage() {
       </div>
 
       {/* MAIN CONTENT */}
-      <main className="relative z-10 my-10 flex flex-grow items-center justify-center">
-        <div className="mx-auto w-full max-w-3xl p-4">
+      <main className="relative z-10 flex flex-grow items-center justify-center">
+        <div className="mx-auto w-full max-w-3xl p-6">
           {/* PROGRESS BAR AND CHALLENGE BANK BUTTON */}
-          <div className="mb-4 flex items-center gap-2">
+          <div className="mb-4 flex items-center gap-6 rounded-xl bg-white px-6 py-2 shadow-lg">
             <ProgressBar
               current={currentQuestionIndex}
               total={questions.length}
@@ -132,8 +144,8 @@ export default function QuizPage() {
           <div className="my-6">
             <QuestionCard
               question={currentQuestion}
-              onAnswerSelect={handleAnswerSelect}
               selectedAnswer={selectedAnswer}
+              onAnswerSelect={handleAnswerSelect}
             />
           </div>
 

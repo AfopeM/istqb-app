@@ -1,6 +1,6 @@
 import { Button } from "../ui";
+import { toast } from "sonner";
 import { Bookmark } from "lucide-react";
-import { useState, useEffect } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface Props {
@@ -18,20 +18,13 @@ export default function MindVaultButton({ questionId, chapterId }: Props) {
     "MindVault",
     [],
   );
-  const [showToast, setShowToast] = useState(false);
 
+  // Checks if the questionId is already in the mindVault array
   const isSelected = mindVault.some(
     (item) =>
       (typeof item === "string" && item === questionId) ||
       (typeof item === "object" && item.questionId === questionId),
   );
-
-  useEffect(() => {
-    if (showToast) {
-      const timer = setTimeout(() => setShowToast(false), 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [showToast]);
 
   const toggleChallenge = () => {
     if (isSelected) {
@@ -43,6 +36,8 @@ export default function MindVaultButton({ questionId, chapterId }: Props) {
             (typeof item === "object" && item.questionId !== questionId),
         ),
       );
+      // Use Sonner's toast to show a success message
+      toast.info("Removed from MindVault!");
     } else {
       // Add to vault with chapter information
       if (chapterId) {
@@ -51,36 +46,24 @@ export default function MindVaultButton({ questionId, chapterId }: Props) {
           questionId,
         };
         setMindVault((prev) => [...prev, newItem]);
-        setShowToast(true);
+        // Use Sonner's toast to show a success message
+        toast.success("Added to MindVault!");
       }
     }
   };
 
   return (
-    <div className="relative inline-block">
-      <Button
-        className="group"
-        onClick={toggleChallenge}
-        variant={isSelected ? "default" : "ghost"}
-      >
-        <Bookmark
-          className={`size-5 transition-colors duration-200 ${
-            isSelected ? "fill-white text-white" : "text-blue-500"
-          }`}
-        />
-      </Button>
-
-      {/* Toast Notification */}
-      <div
-        className={`fixed right-4 bottom-4 flex transform items-center space-x-2 rounded-lg bg-blue-500 px-4 py-3 text-white shadow-lg transition-all duration-300 ease-in-out ${
-          showToast
-            ? "translate-y-0 opacity-100"
-            : "pointer-events-none translate-y-8 opacity-0"
-        } `}
-      >
-        <Bookmark className="size-5 fill-white" />
-        <span>Added to MindVault!</span>
-      </div>
-    </div>
+    <Button
+      size="sm"
+      variant="blank"
+      className="group"
+      onClick={toggleChallenge}
+    >
+      <Bookmark
+        className={`size-5 transition-colors duration-200 ${
+          isSelected ? "fill-blue-500 text-blue-500" : "text-blue-500"
+        }`}
+      />
+    </Button>
   );
 }
