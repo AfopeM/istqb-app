@@ -1,35 +1,79 @@
-import { Book } from "lucide-react";
+import { Clock } from "lucide-react";
 import type { Question } from "../../types/quiz";
+import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 
 interface Props {
   chapterTitle: string;
   chapterId: string;
   questions: Question[];
-  onChapterClick: (chapterId: string) => void;
+  isLoading?: boolean;
 }
 
 export default function ChapterCard({
   chapterTitle,
   chapterId,
   questions,
-  onChapterClick,
+  isLoading = false,
 }: Props) {
+  const navigate = useNavigate();
+
+  const handleClick = useMemo(() => {
+    return () => {
+      if (!isLoading) {
+        navigate(`/mindvault/mindvaultquiz/${chapterId}`, {
+          state: {
+            questions,
+          },
+        });
+      }
+    };
+  }, [chapterId, questions, navigate, isLoading]);
+
+  const handleKeyDown = useMemo(() => {
+    return (e: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleClick();
+      }
+    };
+  }, [handleClick]);
+
+  // Estimate time based on number of questions (2 minutes per question)
+  const estimatedTime = `${Math.max(Math.ceil(questions.length * 2), 5)} min`;
+
   return (
-    <div
-      className="cursor-pointer rounded-lg bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg"
-      onClick={() => onChapterClick(chapterId)}
+    <button
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      disabled={isLoading}
+      className="group relative w-full transform cursor-pointer rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-left text-white shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:from-blue-600 hover:to-indigo-700 hover:shadow-xl disabled:transform-none disabled:cursor-not-allowed disabled:opacity-70"
+      aria-label={`Start review for ${chapterTitle} with ${questions.length} questions`}
     >
-      <div className="flex items-start justify-between">
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <Book className="size-5 text-blue-500" />
-            <h3 className="text-lg font-bold text-gray-900">{chapterTitle}</h3>
-          </div>
-          <p className="text-sm text-gray-500 capitalize">
-            {questions.length} saved question{questions.length !== 1 ? "s" : ""}
+      {/* CONTENT */}
+      <div>
+        <div className="mb-2 font-bold">
+          <h3 className="text-sm uppercase">{chapterTitle}</h3>
+          <p className="text-2xl md:text-3xl">
+            {questions.length} Question{questions.length !== 1 ? "s" : ""}
           </p>
         </div>
+
+        {/* FOOTER */}
+        <div className="flex items-center justify-between pt-2">
+          <div className="inline-flex items-center gap-1 rounded-sm bg-blue-400/20 px-3 py-1 text-xs font-medium text-blue-100">
+            <Clock className="size-3" />
+            {estimatedTime}
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* LOADING STATE */}
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/20">
+          <div className="h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+        </div>
+      )}
+    </button>
   );
 }

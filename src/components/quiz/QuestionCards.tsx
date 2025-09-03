@@ -79,12 +79,12 @@ export default function QuestionCard({
     <div className="rounded-xl bg-white p-8 shadow-lg">
       <Tagline>section {question.chapterSection}</Tagline>
 
-      <div className="mb-6 font-bold whitespace-pre-line lg:text-xl">
+      <div className="mb-6 font-bold whitespace-pre-line">
         {question.questionText
           .split(".")
           .filter(Boolean)
           .map((line, index) => (
-            <p key={index} className="mb-4 text-lg leading-6">
+            <p key={index} className="mb-4 text-lg leading-6 md:text-xl">
               {line.trim()}
               {index <
               question.questionText.split(".").filter(Boolean).length - 1

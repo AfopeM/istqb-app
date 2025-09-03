@@ -5,7 +5,7 @@ import type { Question } from "../types/quiz";
 import chaptersData from "../data/chapters.json";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { Button, SectionWrapper } from "../components/ui";
-import { ChapterCard, QuestionList } from "../components/mindvault";
+import { ChapterCard } from "../components/mindvault";
 
 interface ChapterQuestions {
   chapterId: string;
@@ -59,7 +59,7 @@ export default function MindVaultPage() {
   );
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedChapter, setSelectedChapter] = useState<string | null>(null);
+
   const navigate = useNavigate();
 
   // LOAD ALL QUESTIONS FROM CHAPTERS
@@ -148,35 +148,12 @@ export default function MindVaultPage() {
       .filter((chapter) => chapter.questions.length > 0);
   }, [mindVaultQuestions]);
 
-  const selectedChapterData = useMemo(() => {
-    if (!selectedChapter) return null;
-    return chapterQuestions.find((c) => c.chapterId === selectedChapter);
-  }, [selectedChapter, chapterQuestions]);
-
   // EVENT HANDLERS
   const handleReset = useCallback(() => {
     if (window.confirm("Are you sure you want to clear your MindVault?")) {
       setMindVault([]);
-      setSelectedChapter(null);
     }
   }, [setMindVault]);
-
-  const handleRemoveFromVault = useCallback(
-    (questionId: string) => {
-      setMindVault((prev) =>
-        prev.filter((item) => {
-          const itemQuestionId =
-            typeof item === "string" ? item : item.questionId;
-          return itemQuestionId !== questionId;
-        }),
-      );
-    },
-    [setMindVault],
-  );
-
-  const handleBackToChapters = useCallback(() => {
-    setSelectedChapter(null);
-  }, []);
 
   const handleGoHome = useCallback(() => {
     navigate("/");
@@ -248,45 +225,18 @@ export default function MindVaultPage() {
 
         {/* MAIN CONTENT AREA */}
         <main className="space-y-8">
-          {selectedChapter === null ? (
-            <>
-              {/* CHAPTER GRID VIEW */}
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                {chapterQuestions.map((chapter) => (
-                  <ChapterCard
-                    key={chapter.chapterId}
-                    chapterId={chapter.chapterId}
-                    questions={chapter.questions}
-                    chapterTitle={chapter.chapterTitle}
-                    onChapterClick={setSelectedChapter}
-                  />
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              {/* SELECTED CHAPTER DETAIL VIEW */}
-              <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-semibold text-gray-900">
-                    {selectedChapterData?.chapterTitle}
-                  </h2>
-                  <Button
-                    variant="ghost"
-                    onClick={handleBackToChapters}
-                    className="text-gray-600"
-                  >
-                    Back to Chapters
-                  </Button>
-                </div>
-                {/* QUESTION LIST FOR SELECTED CHAPTER */}
-                <QuestionList
-                  questions={selectedChapterData?.questions || []}
-                  onRemoveFromVault={handleRemoveFromVault}
-                />
-              </div>
-            </>
-          )}
+          {/* CHAPTER GRID VIEW */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {chapterQuestions.map((chapter) => (
+              <ChapterCard
+                key={chapter.chapterId}
+                chapterId={chapter.chapterId}
+                questions={chapter.questions}
+                chapterTitle={chapter.chapterTitle}
+                isLoading={loading}
+              />
+            ))}
+          </div>
         </main>
       </div>
     </SectionWrapper>

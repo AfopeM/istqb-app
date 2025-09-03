@@ -7,7 +7,7 @@ interface SessionOption {
   type: SessionType;
   label: string;
   questionCount: number;
-  description: string;
+  description?: string;
   estimatedTime: string;
   difficulty?: "beginner" | "intermediate" | "advanced";
 }
@@ -92,33 +92,26 @@ export default function SessionCard({
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       disabled={isLoading}
-      className={`
-        w-full py-8 px-5 rounded-lg text-white text-left
-        bg-gradient-to-br ${colors.bg} shadow-lg hover:shadow-xl relative
-        transform transition-all duration-300 ease-out hover:scale-105 
-        hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-offset-2 
-        focus:ring-blue-300 disabled:opacity-70 disabled:cursor-not-allowed 
-        disabled:transform-none group cursor-pointer 
-      `}
+      className={`w-full rounded-lg bg-gradient-to-br px-5 py-8 text-left text-white ${colors.bg} group relative transform cursor-pointer shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-blue-300 focus:ring-offset-2 focus:outline-none disabled:transform-none disabled:cursor-not-allowed disabled:opacity-70`}
       aria-label={`Start ${label} session with ${questionCount} questions`}
     >
       {/* ICON */}
-      <div className={`p-3 rounded-xl absolute top-6 right-6 ${colors.icon}`}>
+      <div className={`absolute top-6 right-6 rounded-xl p-3 ${colors.icon}`}>
         {getSessionIcon(type)}
       </div>
 
       {/* CONTENT */}
       <div>
         <div className="mb-4">
-          <h3 className="text-sm uppercase font-bold">{label}</h3>
-          <p className="text-2xl font-bold mb-1">{questionCount} Questions</p>
-          <p className="text-sm opacity-80 leading-relaxed">{description}</p>
+          <h3 className="text-sm font-bold uppercase">{label}</h3>
+          <p className="mb-1 text-2xl font-bold">{questionCount} Questions</p>
+          <p className="text-sm leading-relaxed opacity-80">{description}</p>
         </div>
 
         {/* FOOTER */}
         <div className="flex items-center justify-between pt-2">
           <div
-            className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${colors.badge}`}
+            className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${colors.badge}`}
           >
             <Clock className="size-3" />
             {estimatedTime}
@@ -126,7 +119,7 @@ export default function SessionCard({
 
           {difficulty && (
             <div
-              className={`px-3 py-1 rounded-full text-xs font-medium ${colors.badge} capitalize`}
+              className={`rounded-full px-3 py-1 text-xs font-medium ${colors.badge} capitalize`}
             >
               {difficulty}
             </div>
@@ -136,8 +129,8 @@ export default function SessionCard({
 
       {/* LOADING STATE */}
       {isLoading && (
-        <div className="absolute inset-0 bg-black/20 rounded-2xl flex items-center justify-center">
-          <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+        <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/20">
+          <div className="h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-white" />
         </div>
       )}
     </button>

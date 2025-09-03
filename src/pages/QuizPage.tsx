@@ -4,7 +4,7 @@ import type { Question } from "../types/quiz";
 import chaptersData from "../data/chapters.json";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { ProgressBar, QuestionCard, MindVaultButton } from "../components/quiz";
+import { QuizContent } from "../components/quiz";
 
 interface MindVaultItem {
   chapterId: string;
@@ -125,46 +125,15 @@ export default function QuizPage() {
         </Button>
       </div>
 
-      {/* MAIN CONTENT */}
-      <main className="relative z-10 flex flex-grow items-center justify-center">
-        <div className="mx-auto w-full max-w-3xl p-6">
-          {/* PROGRESS BAR AND CHALLENGE BANK BUTTON */}
-          <div className="mb-4 flex items-center gap-6 rounded-xl bg-white px-6 py-2 shadow-lg">
-            <ProgressBar
-              current={currentQuestionIndex}
-              total={questions.length}
-            />
-            <MindVaultButton
-              questionId={currentQuestion.id}
-              chapterId={chapterId}
-            />
-          </div>
-
-          {/* QUESTION CARD */}
-          <div className="my-6">
-            <QuestionCard
-              question={currentQuestion}
-              selectedAnswer={selectedAnswer}
-              onAnswerSelect={handleAnswerSelect}
-            />
-          </div>
-
-          {/* NAVIGATION BUTTON */}
-          <nav className="mt-4 flex justify-center">
-            {selectedAnswer !== null && (
-              <Button
-                size="lg"
-                onClick={handleNext}
-                className="w-1/2 font-bold tracking-wider uppercase"
-              >
-                {currentQuestionIndex === questions.length - 1
-                  ? "Finish"
-                  : "Next"}
-              </Button>
-            )}
-          </nav>
-        </div>
-      </main>
+      <QuizContent
+        currentQuestion={currentQuestion}
+        currentQuestionIndex={currentQuestionIndex}
+        questionsLength={questions.length}
+        selectedAnswer={selectedAnswer}
+        chapterId={chapterId!}
+        onAnswerSelect={handleAnswerSelect}
+        onNext={handleNext}
+      />
     </SectionWrapper>
   );
 }
