@@ -47,7 +47,7 @@ export default function HomePage() {
         {/* CHAPTER SECTION */}
         <main className="mx-auto max-w-7xl space-y-16 px-4 pb-20 sm:px-6 lg:px-8">
           {/* MINDVAULT SECTION */}
-          <section className="relative">
+          <section className="relative mx-auto max-w-lg md:max-w-2xl">
             <div
               onClick={() => navigate("/MindVault")}
               className="cursor-pointer rounded-2xl bg-blue-100 p-8 shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -60,7 +60,7 @@ export default function HomePage() {
                       MindVault
                     </h2>
                   </div>
-                  <p className="mb-6 max-w-lg text-gray-500">
+                  <p className="mb-6 text-gray-500">
                     lets you track learning progress by saving questions you
                     want to revisit or questions you failed during a quiz,
                     organized by chapter for easy review.
@@ -72,7 +72,7 @@ export default function HomePage() {
                     </span>
                   </div>
                 </div>
-                <div className="absolute top-4 right-8 hidden opacity-10 md:block">
+                <div className="absolute top-8 right-8 hidden opacity-10 md:block">
                   <Brain className="size-32 text-blue-500" />
                 </div>
               </div>
@@ -98,13 +98,12 @@ export default function HomePage() {
 
           {/* COMING SOON SECTION */}
           <section>
-            <h2 className="mb-8 flex items-center gap-3 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-2xl font-bold text-transparent capitalize">
+            <h2 className="mx-auto mb-8 flex max-w-3xl items-center gap-3 text-2xl font-bold text-gray-700 capitalize">
               <Clock className="size-6 text-gray-500" />
               coming soon
             </h2>
 
             <div className="flex flex-wrap justify-center gap-8">
-              {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center"> */}
               {comingSoonChapters.map((chapter) => (
                 <HomeCard
                   key={chapter.id}

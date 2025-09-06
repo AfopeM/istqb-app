@@ -8,6 +8,7 @@ interface Props {
   chapterId: string;
   questions: Question[];
   isLoading?: boolean;
+  isComingSoon?: boolean;
 }
 
 export default function ChapterCard({
@@ -15,6 +16,7 @@ export default function ChapterCard({
   chapterId,
   questions,
   isLoading = false,
+  isComingSoon = false,
 }: Props) {
   const navigate = useNavigate();
 
@@ -46,26 +48,40 @@ export default function ChapterCard({
     <button
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      disabled={isLoading}
-      className="group relative w-full transform cursor-pointer rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-left text-white shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:from-blue-600 hover:to-indigo-700 hover:shadow-xl disabled:transform-none disabled:cursor-not-allowed disabled:opacity-70"
-      aria-label={`Start review for ${chapterTitle} with ${questions.length} questions`}
+      disabled={isLoading || isComingSoon}
+      className={`group relative w-full transform cursor-pointer rounded-lg p-6 text-left text-white shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl disabled:transform-none disabled:cursor-not-allowed disabled:opacity-70 ${
+        isComingSoon
+          ? "bg-gradient-to-br from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700"
+          : "bg-gradient-to-br from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+      }`}
+      aria-label={
+        isComingSoon
+          ? `${chapterTitle} - Coming Soon`
+          : `Start review for ${chapterTitle} with ${questions.length} questions`
+      }
     >
       {/* CONTENT */}
       <div>
         <div className="mb-2 font-bold">
           <h3 className="text-sm uppercase">{chapterTitle}</h3>
-          <p className="text-2xl md:text-3xl">
-            {questions.length} Question{questions.length !== 1 ? "s" : ""}
-          </p>
+          {isComingSoon ? (
+            <p className="text-2xl md:text-3xl">Coming Soon</p>
+          ) : (
+            <p className="text-2xl md:text-3xl">
+              {questions.length} Question{questions.length !== 1 ? "s" : ""}
+            </p>
+          )}
         </div>
 
         {/* FOOTER */}
-        <div className="flex items-center justify-between pt-2">
-          <div className="inline-flex items-center gap-1 rounded-sm bg-blue-400/20 px-3 py-1 text-xs font-medium text-blue-100">
-            <Clock className="size-3" />
-            {estimatedTime}
+        {!isComingSoon && (
+          <div className="flex items-center justify-between pt-2">
+            <div className="inline-flex items-center gap-1 rounded-sm bg-blue-400/20 px-3 py-1 text-xs font-medium text-blue-100">
+              <Clock className="size-3" />
+              {estimatedTime}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* LOADING STATE */}

@@ -61,17 +61,26 @@ export default function MindVaultPage() {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
+  console.log(mindVault);
 
-  // LOAD ALL QUESTIONS FROM CHAPTERS
+  // LOAD ALL QUESTIONS FROM AVAILABLE CHAPTERS
   useEffect(() => {
     const loadQuestions = async () => {
       try {
-        const questionPromises = chaptersData.chapters.map(async (chapter) => {
+        // Only load questions for chapters that are not marked as coming soon
+        const availableChapters = chaptersData.chapters.filter(
+          (chapter) => !chapter.isComingSoon,
+        );
+
+        const questionPromises = availableChapters.map(async (chapter) => {
           try {
             const module = await import(`../data/questions-${chapter.id}.json`);
             return module.default.questions;
-          } catch (err) {
-            console.error(`Failed to load questions for ${chapter.id}`, err);
+          } catch (err: unknown) {
+            console.error(
+              `Failed to load questions for ${chapter.id}. This chapter might not be available yet.`,
+              err,
+            );
             return [];
           }
         });
@@ -128,25 +137,41 @@ export default function MindVaultPage() {
   const mindVaultQuestions = useMemo(() => {
     return allQuestions.filter((question) =>
       mindVault.some((item) => {
-        const questionId = typeof item === "string" ? item : item.questionId;
-        return questionId === question.id;
+        const chapterNum = question.chapterSection.split(".")[0];
+        const questionChapterId = `chapter-${chapterNum}`;
+        return (
+          item.questionId === question.id &&
+          item.chapterId === questionChapterId
+        );
       }),
     );
   }, [allQuestions, mindVault]);
 
   const chapterQuestions = useMemo((): ChapterQuestions[] => {
+    // Debug logging
+    console.log("MindVault items:", mindVault);
+    console.log("All questions:", allQuestions);
+    console.log("MindVault questions:", mindVaultQuestions);
+
     return chaptersData.chapters
-      .map((chapter) => ({
-        chapterId: chapter.id,
-        chapterTitle: chapter.title,
-        questions: mindVaultQuestions.filter((question) =>
-          question.chapterSection.startsWith(
-            chapter.id.replace("chapter-", ""),
-          ),
-        ),
-      }))
+      .map((chapter) => {
+        // Get questions for this chapter from mindVault
+        const chapterQs = mindVaultQuestions.filter((question) => {
+          // Find the corresponding MindVaultItem
+          const mindVaultItem = mindVault.find(
+            (item) => item.questionId === question.id,
+          );
+          return mindVaultItem?.chapterId === chapter.id;
+        });
+
+        return {
+          chapterId: chapter.id,
+          chapterTitle: chapter.title,
+          questions: chapterQs,
+        };
+      })
       .filter((chapter) => chapter.questions.length > 0);
-  }, [mindVaultQuestions]);
+  }, [mindVaultQuestions, mindVault, allQuestions]);
 
   // EVENT HANDLERS
   const handleReset = useCallback(() => {
@@ -234,6 +259,10 @@ export default function MindVaultPage() {
                 questions={chapter.questions}
                 chapterTitle={chapter.chapterTitle}
                 isLoading={loading}
+                isComingSoon={
+                  chaptersData.chapters.find((c) => c.id === chapter.chapterId)
+                    ?.isComingSoon
+                }
               />
             ))}
           </div>
