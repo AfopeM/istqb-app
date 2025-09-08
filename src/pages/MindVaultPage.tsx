@@ -257,7 +257,7 @@ export default function MindVaultPage() {
                 key={chapter.chapterId}
                 chapterId={chapter.chapterId}
                 questions={chapter.questions}
-                chapterTitle={chapter.chapterTitle}
+                chapterTitle={`chapter ${chapter.chapterId.split("-")[1]} : ${chapter.chapterTitle}`}
                 isLoading={loading}
                 isComingSoon={
                   chaptersData.chapters.find((c) => c.id === chapter.chapterId)

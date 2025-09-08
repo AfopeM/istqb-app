@@ -1,0 +1,840 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "chapterSection": "3.1",
+      "questionText": "During a backlog refinement session, a tester notices that user stories lack clear acceptance criteria. What is the MOST effective static testing approach to address this issue?",
+      "options": [
+        "Individually assess the user stories against common quality checklists for completeness and clarity",
+        "Use peer review sessions among testers to suggest improvements for acceptance criteria",
+        "Perform a collaborative review with developers and business representatives to refine the user stories",
+        "Compare the user stories with similar past stories to identify missing elements"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "While individual checks, peer reviews, and comparisons can help improve user stories, a collaborative review with developers and business representatives ensures that acceptance criteria are clear, testable, and aligned with business needs before dynamic testing begins."
+    },
+    {
+      "id": "q002",
+      "chapterSection": "3.1",
+      "questionText": "A development team integrates a static analysis tool into their CI pipeline. Which benefit is MOST directly achieved by this practice?",
+      "options": [
+        "Automated execution of test cases for functional verification",
+        "Guaranteeing 100% code coverage",
+        "Ensuring acceptance tests are passed before deployment",
+        "Early detection of potential defects and maintainability issues"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Static analysis identifies defects, security issues, and maintainability concerns without executing the code. Integration into CI allows early detection before dynamic testing."
+    },
+    {
+      "id": "q003",
+      "chapterSection": "3.1.1",
+      "questionText": "Which of the following work products would be LEAST suitable for static testing?",
+      "options": [
+        "Requirement specification documents",
+        "Source code with formal syntax",
+        "Third-party executable libraries",
+        "Test plans and charters"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Static testing requires work products that can be read, understood, and/or analyzed by humans or tools. Third-party executables are opaque and may have legal restrictions, making them inappropriate for static analysis."
+    },
+    {
+      "id": "q004",
+      "chapterSection": "3.1",
+      "questionText": "A tester finds a function that is technically correct but very difficult to read and maintain. Which static testing technique can help identify this issue before it reaches dynamic testing?",
+      "options": [
+        "Perform system integration testing",
+        "Review the code for maintainability and readability",
+        "Run exploratory testing to find defects",
+        "Execute automated functional tests"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Static testing includes reviewing work products for quality attributes like readability and maintainability. This allows issues to be addressed early, without executing the code."
+    },
+    {
+      "id": "q005",
+      "chapterSection": "3.1",
+      "questionText": "In a scenario where acceptance criteria are ambiguous, which outcome BEST represents the value added by static testing?",
+      "options": [
+        "It guarantees that the final product will meet user expectations",
+        "It allows testers to execute dynamic tests immediately",
+        "It uncovers ambiguities early, reducing misinterpretation during development",
+        "It eliminates the need for later regression testing"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Static testing helps detect ambiguities, incomplete or unclear requirements, and other quality issues early. This reduces downstream errors during dynamic testing and development."
+    },
+    {
+      "id": "q006",
+      "chapterSection": "3.1",
+      "questionText": "A team uses spelling checkers and readability tools on requirement documents. What type of static testing objective does this address?",
+      "options": [
+        "Detecting functional defects in code",
+        "Measuring performance efficiency of the system",
+        "Validating dynamic behavior of software components",
+        "Evaluating maintainability and understandability of work products"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Static testing can evaluate readability and quality attributes of documentation. Spelling and readability tools help improve clarity, completeness, and maintainability without executing the software."
+    },
+    {
+      "id": "q007",
+      "chapterSection": "3.1.1",
+      "questionText": "During a review, a tester finds a model diagram with inconsistent notation that could confuse developers. What is the BEST static testing action to take?",
+      "options": [
+        "Ignore it and address it during system testing",
+        "Manually review the diagram and provide feedback for correction",
+        "Execute the code generated from the model to find errors",
+        "Wait for automated tests to highlight inconsistencies"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Static reviews of models detect errors, inconsistencies, or ambiguities early. Providing feedback improves the quality of work products before dynamic testing or implementation begins."
+    },
+    {
+      "id": "q008",
+      "chapterSection": "3.1",
+      "questionText": "A tester is assessing the testability of a requirement document. Which static testing approach would provide the MOST insight?",
+      "options": [
+        "Dynamic testing by executing code related to the requirement",
+        "Stress testing of the implemented feature",
+        "Running unit tests on developer code",
+        "Static analysis of the requirement for completeness and clarity"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Static testing evaluates work products for attributes like testability. Reviewing requirements for clarity and completeness ensures that future test design and execution will be effective."
+    },
+    {
+      "id": "q009",
+      "chapterSection": "3.1",
+      "questionText": "Which scenario illustrates an effective use of static testing for validation purposes?",
+      "options": [
+        "Using static analysis to ensure user stories include testable acceptance criteria",
+        "Reviewing requirement specifications for completeness and clarity before implementation",
+        "Checking design models for consistency with business objectives",
+        "Ensuring traceability of test cases to requirements during planning"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "While reviewing specifications, design models, or traceability are also valid static testing activities, the question specifically targets validation. Ensuring user stories include testable acceptance criteria directly validates that the product will meet stakeholder needs before coding begins."
+    },
+    {
+      "id": "q010",
+      "chapterSection": "3.1",
+      "questionText": "A tester wants to improve security before dynamic testing begins. Which static testing action is MOST appropriate?",
+      "options": [
+        "Performing a code review and static security analysis",
+        "Conducting penetration testing on the deployed application",
+        "Creating automated GUI test scripts",
+        "Running system performance tests"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static security analysis identifies potential vulnerabilities in code or design without executing the software, allowing security issues to be addressed early."
+    },
+    {
+      "id": "q011",
+      "chapterSection": "3.1.2",
+      "questionText": "A project manager wants to reduce overall development costs by catching defects early. Which static testing practice would provide the MOST benefit in achieving this goal?",
+      "options": [
+        "Conducting requirement and design reviews before coding begins",
+        "Performing unit tests immediately after coding",
+        "Executing automated functional tests",
+        "Running system performance tests during the final phase"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static testing performed in early phases, such as requirement and design reviews, can detect defects before coding starts, reducing later rework and lowering overall project costs."
+    },
+    {
+      "id": "q012",
+      "chapterSection": "3.1.2",
+      "questionText": "During a static review of requirements, a tester identifies ambiguities that could lead to different interpretations by developers. What is the primary value of detecting such defects early?",
+      "options": [
+        "Guarantees that dynamic tests will pass",
+        "Eliminates the need for regression testing",
+        "Reduces miscommunication and prevents costly downstream defects",
+        "Ensures code coverage metrics are met"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Detecting ambiguities early allows stakeholders to clarify requirements, creating shared understanding and preventing costly defects during development and dynamic testing."
+    },
+    {
+      "id": "q013",
+      "chapterSection": "3.1.2",
+      "questionText": "A software architect wants to ensure that the design aligns with stakeholder needs before implementation. Which static testing approach would BEST achieve this?",
+      "options": [
+        "Design review with cross-functional stakeholders",
+        "System integration testing",
+        "Unit testing of individual modules",
+        "Performance benchmarking"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static design reviews involving stakeholders validate that the documented design meets actual needs, supporting early defect detection and shared understanding."
+    },
+    {
+      "id": "q014",
+      "chapterSection": "3.1.2",
+      "questionText": "A team observes that static analysis has identified unreachable code and undeclared variables. Why might these defects be difficult to detect using dynamic testing?",
+      "options": [
+        "They are always executed during dynamic testing",
+        "They occur in rarely executed or non-executable code paths",
+        "Dynamic testing automatically flags these defects",
+        "They are not relevant to software functionality"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Static testing can detect defects in code paths that are rarely executed or unreachable, which dynamic testing may never cover, making static analysis more efficient for these issues."
+    },
+    {
+      "id": "q015",
+      "chapterSection": "3.1.2",
+      "questionText": "Which of the following BEST describes how static testing contributes to validation?",
+      "options": [
+        "By executing the system to observe failures",
+        "By measuring system performance under load",
+        "By automatically generating test cases",
+        "By verifying work products against stakeholder requirements"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Static testing validates work products like requirements and design documents to ensure they meet actual stakeholder needs, before any code execution occurs."
+    },
+    {
+      "id": "q016",
+      "chapterSection": "3.1.3",
+      "questionText": "Which defect type is MOST likely to be found by static testing rather than dynamic testing?",
+      "options": [
+        "Incorrect interface specification in a design document",
+        "Race condition causing intermittent failure",
+        "Memory leak during system execution",
+        "Unexpected system behavior under load"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static testing can detect issues in non-executable work products, like design documents, including interface mismatches, whereas dynamic testing can only detect defects manifesting during execution."
+    },
+    {
+      "id": "q017",
+      "chapterSection": "3.1.3",
+      "questionText": "A tester wants to measure the maintainability of a software module. Which testing approach is MOST suitable?",
+      "options": [
+        "Dynamic functional testing",
+        "Static code analysis and reviews",
+        "System stress testing",
+        "User acceptance testing"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Maintainability is a quality characteristic that can be evaluated through static techniques like code reviews and static analysis, independent of code execution."
+    },
+    {
+      "id": "q018",
+      "chapterSection": "3.1.3",
+      "questionText": "Which of the following illustrates a defect type that static testing can detect but dynamic testing likely cannot?",
+      "options": [
+        "Ambiguous requirement specifications",
+        "Buffer overflow during runtime",
+        "Incorrect output from a calculation",
+        "Failure to handle high concurrent user load"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Ambiguities in requirements or design documents are detected through static techniques such as reviews, and cannot be found through dynamic execution of software."
+    },
+    {
+      "id": "q019",
+      "chapterSection": "3.1.3",
+      "questionText": "A tester finds duplicated code sections that may increase maintenance effort. What is the BEST way to handle this issue using static testing principles?",
+      "options": [
+        "Create test cases to execute the duplicated code paths",
+        "Wait for integration testing to detect failures",
+        "Refactor the code to remove duplication before dynamic testing",
+        "Ignore it since dynamic testing will cover functionality"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Static testing identifies maintainability issues like duplicated code. Refactoring early reduces complexity, improves maintainability, and prevents future defects."
+    },
+    {
+      "id": "q020",
+      "chapterSection": "3.1.3",
+      "questionText": "A development team is evaluating interface specifications. Which static testing activity would BEST identify mismatches in parameter types, order, or quantity?",
+      "options": [
+        "Peer review of interface documentation",
+        "Code execution in unit tests",
+        "Load testing of system interfaces",
+        "Automated GUI testing"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static review of interface specifications can reveal mismatches in type, order, or quantity of parameters without executing the system."
+    },
+    {
+      "id": "q021",
+      "chapterSection": "3.1.2",
+      "questionText": "Why is involving a wide variety of stakeholders in static testing particularly valuable?",
+      "options": [
+        "It replaces the need for dynamic testing entirely",
+        "It guarantees defect-free code",
+        "It ensures 100% code coverage",
+        "It helps build shared understanding and improves communication"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Early stakeholder involvement in static testing fosters shared understanding of requirements, improves communication, and helps detect defects in early phases of the SDLC."
+    },
+    {
+      "id": "q022",
+      "chapterSection": "3.1.2",
+      "questionText": "How can static testing reduce total project costs despite having upfront implementation costs?",
+      "options": [
+        "By detecting defects early, reducing expensive rework in later phases",
+        "By increasing dynamic test execution time",
+        "By automatically generating all functional test cases",
+        "By eliminating the need for developers"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "While static testing may require initial effort, early defect detection reduces costly fixes later, lowering overall development effort and project costs."
+    },
+    {
+      "id": "q023",
+      "chapterSection": "3.1.3",
+      "questionText": "Which statement BEST captures the difference between static and dynamic testing?",
+      "options": [
+        "Static testing finds defects through reviews or analysis without executing code, dynamic testing identifies defects by observing failures during execution",
+        "Static testing is more expensive than dynamic testing in all cases",
+        "Dynamic testing cannot detect any defects in code",
+        "Static testing can only be applied to executable work products"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static testing evaluates work products without execution, while dynamic testing executes software to observe failures. Each complements the other and may find defects the other cannot."
+    },
+    {
+      "id": "q024",
+      "chapterSection": "3.1.3",
+      "questionText": "A reviewer identifies excessive code complexity. Why might static testing be better suited to detect this than dynamic testing?",
+      "options": [
+        "Complex code always fails during execution",
+        "Static analysis can evaluate complexity directly without executing code",
+        "Dynamic testing measures only functional correctness",
+        "Complex code cannot cause runtime errors"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Static analysis tools or code reviews can measure code complexity directly, identifying maintainability and potential defect risks early, without running the code."
+    },
+    {
+      "id": "q025",
+      "chapterSection": "3.1.3",
+      "questionText": "Why might certain security vulnerabilities, such as buffer overflows, be detected earlier with static testing?",
+      "options": [
+        "Static analysis can detect unsafe code patterns before execution",
+        "Dynamic testing cannot simulate user input",
+        "Static testing executes the software in a secure environment",
+        "Dynamic testing guarantees detection only after deployment"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static analysis can flag unsafe constructs like buffer overflows early in the SDLC, reducing risk before any dynamic execution or deployment."
+    },
+    {
+      "id": "q026",
+      "chapterSection": "3.1.2",
+      "questionText": "A team is deciding whether to invest in static analysis tools. Which scenario would MOST justify this investment?",
+      "options": [
+        "To identify typos in documentation only",
+        "To replace dynamic testing entirely",
+        "To detect defects in non-executable artifacts and hard-to-reach code paths",
+        "To guarantee all functional tests pass"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Static analysis tools are valuable when detecting defects in non-executable work products or rarely executed code paths, providing cost-effective early detection."
+    },
+    {
+      "id": "q027",
+      "chapterSection": "3.1.2",
+      "questionText": "A tester discovers missing acceptance criteria in several user stories. What value does addressing this through static testing bring to the SDLC?",
+      "options": [
+        "Increases the number of executed test cases",
+        "Eliminates the need for functional testing",
+        "Guarantees system performance efficiency",
+        "Prevents potential misinterpretation and reduces downstream defects"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Correcting missing acceptance criteria during static testing ensures shared understanding and prevents defects from propagating into development and dynamic testing."
+    },
+    {
+      "id": "q028",
+      "chapterSection": "3.1.3",
+      "questionText": "Which type of defect is MOST efficiently identified using static testing rather than dynamic testing?",
+      "options": [
+        "Undeclared variables in code",
+        "Incorrect output during program execution",
+        "Race conditions under high load",
+        "Memory leaks during runtime"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Static testing detects issues like undeclared variables through analysis or reviews before execution, whereas dynamic testing only finds defects that manifest during execution."
+    },
+    {
+      "id": "q029",
+      "chapterSection": "3.1.3",
+      "questionText": "Why might static testing be particularly effective for verifying non-executable work products such as requirement specifications or design documents?",
+      "options": [
+        "Because these work products are executed by dynamic tests",
+        "Because static techniques can detect inconsistencies, omissions, and ambiguities without code execution",
+        "Because dynamic testing automatically checks documentation",
+        "Because non-executable artifacts cannot contain defects"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Static testing allows reviewers to identify issues in documents and models, ensuring correctness, completeness, and clarity before coding begins."
+    },
+    {
+      "id": "q030",
+      "chapterSection": "3.1.3",
+      "questionText": "A reviewer observes that some modules deviate from coding standards. What is the significance of detecting this through static testing early in the SDLC?",
+      "options": [
+        "Deviations have no impact until dynamic testing",
+        "Coding standard violations can only be detected during system testing",
+        "Early detection prevents propagation of maintainability issues and reduces later rework",
+        "Dynamic testing will automatically highlight standard deviations"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Static testing helps identify deviations from standards early, reducing maintenance effort and preventing quality issues from propagating downstream."
+    },
+    {
+      "id": "q031",
+      "chapterSection": "3.2.1",
+      "questionText": "A project team has minimal stakeholder involvement during development. What is the MOST likely consequence?",
+      "options": [
+        "Features might be developed that add little business value",
+        "Misunderstandings about requirements could increase and cause delays",
+        "Quality issues may only be discovered late in the development cycle",
+        "The product may not meet stakeholder expectations, leading to costly rework"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "While all options describe potential negative outcomes of low stakeholder involvement, the primary consequence is that the product may not meet stakeholder expectations, leading to rework and additional costs. Other effects are secondary or downstream results of this main issue."
+    },
+    {
+      "id": "q032",
+      "chapterSection": "3.2.1",
+      "questionText": "Frequent stakeholder feedback during the SDLC MOST directly helps the development team by:",
+      "options": [
+        "Ensuring the code is free from syntax errors",
+        "Improving understanding of requirements and focusing on high-value features",
+        "Guaranteeing no defects will occur during execution",
+        "Eliminating the need for formal testing"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Frequent feedback allows the team to better understand requirements, implement necessary changes early, and prioritize features that deliver the most value, reducing misalignment with stakeholder expectations."
+    },
+    {
+      "id": "q033",
+      "chapterSection": "3.2.1",
+      "questionText": "A stakeholder suggests a change in a critical feature during a mid-development review. What is the MOST effective approach to handle this change?",
+      "options": [
+        "Ignore the change until dynamic testing",
+        "Update the requirement and communicate the impact to all stakeholders immediately",
+        "Postpone the change until after deployment",
+        "Implement the change without analyzing potential impacts"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Early communication and understanding of requirement changes help the team implement them efficiently, assess impact, and maintain alignment with stakeholder expectations."
+    },
+    {
+      "id": "q034",
+      "chapterSection": "3.2.2",
+      "questionText": "During the planning phase of a review, which activity is MOST critical to ensure the review’s effectiveness?",
+      "options": [
+        "Deciding the exit criteria and scope of the review",
+        "Running unit tests on code modules",
+        "Conducting stress testing",
+        "Deploying the system to production"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Planning defines the purpose, scope, work products, quality characteristics, areas of focus, and exit criteria, which are essential to guide the review and ensure meaningful outcomes."
+    },
+    {
+      "id": "q035",
+      "chapterSection": "3.2.2",
+      "questionText": "During review initiation, a participant realizes they do not have access to the work product. What is the MOST appropriate action?",
+      "options": [
+        "Proceed with the review anyway",
+        "Request access and clarify roles before starting",
+        "Ignore the work product and focus on other tasks",
+        "Submit defects based on assumptions"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Review initiation ensures participants are prepared and have the required access and understanding of their roles. Starting without this could compromise review effectiveness."
+    },
+    {
+      "id": "q036",
+      "chapterSection": "3.2.2",
+      "questionText": "A reviewer applies checklist-based reviewing and identifies several anomalies. Which is the NEXT step in the review process?",
+      "options": [
+        "Ignore the anomalies until dynamic testing",
+        "Analyze and discuss anomalies in a review meeting",
+        "Fix the anomalies independently without reporting",
+        "Deploy the system to production"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "After individual review, anomalies must be analyzed and discussed collectively to determine status, ownership, and required actions, ensuring structured defect resolution."
+    },
+    {
+      "id": "q037",
+      "chapterSection": "3.2.2",
+      "questionText": "During communication and analysis, a reviewer suggests a potential improvement that is not strictly a defect. What should the team do?",
+      "options": [
+        "Document it as a recommendation and discuss its value with stakeholders",
+        "Ignore it because it is not a defect",
+        "Delay discussion until deployment",
+        "Apply it immediately without analysis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Recommendations and non-defect anomalies are valuable inputs for improving work products. Discussing them with stakeholders ensures informed decisions on implementation."
+    },
+    {
+      "id": "q038",
+      "chapterSection": "3.2.2",
+      "questionText": "A work product requires multiple review sessions due to its size. Which principle does this illustrate?",
+      "options": [
+        "Static analysis can replace all review activities",
+        "Reviews should always be completed in a single session regardless of size",
+        "Reviews can be invoked multiple times to cover large work products thoroughly",
+        "Dynamic testing can substitute for large work product reviews"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Large work products may be too big for a single review. Conducting multiple sessions ensures complete coverage and effective identification of anomalies."
+    },
+    {
+      "id": "q039",
+      "chapterSection": "3.2.2",
+      "questionText": "Which of the following BEST represents the value of reporting review results?",
+      "options": [
+        "Provides insights to improve future work products and review processes",
+        "Allows stakeholders to understand the quality of the work product and track follow-up actions",
+        "Supports decision-making on project priorities and resource allocation",
+        "Facilitates communication among team members regarding identified issues and resolutions"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "While reporting results can help improve future products, support decisions, and facilitate communication, the primary value is giving stakeholders a clear understanding of the work product’s quality and ensuring follow-up actions are tracked and completed."
+    },
+    {
+      "id": "q040",
+      "chapterSection": "3.2.2",
+      "questionText": "During fixing and reporting, a defect is logged. What is the MOST important reason for formal defect documentation?",
+      "options": [
+        "To immediately deploy the system",
+        "To prevent any further testing",
+        "To automatically generate test cases",
+        "To allow follow-up and tracking of corrective actions"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Defect reports document identified issues and enable tracking and follow-up, ensuring that corrective actions are taken and exit criteria can be satisfied."
+    },
+    {
+      "id": "q041",
+      "chapterSection": "3.2.1",
+      "questionText": "Frequent stakeholder feedback can help mitigate risk by:",
+      "options": [
+        "Ensuring the product is fully implemented without review",
+        "Identifying misunderstandings and misalignments early",
+        "Replacing the need for unit tests",
+        "Guaranteeing project completion on schedule"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Early and frequent feedback allows teams to detect misinterpretations or gaps in requirements early, reducing the risk of delivering a product that does not meet stakeholder needs."
+    },
+    {
+      "id": "q042",
+      "chapterSection": "3.2.1",
+      "questionText": "A project suffers repeated delays because stakeholders are not involved until late. Which SDLC principle does this violate?",
+      "options": [
+        "Early testing principle and early stakeholder involvement",
+        "Static analysis principle",
+        "Automated test execution principle",
+        "Continuous deployment principle"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The principle of early testing and stakeholder involvement emphasizes engaging stakeholders early to detect issues and align development with expectations, avoiding delays."
+    },
+    {
+      "id": "q043",
+      "chapterSection": "3.2.2",
+      "questionText": "During individual review, a reviewer identifies inconsistencies in a requirement. Which action BEST aligns with review process guidance?",
+      "options": [
+        "Ignore it and hope dynamic testing catches it",
+        "Directly change the requirement without discussion",
+        "Log the inconsistency as an anomaly and provide recommendations",
+        "Wait until system testing to identify the issue"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Individual review involves identifying anomalies, recommendations, and questions. Logging inconsistencies ensures structured communication and collective analysis in the review meeting."
+    },
+    {
+      "id": "q044",
+      "chapterSection": "3.2.2",
+      "questionText": "Why might a follow-up review be required after the initial review cycle?",
+      "options": [
+        "To conduct performance testing",
+        "To complete actions and verify fixes of identified defects",
+        "To execute automated GUI tests",
+        "To deploy the system into production"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Follow-up reviews ensure that corrective actions have been implemented, anomalies are resolved, and exit criteria are met before accepting the work product."
+    },
+    {
+      "id": "q045",
+      "chapterSection": "3.2.2",
+      "questionText": "What is the MOST critical outcome of communication and analysis in a review?",
+      "options": [
+        "Determining the status, ownership, and required actions for each identified anomaly",
+        "Prioritizing anomalies for future testing and development cycles",
+        "Clarifying ambiguities and confirming understanding of requirements among participants",
+        "Documenting all discussion points and suggestions for process improvement"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "While all options are valuable outcomes, the primary goal of communication and analysis is to ensure each anomaly is assigned a status, ownership, and corrective action. Other activities, such as prioritization or clarification, support this main goal but are secondary."
+    },
+    {
+      "id": "q046",
+      "chapterSection": "3.2.3",
+      "questionText": "Who is primarily responsible for ensuring a review meeting runs smoothly, including mediating discussions and managing time?",
+      "options": ["Author", "Moderator", "Reviewer", "Manager"],
+      "correctAnswerIndex": 1,
+      "explanation": "The moderator (facilitator) ensures effective review meetings by managing time, mediating discussions, and providing a safe environment where everyone can speak freely."
+    },
+    {
+      "id": "q047",
+      "chapterSection": "3.2.3",
+      "questionText": "In a review session, who collates anomalies from reviewers and records new issues found during the meeting?",
+      "options": ["Review leader", "Manager", "Moderator", "Scribe"],
+      "correctAnswerIndex": 3,
+      "explanation": "The scribe (recorder) documents all anomalies, decisions, and new issues during the review meeting, ensuring traceability and proper follow-up."
+    },
+    {
+      "id": "q048",
+      "chapterSection": "3.2.3",
+      "questionText": "Which role is responsible for creating and fixing the work product under review?",
+      "options": ["Reviewer", "Author", "Manager", "Moderator"],
+      "correctAnswerIndex": 1,
+      "explanation": "The author produces the work product and addresses defects or improvements identified during the review."
+    },
+    {
+      "id": "q049",
+      "chapterSection": "3.2.3",
+      "questionText": "Which stakeholder decides which work products to review and allocates staff and time for the review?",
+      "options": ["Manager", "Author", "Scribe", "Reviewer"],
+      "correctAnswerIndex": 0,
+      "explanation": "The manager provides resources and decides what is to be reviewed, ensuring the review process is supported and feasible."
+    },
+    {
+      "id": "q050",
+      "chapterSection": "3.2.3",
+      "questionText": "Who takes overall responsibility for the review, such as deciding participants and organizing the review meeting?",
+      "options": ["Manager", "Review leader", "Moderator", "Author"],
+      "correctAnswerIndex": 1,
+      "explanation": "The review leader organizes the review, selects participants, and schedules the review sessions, overseeing the process."
+    },
+    {
+      "id": "q051",
+      "chapterSection": "3.2.3",
+      "questionText": "A technically qualified reviewer evaluates a design document and proposes improvements. Which role does this describe?",
+      "options": ["Moderator", "Scribe", "Author", "Reviewer"],
+      "correctAnswerIndex": 3,
+      "explanation": "A reviewer examines work products, providing feedback and identifying anomalies. They may be subject matter experts or project participants."
+    },
+    {
+      "id": "q052",
+      "chapterSection": "3.2.4",
+      "questionText": "Which review type is MOST suitable when the objective is to find the maximum number of anomalies and collect metrics for process improvement?",
+      "options": [
+        "Walkthrough",
+        "Informal review",
+        "Inspection",
+        "Technical review"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Inspections are highly formal reviews aimed at detecting as many defects as possible and collecting metrics to improve the SDLC and inspection process."
+    },
+    {
+      "id": "q053",
+      "chapterSection": "3.2.4",
+      "questionText": "During a walkthrough, who typically leads the session?",
+      "options": ["Author", "Moderator", "Manager", "Scribe"],
+      "correctAnswerIndex": 0,
+      "explanation": "The author leads a walkthrough, guiding reviewers through the work product to evaluate quality, educate reviewers, and detect anomalies."
+    },
+    {
+      "id": "q054",
+      "chapterSection": "3.2.4",
+      "questionText": "A technical review is performed primarily to:",
+      "options": [
+        "Evaluate technical feasibility and adherence to standards",
+        "Clarify requirements and educate team members on the work product",
+        "Gain consensus on technical issues and detect anomalies",
+        "Identify risks and suggest improvements in design"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "While technical reviews may also help clarify requirements, educate participants, or identify risks, their primary purpose is to make decisions on technical problems and detect anomalies in the work product. The other options describe secondary benefits rather than the main objective."
+    },
+    {
+      "id": "q055",
+      "chapterSection": "3.2.4",
+      "questionText": "Which factors should MOST influence the choice of review type for a work product?",
+      "options": [
+        "Programming language, team experience, coding standards, documentation style",
+        "Author availability, document size, team location, time zone differences",
+        "Project schedule, deployment plan, testing tools, resource allocation",
+        "Work product criticality, SDLC approach, regulatory requirements, reviewer skills"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The choice of review type depends on the criticality of the work product, the SDLC being used, applicable regulatory requirements, and the skills of reviewers. Other factors may affect logistics but are not primary criteria."
+    },
+    {
+      "id": "q056",
+      "chapterSection": "3.2.4",
+      "questionText": "An informal review would be most appropriate when:",
+      "options": [
+        "The main objective is to quickly detect anomalies without formal documentation",
+        "Metrics need to be collected to improve processes",
+        "Decisions on technical issues must be formally agreed upon",
+        "Maximum anomalies must be detected following strict procedures"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Informal reviews are unstructured and aim at quickly detecting anomalies, with minimal documentation."
+    },
+    {
+      "id": "q057",
+      "chapterSection": "3.2.4",
+      "questionText": "Which restriction applies during inspections that is not required for other review types?",
+      "options": [
+        "The author cannot act as review leader or scribe",
+        "Reviewers cannot raise anomalies",
+        "Managers cannot provide resources",
+        "Dynamic testing is mandatory"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In inspections, the author is not allowed to serve as review leader or scribe to maintain objectivity and independence in the review process."
+    },
+    {
+      "id": "q058",
+      "chapterSection": "3.2.5",
+      "questionText": "Which factor is MOST critical for review success?",
+      "options": [
+        "The number of developers on the project",
+        "Defining clear objectives and measurable exit criteria",
+        "Whether dynamic testing is automated",
+        "Using a specific programming language"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Clear objectives and exit criteria ensure that the review is focused and outcomes can be measured, making them critical to success."
+    },
+    {
+      "id": "q059",
+      "chapterSection": "3.2.5",
+      "questionText": "Why should reviews be conducted on small chunks of work products?",
+      "options": [
+        "To reduce the number of reviewers needed",
+        "To ensure metrics are automatically collected",
+        "To maintain reviewer concentration and effectiveness",
+        "To replace dynamic testing"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Small chunks prevent fatigue and ensure reviewers can thoroughly assess each section of the work product, improving review quality."
+    },
+    {
+      "id": "q060",
+      "chapterSection": "3.2.5",
+      "questionText": "Providing adequate time for participants to prepare for a review ensures:",
+      "options": [
+        "Thorough individual assessment and better quality feedback",
+        "Faster project deployment",
+        "Automatic defect resolution",
+        "Reduction of dynamic testing scope"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Adequate preparation time allows reviewers to thoroughly analyze work products, identify anomalies, and provide meaningful feedback."
+    },
+    {
+      "id": "q061",
+      "chapterSection": "3.2.5",
+      "questionText": "Making reviews part of the organization’s culture primarily helps to:",
+      "options": [
+        "Promote learning and continuous process improvement",
+        "Eliminate the need for other testing activities",
+        "Ensure 100% defect-free software",
+        "Replace stakeholder involvement"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Embedding reviews in organizational culture encourages learning from defects, improves processes, and supports knowledge sharing."
+    },
+    {
+      "id": "q062",
+      "chapterSection": "3.2.5",
+      "questionText": "What is the primary purpose of providing feedback from reviews to stakeholders and authors?",
+      "options": [
+        "Help prioritize work items for the next development iteration",
+        "Clarify ambiguities and confirm understanding among participants",
+        "Enable improvement of the work product and participants’ activities",
+        "Document issues for compliance or audit purposes"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The main purpose of review feedback is to help authors and stakeholders improve the work product and enhance participants’ review practices. Other options describe secondary benefits but are not the primary purpose."
+    },
+    {
+      "id": "q063",
+      "chapterSection": "3.2.5",
+      "questionText": "Adequate training for all participants ensures that:",
+      "options": [
+        "Dynamic tests are executed faster",
+        "Defects are automatically prevented",
+        "Each participant understands their role and can fulfill it effectively",
+        "Only managers can evaluate work products"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Training ensures that participants are competent in their roles, leading to more effective and consistent review activities."
+    },
+    {
+      "id": "q064",
+      "chapterSection": "3.2.5",
+      "questionText": "Which of the following BEST describes the role of management support in successful reviews?",
+      "options": [
+        "Executes all dynamic tests",
+        "Leads all review sessions personally",
+        "Reduces the need for scribe documentation",
+        "Provides resources, time, and authority to ensure reviews are prioritized"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Management support ensures reviews have the necessary resources, time, and organizational backing to be conducted effectively."
+    },
+    {
+      "id": "q065",
+      "chapterSection": "3.2.5",
+      "questionText": "A review facilitator ensures that participants can speak freely and that discussions remain productive. Which success factor does this MOST closely relate to?",
+      "options": [
+        "Choosing review type",
+        "Collecting metrics",
+        "Facilitating meetings",
+        "Defining exit criteria"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Effective facilitation ensures a safe, productive environment where participants can contribute, which is a key success factor in reviews."
+    },
+    {
+      "id": "q066",
+      "chapterSection": "3.2.5",
+      "questionText": "When selecting a review type, which factors are MOST important to consider?",
+      "options": [
+        "Team experience, available tools, work product size, and schedule constraints",
+        "Document complexity, coding standards, author availability, and regulatory rules",
+        "Stakeholder preferences, team location, development methodology, and risk assessment",
+        "Objectives of the review, work product type, participant expertise, project needs, and context"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The review type must align with the review objectives, work product characteristics, participant skills, project requirements, and context. Other factors may influence logistics but are not the primary criteria for selection."
+    },
+    {
+      "id": "q067",
+      "chapterSection": "3.2.5",
+      "questionText": "Which factor helps ensure reviewers remain focused and the quality of the review is maintained?",
+      "options": [
+        "Providing reviewers with checklists and guidelines before the review",
+        "Limiting the number of work products reviewed in a single session",
+        "Conducting reviews on small, manageable sections of the work product",
+        "Rotating review responsibilities among team members"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "While all options can support review quality, breaking work products into small chunks directly prevents fatigue and loss of concentration, which is the primary factor for maintaining focus and effectiveness during reviews."
+    }
+  ]
+}

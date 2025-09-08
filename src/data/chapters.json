@@ -18,7 +18,7 @@
       "id": "chapter-3",
       "title": "Static Testing",
       "img": "home_card_image_3.jpg",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "description": "Master static analysis techniques and code reviews"
     },
     {
