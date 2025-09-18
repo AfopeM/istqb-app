@@ -1,0 +1,11 @@
+{
+  "exams": [
+    {
+      "id": "exam-1",
+      "title": "Exam A",
+      "description": "Learn the core principles and fundamentals of software testing",
+      "duration": 60,
+      "numberOfQuestions": 40
+    }
+  ]
+}

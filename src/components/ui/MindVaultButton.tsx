@@ -61,7 +61,9 @@ export default function MindVaultButton({ questionId, chapterId }: Props) {
     >
       <Bookmark
         className={`size-5 transition-colors duration-200 ${
-          isSelected ? "fill-blue-500 text-blue-500" : "text-blue-500"
+          isSelected
+            ? "fill-blue-500 text-blue-500"
+            : "text-blue-300 hover:text-blue-500"
         }`}
       />
     </Button>

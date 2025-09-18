@@ -10,7 +10,7 @@ interface Props {
   isComingSoon?: boolean;
 }
 
-export default function HomeCard({
+export default function ChapterCard({
   id,
   img,
   title,
@@ -37,16 +37,11 @@ export default function HomeCard({
 
   return (
     <article
-      className={`
-        relative group transform transition-all duration-300 ease-out
-        rounded-2xl overflow-hidden w-full max-w-sm shadow-md h-[340px]
-        bg-white border border-white/0 
-        ${
-          !isComingSoon
-            ? "hover:scale-105 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] cursor-pointer"
-            : "cursor-default"
-        }
-      `}
+      className={`group relative h-[340px] w-full max-w-sm transform overflow-hidden rounded-2xl border border-white/0 bg-white shadow-md transition-all duration-300 ease-out ${
+        !isComingSoon
+          ? "cursor-pointer hover:scale-105 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+          : "cursor-default"
+      } `}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       tabIndex={isComingSoon ? -1 : 0}
@@ -57,10 +52,10 @@ export default function HomeCard({
     >
       {/* COMING SOON OVERLAY */}
       {isComingSoon && (
-        <div className="absolute inset-0 z-20 bg-gradient-to-br from-gray-900/80 to-gray-700/80 backdrop-blur-sm flex items-center justify-center">
-          <div className="text-center transform -rotate-12">
-            <Clock className="w-8 h-8 text-white mx-auto mb-2" />
-            <p className="font-bold text-white text-lg tracking-wide">
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-gradient-to-br from-gray-900/80 to-gray-700/80 backdrop-blur-sm">
+          <div className="-rotate-12 transform text-center">
+            <Clock className="mx-auto mb-2 h-8 w-8 text-white" />
+            <p className="text-lg font-bold tracking-wide text-white">
               Coming Soon
             </p>
           </div>
@@ -69,9 +64,9 @@ export default function HomeCard({
 
       {/* IMAGE SECTION */}
       <div className="relative h-40 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 to-transparent" />
         <div
-          className="w-full h-full bg-contain bg-center"
+          className="h-full w-full bg-contain bg-center"
           style={{
             backgroundImage: `url(/home/${img})`,
             backgroundColor: "#e5e7eb",
@@ -82,20 +77,20 @@ export default function HomeCard({
       {/* CONTENT SECTION */}
       <div className="p-6">
         <div className="flex items-start justify-between">
-          <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold text-blue-600/90 uppercase tracking-wider mb-2">
+          <div className="min-w-0 flex-1">
+            <p className="mb-2 text-xs font-semibold tracking-wider text-blue-600/90 uppercase">
               {id.replace(/-/g, " ")}
             </p>
-            <h3 className="font-bold text-gray-900/90 text-lg leading-tight">
+            <h3 className="text-lg leading-tight font-bold text-gray-900/90">
               {title}
             </h3>
           </div>
           {!isComingSoon && (
-            <ExternalLink className="w-4 h-4 text-blue-500/70 ml-2 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ExternalLink className="ml-2 h-4 w-4 flex-shrink-0 text-blue-500/70 opacity-0 transition-opacity group-hover:opacity-100" />
           )}
         </div>
 
-        <p className="text-sm text-gray-700/90 leading-relaxed mt-3">
+        <p className="mt-3 text-sm leading-relaxed text-gray-700/90">
           {description}
         </p>
       </div>

@@ -41,14 +41,14 @@ const Button = forwardRef<HTMLButtonElement, Props>(
 
     const variantStyles = {
       default: cn(
-        "bg-blue-500 text-white border-2 border-blue-500",
-        "hover:bg-transparent hover:text-blue-500 backdrop-blur-lg",
+        "bg-blue-400 text-white border-2 border-blue-400",
+        "hover:bg-blue-500 hover:text-white hover:border-blue-500",
         "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
         "disabled:bg-blue-300 disabled:border-blue-300",
       ),
       outline: cn(
-        "bg-blue-100 border-2 text-blue-400 border-blue-300",
-        "hover:text-blue-700 hover:bg-blue-200 border-blue-500 backdrop-blur-lg ",
+        "bg-transparent border-2 text-blue-300 border-blue-300",
+        "hover:text-blue-500 hover:border-blue-500 backdrop-blur-lg",
         "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
         "disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200",
       ),

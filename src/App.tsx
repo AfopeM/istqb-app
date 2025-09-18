@@ -2,11 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import {
   HomePage,
   QuizPage,
-  ReviewPage,
-  SessionPage,
+  ExamPage,
+  QuizReviewPage,
+  QuizQuestionsPage,
   MindVaultPage,
-  MindVaultQuiz,
-  MindVaultReview,
+  MindVaultQuestionsPage,
+  MindVaultReviewPage,
   PerformancePage,
 } from "./pages";
 
@@ -14,21 +15,31 @@ export default function App() {
   return (
     <main>
       <Routes>
+        {/* HOME */}
         <Route path="/" element={<HomePage />} />
+
+        {/* MINDVAULT */}
         <Route path="/MindVault" element={<MindVaultPage />} />
         <Route
           path="/mindvault/mindvaultquiz/:chapterId"
-          element={<MindVaultQuiz />}
+          element={<MindVaultQuestionsPage />}
         />
         <Route
           path="/mindvault/mindvaultreview/:chapterId"
-          element={<MindVaultReview />}
+          element={<MindVaultReviewPage />}
         />
-        <Route path="/mindvault/review/:chapterId" element={<ReviewPage />} />
+
+        {/* QUIZ */}
         <Route path="/quiz/:chapterId" element={<QuizPage />} />
-        <Route path="/session/:chapterId" element={<SessionPage />} />
+        <Route
+          path="/quizquestions/:chapterId"
+          element={<QuizQuestionsPage />}
+        />
         <Route path="/performance/:chapterId" element={<PerformancePage />} />
-        <Route path="/review/:chapterId" element={<ReviewPage />} />
+        <Route path="/review/:chapterId" element={<QuizReviewPage />} />
+
+        {/* EXAM */}
+        <Route path="/exam/:examId" element={<ExamPage />} />
       </Routes>
     </main>
   );

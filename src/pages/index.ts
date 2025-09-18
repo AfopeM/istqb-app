@@ -1,8 +1,9 @@
 export { default as HomePage } from "./HomePage";
 export { default as QuizPage } from "./QuizPage";
-export { default as ReviewPage } from "./ReviewPage";
-export { default as SessionPage } from "./SessionPage";
+export { default as QuizQuestionsPage } from "./QuizQuestionsPage";
+export { default as ExamPage } from "./ExamPage";
+export { default as QuizReviewPage } from "./QuizReviewPage";
 export { default as MindVaultPage } from "./MindVaultPage";
-export { default as MindVaultQuiz } from "./MindVaultQuiz";
-export { default as MindVaultReview } from "./MindVaultReview";
+export { default as MindVaultQuestionsPage } from "./MindVaultQuestionsPage";
+export { default as MindVaultReviewPage } from "./MindVaultReviewPage";
 export { default as PerformancePage } from "./PerformancePage";

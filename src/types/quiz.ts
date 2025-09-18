@@ -16,3 +16,19 @@ export interface Chapter {
 export interface QuizData {
   chapters: Chapter[];
 }
+
+export interface MindVaultItem {
+  chapterId: string;
+  questionId: string;
+}
+
+export interface QuizResult {
+  questionId: string;
+  selectedIndex: number;
+  isCorrect: boolean;
+}
+
+export interface QuizState {
+  questions: Question[];
+  results: QuizResult[];
+}

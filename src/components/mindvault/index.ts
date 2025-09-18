@@ -1,2 +1,2 @@
-export { default as ChapterCard } from "./ChapterCard";
+export { default as MindvaultCard } from "./MindvaultCard";
 export { default as QuestionList } from "./QuestionList";

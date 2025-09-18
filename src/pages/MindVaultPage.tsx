@@ -1,11 +1,15 @@
 import { Brain, Trash2, ArrowLeft } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Question } from "../types/quiz";
 import chaptersData from "../data/chapters.json";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { Button, SectionWrapper } from "../components/ui";
-import { ChapterCard } from "../components/mindvault";
+import { MindvaultCard } from "../components/mindvault";
+
+// Utility function to format chapter title
+const formatChapterTitle = (chapterId: string, title: string): string =>
+  `chapter ${chapterId.split("-")[1]} : ${title}`;
 
 interface ChapterQuestions {
   chapterId: string;
@@ -61,7 +65,6 @@ export default function MindVaultPage() {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-  console.log(mindVault);
 
   // LOAD ALL QUESTIONS FROM AVAILABLE CHAPTERS
   useEffect(() => {
@@ -97,8 +100,8 @@ export default function MindVaultPage() {
     loadQuestions();
   }, []);
 
-  // CLEAN AND MIGRATE MINDVAULT DATA
-  const cleanAndMigrateMindVault = useCallback(() => {
+  // Clean and migrate data when dependencies change
+  useEffect(() => {
     if (mindVault.length === 0 || loading) return;
 
     const cleanedItems: MindVaultItem[] = [];
@@ -125,13 +128,8 @@ export default function MindVaultPage() {
 
     if (uniqueItems.length !== mindVault.length) {
       setMindVault(uniqueItems);
-      console.log("Cleaned and migrated MindVault:", uniqueItems);
     }
   }, [mindVault, allQuestions, setMindVault, loading]);
-
-  useEffect(() => {
-    cleanAndMigrateMindVault();
-  }, [cleanAndMigrateMindVault]);
 
   // COMPUTED VALUES
   const mindVaultQuestions = useMemo(() => {
@@ -147,42 +145,30 @@ export default function MindVaultPage() {
     );
   }, [allQuestions, mindVault]);
 
-  const chapterQuestions = useMemo((): ChapterQuestions[] => {
-    // Debug logging
-    console.log("MindVault items:", mindVault);
-    console.log("All questions:", allQuestions);
-    console.log("MindVault questions:", mindVaultQuestions);
-
-    return chaptersData.chapters
-      .map((chapter) => {
-        // Get questions for this chapter from mindVault
-        const chapterQs = mindVaultQuestions.filter((question) => {
-          // Find the corresponding MindVaultItem
-          const mindVaultItem = mindVault.find(
-            (item) => item.questionId === question.id,
-          );
-          return mindVaultItem?.chapterId === chapter.id;
-        });
-
-        return {
+  const chapterQuestions = useMemo(
+    (): ChapterQuestions[] =>
+      chaptersData.chapters
+        .map((chapter) => ({
           chapterId: chapter.id,
           chapterTitle: chapter.title,
-          questions: chapterQs,
-        };
-      })
-      .filter((chapter) => chapter.questions.length > 0);
-  }, [mindVaultQuestions, mindVault, allQuestions]);
+          questions: mindVaultQuestions.filter(
+            (question) =>
+              mindVault.find((item) => item.questionId === question.id)
+                ?.chapterId === chapter.id,
+          ),
+        }))
+        .filter((chapter) => chapter.questions.length > 0),
+    [mindVaultQuestions, mindVault],
+  );
 
   // EVENT HANDLERS
-  const handleReset = useCallback(() => {
+  const handleReset = () => {
     if (window.confirm("Are you sure you want to clear your MindVault?")) {
       setMindVault([]);
     }
-  }, [setMindVault]);
+  };
 
-  const handleGoHome = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
+  const handleGoHome = () => navigate("/");
 
   // LOADING STATE
   if (loading) {
@@ -253,12 +239,14 @@ export default function MindVaultPage() {
           {/* CHAPTER GRID VIEW */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {chapterQuestions.map((chapter) => (
-              <ChapterCard
+              <MindvaultCard
                 key={chapter.chapterId}
                 chapterId={chapter.chapterId}
                 questions={chapter.questions}
-                chapterTitle={`chapter ${chapter.chapterId.split("-")[1]} : ${chapter.chapterTitle}`}
-                isLoading={loading}
+                chapterTitle={formatChapterTitle(
+                  chapter.chapterId,
+                  chapter.chapterTitle,
+                )}
                 isComingSoon={
                   chaptersData.chapters.find((c) => c.id === chapter.chapterId)
                     ?.isComingSoon
