@@ -383,7 +383,7 @@ export default function MindVaultPage() {
             onClick={handleGoHome}
             className="mt-4 px-16 font-bold tracking-wide"
           >
-            Go to Home
+            Home Page
           </Button>
         </div>
       </SectionWrapper>

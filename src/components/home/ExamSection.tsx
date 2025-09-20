@@ -12,7 +12,7 @@ export default function ExamSection({ className = "" }: Props) {
   return (
     <section
       className={cn(
-        `relative overflow-hidden rounded-xl bg-blue-500/15 p-10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] backdrop-blur-sm`,
+        `relative overflow-hidden rounded-xl bg-blue-500/15 p-10 backdrop-blur-sm`,
         className,
       )}
     >
@@ -30,7 +30,8 @@ export default function ExamSection({ className = "" }: Props) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"> */}
+        <div className="flex flex-wrap justify-center gap-6">
           {examData.exams.map((exam: Exam) => (
             <ExamCard key={exam.id} exam={exam} />
           ))}

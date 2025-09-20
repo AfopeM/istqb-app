@@ -211,7 +211,7 @@
     {
       "id": "q017",
       "chapterSection": "3.2.2",
-      "questionText": "Given the following task descriptions:The quality characteristics to be evaluated and the exit criteria are selected.2) Everyone has access to the work product.3) Anomalies are identified in the work product.4) Anomalies are discussed. And the following review activities.A) Individual review.B) Review initiation.C) Planning.D) Communication and analysisWhich of the following BEST matches the task descriptions and activities?",
+      "questionText": "Given the following task descriptions: 1)The quality characteristics to be evaluated and the exit criteria are selected. 2) Everyone has access to the work product. 3) Anomalies are identified in the work product. 4) Anomalies are discussed. And the following review activities. A) Individual review. B) Review initiation. C) Planning. D) Communication and analysis. Which of the following BEST matches the task descriptions and activities?",
       "options": [
         "1B, 2C, 3D, 4A",
         "1B, 2D, 3C, 4A",
@@ -224,7 +224,7 @@
     {
       "id": "q018",
       "chapterSection": "3.2.3",
-      "questionText": "Given the following roles in reviews:1) Scribe.2) Review leader.3) Facilitator.4) Manager.And the following responsibilities in reviews:A) Ensures the effective running of review meetings and the setting up a safe review environment.B) Records review information, such as decisions and new anomalies found during the review meeting.C) Decides what is to be reviewed and provides resources, such as staff and time for the review.D) Takes overall responsibility for the review such as organizing when and where the review will take place. Which of the following BEST matches the roles and responsibilities?",
+      "questionText": "Given the following roles in reviews: 1) Scribe. 2) Review leader. 3) Facilitator. 4) Manager. And the following responsibilities in reviews: A) Ensures the effective running of review meetings and the setting up a safe review environment. B) Records review information, such as decisions and new anomalies found during the review meeting. C) Decides what is to be reviewed and provides resources, such as staff and time for the review. D) Takes overall responsibility for the review such as organizing when and where the review will take place. Which of the following BEST matches the roles and responsibilities?",
       "options": [
         "1A, 2B, 3D, 4C",
         "1A, 2C, 3B, 4D",
@@ -250,7 +250,7 @@
     {
       "id": "q020",
       "chapterSection": "4.2.1",
-      "questionText": "Customers of the TestWash car wash chain have cards with a record of the number of washes they have bought so far. The initial value is 0. After entering the car wash, the system increases the number on the card by one. This value represents the number of the current wash. Based on this number the system decides what discount the customer is entitled to.For every tenth wash the system gives a 10% discount, and for every twentieth wash, the system gives a further 40% discount (ie, a 50% discount in total).Which of the following sets of input data (understood as the numbers of the current wash) achieves the highest equivalence partition coverage?",
+      "questionText": "Customers of the TestWash car wash chain have cards with a record of the number of washes they have bought so far. The initial value is 0. After entering the car wash, the system increases the number on the card by one. This value represents the number of the current wash. Based on this number the system decides what discount the customer is entitled to. For every tenth wash the system gives a 10% discount, and for every twentieth wash, the system gives a further 40% discount (i.e., a 50% discount in total). Which of the following sets of input data (understood as the numbers of the current wash) achieves the highest equivalence partition coverage?",
       "options": ["19, 20, 30", "11, 12, 20", "1, 10, 50", "10, 29, 30, 31"],
       "correctAnswerIndex": 0,
       "explanation": "The set 19, 20, 30 covers normal, 10% discount, and 50% discount partitions, giving the best equivalence partition coverage (ISTQB 4.2.1)."
@@ -418,7 +418,7 @@
     {
       "id": "q034",
       "chapterSection": "5.2.4",
-      "questionText": "Given the following risks and mitigation activities, which matches BEST?\nRisks: 1) Ineffective loop implementation causes long system responses.2) Consumers change their preferences.3) Flooding of the server room.4) Patients above a certain age receive inaccurate reports.Mitigations: A) Risk acceptance.B) Performance testing.C) Using boundary value analysis as the test technique.D) Risk transfer",
+      "questionText": "Given the following risks and mitigation activities, which matches BEST? Risks: 1) Ineffective loop implementation causes long system responses. 2) Consumers change their preferences. 3) Flooding of the server room. 4) Patients above a certain age receive inaccurate reports. Mitigations: A) Risk acceptance. B) Performance testing. C) Using boundary value analysis as the test technique. D) Risk transfer",
       "options": [
         "1C, 2D, 3A, 4B",
         "1B, 2D, 3A, 4C",
@@ -478,7 +478,7 @@
     {
       "id": "q039",
       "chapterSection": "6.1.1",
-      "questionText": "Given the following descriptions:1) Support workflow tracking.2) Facilitate communication.3) Virtual machines.4) Support reviews.And test tool categories:A) Static testing tools.B) Tools supporting scalability and deployment standardization.C) DevOps tools.D) Collaboration tools. Which of the following BEST matches descriptions to tool categories?",
+      "questionText": "Given the following descriptions: 1) Support workflow tracking. 2) Facilitate communication. 3) Virtual machines. 4) Support reviews. And test tool categories: A) Static testing tools. B) Tools supporting scalability and deployment standardization. C) DevOps tools. D) Collaboration tools. Which of the following BEST matches descriptions to tool categories?",
       "options": [
         "1A, 2B, 3C, 4D",
         "1B, 2D, 3C, 4A",

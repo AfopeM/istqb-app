@@ -1,6 +1,7 @@
 import { Button, Tagline, MindVaultButton } from "../ui";
 import type { Question } from "../../types/quiz";
 import { useLocation } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ReviewCardProps {
   questions: Question[];
@@ -76,27 +77,71 @@ export default function ReviewCard({
   return (
     <main className="relative z-10 mx-auto mb-8 flex min-h-[calc(100vh-8rem)] w-full max-w-4xl items-center justify-center px-6 md:mb-0">
       <div className="w-full rounded-xl bg-white px-6 py-8 shadow-lg md:px-8 md:py-10">
-        {/* NUMBERED BUTTONS */}
-        <div className="mb-6 flex flex-wrap justify-center gap-2 md:justify-start">
-          {questions.map((_, idx) => {
-            const res = results[idx];
-            const colorClass = res?.isCorrect ? "bg-green-200" : "bg-red-200";
-            const ringClass =
-              res?.isCorrect === true && idx === currentIndex
-                ? "bg-green-500"
-                : res?.isCorrect === false && idx === currentIndex
-                  ? "bg-red-500"
-                  : "";
-            return (
-              <button
-                key={idx}
-                onClick={() => goTo(idx)}
-                className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-sm text-sm font-medium text-white ${colorClass} ${ringClass} focus:outline-none`}
-              >
-                {idx + 1}
-              </button>
-            );
-          })}
+        {/* Navigation Container */}
+        <div className="mb-6 flex h-12 items-stretch gap-2">
+          {/* Left Scroll Button */}
+          <button
+            onClick={() => {
+              document.getElementById("review-question-slider")?.scrollBy({
+                left: -200,
+                behavior: "smooth",
+              });
+            }}
+            className="flex w-10 cursor-pointer items-center justify-center rounded bg-gray-200 transition-colors hover:bg-gray-300"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="size-6 text-gray-700" />
+          </button>
+
+          {/* Question Buttons Slider */}
+          <div
+            id="review-question-slider"
+            className="hide-scrollbar flex flex-1 gap-2 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
+            style={{
+              msOverflowStyle: "none",
+              scrollbarWidth: "none",
+            }}
+          >
+            {questions.map((_, idx) => {
+              const res = results[idx];
+              return (
+                <button
+                  key={idx}
+                  onClick={() => goTo(idx)}
+                  className={`size-12 shrink-0 cursor-pointer rounded-lg border font-medium transition-colors ${
+                    currentIndex === idx
+                      ? res?.isCorrect
+                        ? "border-green-500 bg-green-500 text-white"
+                        : "border-red-500 bg-red-500 text-white"
+                      : res?.isCorrect
+                        ? "border-green-300 bg-green-100 text-green-600 hover:bg-green-200"
+                        : res !== undefined
+                          ? "border-red-300 bg-red-100 text-red-600 hover:bg-red-200"
+                          : "border-gray-200 bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
+                  aria-label={`Question ${idx + 1}${
+                    res !== undefined ? " (Answered)" : ""
+                  }`}
+                >
+                  {idx + 1}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right Scroll Button */}
+          <button
+            onClick={() => {
+              document.getElementById("review-question-slider")?.scrollBy({
+                left: 200,
+                behavior: "smooth",
+              });
+            }}
+            className="flex w-10 cursor-pointer items-center justify-center rounded bg-gray-200 transition-colors hover:bg-gray-300"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="size-6 text-gray-700" />
+          </button>
         </div>
 
         {/* SECTION TITLE */}
@@ -122,12 +167,11 @@ export default function ReviewCard({
         {/* QUESTION TEXT */}
         <div className="mb-6 font-bold whitespace-pre-line">
           {currentQuestion.questionText
-            .split(/(?<=[.:])/)
+            .split(/(?<=[.:])\s+/)
             .filter(Boolean)
-            .map((line, index, arr) => (
+            .map((line, index) => (
               <p key={index} className="mb-4 text-lg leading-6 md:text-xl">
                 {line.trim()}
-                {index < arr.length - 1 ? "." : ""}
               </p>
             ))}
         </div>

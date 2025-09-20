@@ -83,12 +83,11 @@ export default function QuestionsCard({
         {/* QUESTION TEXT */}
         <div className="mb-6 font-bold whitespace-pre-line">
           {currentQuestion.questionText
-            .split(/(?<=[.:])/)
+            .split(/(?<=[.:?])\s+/)
             .filter(Boolean)
-            .map((line, index, arr) => (
+            .map((line, index) => (
               <p key={index} className="mb-4 text-lg leading-6 md:text-xl">
                 {line.trim()}
-                {index < arr.length - 1 ? "." : ""}
               </p>
             ))}
         </div>
