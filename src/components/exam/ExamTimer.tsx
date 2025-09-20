@@ -1,6 +1,5 @@
 import { Timer } from "lucide-react";
 import { formatTime } from "../../utils/exam";
-import "../../styles/exam.css";
 
 interface ExamTimerProps {
   timeRemaining: number;

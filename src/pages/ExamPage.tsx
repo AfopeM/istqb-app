@@ -26,8 +26,6 @@ import {
 } from "../utils/exam";
 
 // Styles
-import "../styles/exam.css";
-
 export default function ExamPage() {
   const { examId } = useParams();
   const navigate = useNavigate();

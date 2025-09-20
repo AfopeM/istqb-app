@@ -1,6 +1,5 @@
 import type { Question } from "../../types/quiz";
 import { formatQuestionText } from "../../utils/exam";
-import "../../styles/exam.css";
 
 interface QuestionDisplayProps {
   question: Question;

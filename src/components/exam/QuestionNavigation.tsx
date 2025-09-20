@@ -1,5 +1,4 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import "../../styles/exam.css";
 
 interface QuestionNavigationProps {
   totalQuestions: number;
