@@ -1,3 +1,21 @@
+// Exam interface
+export interface Exam {
+  id: string;
+  title: string;
+  description: string;
+  duration: number;
+  numberOfQuestions: number;
+}
+
+// Question interface
+export interface Question {
+  id: string;
+  text: string;
+  options: string[];
+  correctAnswer: number;
+  explanation: string;
+}
+
 // Core exam state interface
 export interface ExamState {
   currentQuestionIndex: number;
