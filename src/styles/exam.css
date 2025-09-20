@@ -11,11 +11,11 @@
 
 /* Question Navigation */
 .question-nav-button {
-  @apply flex size-10 cursor-pointer items-center justify-center rounded bg-gray-200 transition-colors hover:bg-gray-300;
+  @apply flex h-10 w-10 cursor-pointer items-center justify-center rounded bg-gray-200 transition-colors hover:bg-gray-300;
 }
 
 .question-number-button {
-  @apply size-12 shrink-0 cursor-pointer rounded-lg border font-medium transition-colors;
+  @apply h-12 w-12 shrink-0 cursor-pointer rounded-lg border font-medium transition-colors;
 }
 
 .question-number-button--current {
