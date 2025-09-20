@@ -11,7 +11,7 @@
 
 /* Question Navigation */
 .question-nav-button {
-  @apply flex w-10 cursor-pointer items-center justify-center rounded bg-gray-200 transition-colors hover:bg-gray-300;
+  @apply flex size-10 cursor-pointer items-center justify-center rounded bg-gray-200 transition-colors hover:bg-gray-300;
 }
 
 .question-number-button {
