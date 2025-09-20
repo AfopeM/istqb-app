@@ -73,6 +73,7 @@ export default function QuestionsCard({
           <MindVaultButton
             questionId={currentQuestion.id}
             chapterId={chapterId}
+            source="chapter"
           />
         </div>
 
@@ -82,7 +83,7 @@ export default function QuestionsCard({
         {/* QUESTION TEXT */}
         <div className="mb-6 font-bold whitespace-pre-line">
           {currentQuestion.questionText
-            .split(".")
+            .split(/(?<=[.:])/)
             .filter(Boolean)
             .map((line, index, arr) => (
               <p key={index} className="mb-4 text-lg leading-6 md:text-xl">

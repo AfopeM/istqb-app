@@ -9,6 +9,8 @@ import { Button, SectionWrapper, Tagline } from "../components/ui";
 interface PerformanceState {
   questions: Question[];
   results: { questionId: string; selectedIndex: number; isCorrect: boolean }[];
+  isExam?: boolean;
+  timerExpired?: boolean;
 }
 
 export default function PerformancePage() {
@@ -54,22 +56,59 @@ export default function PerformancePage() {
   const [MindVault] = useLocalStorage<string[]>("MindVault", []);
   const weakAreasCount = MindVault.length;
 
-  // Generate suggestion text
-  const suggestions = useMemo(() => {
+  // Generate result message and suggestions
+  const { resultMessage, suggestions } = useMemo(() => {
+    // Handle timer expiration first
+    if (performance.isExam && performance.timerExpired) {
+      return {
+        resultMessage: "You ran out of time - Exam Failed",
+        suggestions:
+          "Time management is crucial in exams. Practice with timed sessions to improve your speed.",
+      };
+    }
+
+    // Handle exam pass/fail scenarios
+    if (performance.isExam) {
+      if (percentage >= 80) {
+        return {
+          resultMessage: "Congratulations! You Passed! 🎉",
+          suggestions:
+            "Excellent work! You've demonstrated strong understanding of the material.",
+        };
+      } else {
+        return {
+          resultMessage: "Exam Failed",
+          suggestions:
+            "Review the questions you missed and try again. Focus on understanding the concepts thoroughly.",
+        };
+      }
+    }
+
+    // Regular practice session suggestions
+    let suggestions = "";
     if (percentage >= 90)
-      return "Outstanding! You’ve nearly mastered this section. Aim for 100% by refining small details.";
-    if (percentage >= 80)
-      return "Excellent work! Keep practicing to maintain your mastery.";
-    if (percentage >= 70)
-      return "Solid effort! Review the tricky areas to push yourself into the top tier.";
-    if (percentage >= 60)
-      return "Good job! Focus on the questions saved in your Challenge Bank to improve further.";
-    if (percentage >= 50)
-      return "You're getting there. Revisit your weaker topics and try a mixed practice session.";
-    if (percentage >= 40)
-      return "You’ve made progress, but a deeper review will help. Break concepts into smaller parts.";
-    return "Consider revisiting the study material and practising the questions you missed.";
-  }, [percentage]);
+      suggestions =
+        "Outstanding! You've nearly mastered this section. Aim for 100% by refining small details.";
+    else if (percentage >= 80)
+      suggestions = "Excellent work! Keep practicing to maintain your mastery.";
+    else if (percentage >= 70)
+      suggestions =
+        "Solid effort! Review the tricky areas to push yourself into the top tier.";
+    else if (percentage >= 60)
+      suggestions =
+        "Good job! Focus on the questions saved in your Challenge Bank to improve further.";
+    else if (percentage >= 50)
+      suggestions =
+        "You're getting there. Revisit your weaker topics and try a mixed practice session.";
+    else if (percentage >= 40)
+      suggestions =
+        "You've made progress, but a deeper review will help. Break concepts into smaller parts.";
+    else
+      suggestions =
+        "Consider revisiting the study material and practising the questions you missed.";
+
+    return { resultMessage: null, suggestions };
+  }, [percentage, performance.isExam, performance.timerExpired]);
 
   const chapter = chaptersData.chapters.find((c) => c.id === chapterId);
 
@@ -109,6 +148,30 @@ export default function PerformancePage() {
             progressColor={scoreGaugeColor}
           />
 
+          {/* EXAM RESULT MESSAGE */}
+          {performance.isExam && resultMessage && (
+            <section
+              className={`flex w-full flex-col items-center rounded-xl p-6 text-center ${
+                percentage >= 80 && !performance.timerExpired
+                  ? "bg-green-500/10"
+                  : "bg-red-500/10"
+              }`}
+            >
+              <span className="text-4xl">
+                {percentage >= 80 && !performance.timerExpired ? "🎉" : "❌"}
+              </span>
+              <h2
+                className={`mt-4 mb-1 text-2xl font-black ${
+                  percentage >= 80 && !performance.timerExpired
+                    ? "text-green-700"
+                    : "text-red-700"
+                }`}
+              >
+                {resultMessage}
+              </h2>
+            </section>
+          )}
+
           {/* SUGGESTIONS */}
           <section className="flex w-full flex-col items-center rounded-xl bg-blue-500/10 p-6 text-center">
             <span className="text-4xl">💡</span>
@@ -119,21 +182,23 @@ export default function PerformancePage() {
           </section>
 
           {/* QUESTIONS IN MIND VAULT */}
-          <p className="flex w-full flex-col items-center justify-center gap-1 rounded-lg bg-blue-500/10 p-6">
-            <span className="text-sm font-bold text-gray-900 capitalize">
-              questions in Mind Vault
-            </span>
-            <span className="text-3xl font-black text-blue-500">
-              {weakAreasCount}
-            </span>
-          </p>
+          {!performance.isExam && (
+            <p className="flex w-full flex-col items-center justify-center gap-1 rounded-lg bg-blue-500/10 p-6">
+              <span className="text-sm font-bold text-gray-900 capitalize">
+                questions in Mind Vault
+              </span>
+              <span className="text-3xl font-black text-blue-500">
+                {weakAreasCount}
+              </span>
+            </p>
+          )}
         </main>
 
         {/* BUTTONS */}
         <section className="mx-auto mt-12 flex max-w-2xl flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            to={`/session/${chapterId}`}
+            to={performance.isExam ? `/` : `/quiz/${chapterId}`}
             className="font-bold tracking-wider"
           >
             Start New Session
@@ -141,7 +206,11 @@ export default function PerformancePage() {
           <Button
             size="lg"
             variant="outline"
-            to={`/review/${chapterId}`}
+            to={
+              performance.isExam
+                ? `/exam-review/${chapterId}`
+                : `/review/${chapterId}`
+            }
             state={{ questions, results }}
             className="font-bold tracking-wider"
           >

@@ -1,0 +1,745 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "chapterSection": "4.1",
+      "questionText": "A development team is using test-driven development for a new feature. They anticipate frequent refactoring and want test cases to remain reliable over time. Which type of testing technique will ensure that tests continue to validate correct behavior regardless of internal code changes?",
+      "options": [
+        "Techniques that rely heavily on tester intuition and accumulated domain experience to find potential defects",
+        "Techniques that analyze the internal code structure and implementation-specific logic paths to guide testing",
+        "Techniques that integrate multiple approaches to increase defect detection across various functional levels",
+        "Techniques that verify system behavior based solely on specified requirements without relying on internal code"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Black-box test techniques validate functionality based on expected behavior without referencing internal implementation. This ensures that test cases remain valid even if the code structure changes, making them ideal for TDD environments where refactoring occurs frequently."
+    },
+    {
+      "id": "q002",
+      "chapterSection": "4.2.1",
+      "questionText": "A banking system applies different processing rules for account balances: negative balances trigger overdrafts, zero balances generate warnings, positive balances under $100,000 display normally, and balances above $100,000 require extra verification. How should equivalence partitioning be applied to test the balance input effectively?",
+      "options": [
+        "Divide balances into four categories: negative, zero, positive under $100K, and positive over $100K, then select one test value from each category",
+        "Focus on testing only boundary values such as -0.01, 0, 0.01, 99999.99, and 100000.01 to capture critical thresholds",
+        "Simplify partitions to valid and invalid balances, since any numeric input should be processed correctly by the system",
+        "Generate random values across the entire numeric range because equivalence partitioning is unsuitable for complex business rules"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Each business rule triggers different behavior, creating distinct equivalence partitions. Proper partitioning ensures each processing path is exercised. Negative, zero, positive under $100K, and positive over $100K all need at least one representative test case to achieve comprehensive coverage."
+    },
+    {
+      "id": "q003",
+      "chapterSection": "4.2.1",
+      "questionText": "A tester identified eight equivalence partitions for a module but could only execute test cases covering six partitions due to time constraints, leaving two invalid partitions untested. What is the effective coverage, and what potential risk does this introduce?",
+      "options": [
+        "Coverage is 75%; the risk is minimal since valid partitions were prioritized and invalid partitions are less impactful for core functionality",
+        "Coverage is 75%; the risk is significant because untested invalid partitions may expose critical error-handling defects or unexpected behaviors",
+        "Coverage is effectively 100% since invalid partitions are usually outside practical testing considerations and can be ignored",
+        "Coverage cannot be determined reliably without analyzing the specific results of executed test cases for each partition"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Partition coverage is calculated as the number of exercised partitions divided by the total identified partitions (6/8 = 75%). Leaving invalid partitions untested is risky because they often uncover error-handling defects, so full coverage requires testing both valid and invalid partitions."
+    },
+    {
+      "id": "q004",
+      "chapterSection": "4.2.1",
+      "questionText": "A module accepts multiple parameters: user age (1-120), account type (savings, checking, premium), and transaction amount (0.01-50000). Using Each Choice coverage, what is the minimum number of test cases required to ensure all parameter partitions are exercised at least once?",
+      "options": [
+        "Three test cases minimum, selecting one value from each parameter regardless of total partition count to achieve baseline coverage",
+        "At least six test cases to systematically cover all age ranges, account types, and transaction amount ranges across parameters",
+        "One test case minimum if designed carefully to include one value from each parameter partition simultaneously for coverage",
+        "The number cannot be determined precisely without specifying invalid partitions, which are not provided in this scenario"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Each Choice coverage requires that each partition for every input parameter is exercised at least once. One strategically designed test case can simultaneously select representative partitions from multiple parameters, meeting the minimum coverage requirement."
+    },
+    {
+      "id": "q005",
+      "chapterSection": "4.2.2",
+      "questionText": "An online form enforces a password length of 8 to 20 characters inclusive. Using 2-value boundary value analysis, which test values ensure complete coverage of boundaries and adjacent invalid inputs?",
+      "options": [
+        "Test with 7, 8, 20, 21 characters to exercise both minimum and maximum boundaries along with neighboring invalid values",
+        "Test with 8, 9, 19, 20 characters to ensure validation of all valid boundary values without including invalid neighbors",
+        "Test with 1, 7, 8, 20, 21, 25 characters to attempt full input domain exploration including extreme invalid inputs",
+        "Test with 8, 14, 20 characters representing only minimum, mid-range, and maximum valid values for basic boundary coverage"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "2-value BVA requires testing each boundary and the closest neighboring value from an adjacent partition. Here, 8 and 20 are boundaries, while 7 and 21 are adjacent invalid values, ensuring full coverage of boundary-related defects."
+    },
+    {
+      "id": "q006",
+      "chapterSection": "4.2.2",
+      "questionText": "A discount calculation uses 'if (orderTotal >= 100) apply10PercentDiscount()', but was implemented as 'if (orderTotal > 100) apply10PercentDiscount()'. Which boundary value analysis approach is most likely to reveal this defect?",
+      "options": [
+        "2-value BVA will detect the defect because testing orderTotal = 100 will expose the incorrect implementation logic",
+        "3-value BVA will detect the defect because testing orderTotal = 99, 100, and 101 highlights the missing discount at the critical boundary",
+        "Both approaches will detect the defect equally since they both test the boundary value around 100 thoroughly",
+        "Neither approach alone will reliably detect it without also performing equivalence partitioning on discount logic across ranges"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "3-value BVA tests the boundary value and adjacent values (99, 100, 101), making it more likely to expose off-by-one errors that 2-value BVA could miss, particularly when the implementation incorrectly excludes the boundary value itself."
+    },
+    {
+      "id": "q007",
+      "chapterSection": "4.2.2",
+      "questionText": "A system allows numeric ratings from 1 to 5 stars, including decimal values like 3.5 or 4.7. When applying boundary value analysis, what is the most important consideration for ensuring meaningful coverage?",
+      "options": [
+        "BVA cannot be applied effectively because decimal values generate infinite intermediate partitions that cannot be reasonably tested",
+        "BVA can only be applied if decimal inputs are treated as invalid and appropriate error handling is tested for each invalid value",
+        "BVA should target integer boundaries exclusively, ignoring the impact of fractional ratings on system behavior",
+        "BVA requires well-defined, ordered partitions, so decimals must first be grouped into meaningful ranges before testing boundaries"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "BVA applies only to ordered partitions. With decimals, partitions must be defined (e.g., 1.0-1.9, 2.0-2.9) to create meaningful boundaries. This allows BVA to systematically test critical edges within the defined ranges."
+    },
+    {
+      "id": "q008",
+      "chapterSection": "4.2.3",
+      "questionText": "An insurance system calculates premiums based on driver age (under 25 / 25+), accident history (clean / has accidents), and vehicle type (economy / luxury). Luxury vehicles require additional verification regardless of other factors. How should a decision table be structured to ensure complete condition coverage?",
+      "options": [
+        "Construct eight columns covering all combinations of conditions, marking luxury vehicle scenarios with extra verification actions",
+        "Create separate decision tables for each vehicle type since luxury vehicles follow a distinct set of business rules",
+        "Use extended-entry format including age ranges and accident counts rather than boolean true/false values for more granular coverage",
+        "Reduce the table by merging columns where luxury vehicle condition renders other factors irrelevant for action outcomes"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Decision table testing requires covering all condition combinations. With three binary inputs, 2³ = 8 columns are needed. Luxury vehicle verification can be represented as an action in all columns where vehicle type = luxury, ensuring systematic coverage as per the syllabus."
+    },
+    {
+      "id": "q009",
+      "chapterSection": "4.2.3",
+      "questionText": "In a decision table, several columns have identical actions despite differing condition combinations. A colleague suggests merging these columns to reduce test cases. What is the proper approach to maintain test validity?",
+      "options": [
+        "Merge columns immediately because identical actions imply the underlying conditions are irrelevant to system outcomes",
+        "Keep columns separate to ensure traceability between each unique condition combination and its intended action",
+        "Merge only if analysis confirms that the differing conditions truly do not affect the action, applying proper minimization techniques",
+        "Convert the table to an extended-entry format to handle multiple similar condition combinations more efficiently"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Columns should only be merged if conditions are confirmed to be irrelevant to the outcome. Identical actions alone do not justify merging, as differing conditions may represent distinct business scenarios. Proper minimization preserves both coverage and traceability."
+    },
+    {
+      "id": "q010",
+      "chapterSection": "4.2.3",
+      "questionText": "A decision table has 15 columns, 3 of which are infeasible (marked N/A). Test cases have executed 10 of the remaining feasible columns. What is the appropriate coverage percentage calculation according to decision table testing principles?",
+      "options": [
+        "Coverage is 67% because all original columns, including infeasible ones, must be counted for accurate measurement",
+        "Coverage is 83% because only feasible columns are considered in coverage calculations and the executed columns are divided by 12",
+        "Coverage is effectively 100% since infeasible columns cannot be tested and are ignored in practical coverage assessments",
+        "Coverage cannot be calculated without specifying the exact condition combinations exercised during test execution"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Decision table coverage is calculated based on feasible columns only. With 15 total columns minus 3 infeasible ones, there are 12 feasible columns. Testing 10 gives 10/12 = 83% coverage, consistent with syllabus guidance."
+    },
+    {
+      "id": "q011",
+      "chapterSection": "4.2.4",
+      "questionText": "A mobile app session can be in states: LoggedOut, LoggedIn, Suspended, or Expired. The transition from LoggedIn to Suspended occurs when 'inactivity > 30min [battery < 10%] / save_session'. How should this transition be represented in a state table to correctly capture events, guards, and actions?",
+      "options": [
+        "Create multiple rows for LoggedIn state, one for each battery condition to handle guard variations accurately",
+        "Use a single LoggedIn row with the 'inactivity > 30min' event, specifying battery guard and save_session action in the cell",
+        "Split the transition into two steps: LoggedIn to Intermediate, then Intermediate to Suspended based on battery levels",
+        "Combine the event and guard into one compound event in the table cell since both must occur simultaneously"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "State tables use rows for states and columns for events with guard conditions. Transitions are represented in the cells containing the target state and associated actions. Here, the LoggedIn row under the inactivity event column should include the guard [battery < 10%] and the action save_session."
+    },
+    {
+      "id": "q012",
+      "chapterSection": "4.2.4",
+      "questionText": "A system has 6 states and 12 valid transitions. Your test suite achieves 100% all states coverage using 3 test cases. What can you infer about your valid transitions coverage?",
+      "options": [
+        "Valid transitions coverage is 100% since visiting all states inherently exercises every transition in the system",
+        "Valid transitions coverage may be less than 100% because reaching all states can be done without exercising all transitions",
+        "Valid transitions coverage cannot be determined reliably without analyzing the specific paths executed in each test case",
+        "Valid transitions coverage is irrelevant because all states coverage provides equivalent defect detection effectiveness"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All states coverage only ensures that each state is visited at least once, but multiple states can be reached through subsets of transitions. Therefore, all transitions may not have been executed, making valid transitions coverage likely below 100%."
+    },
+    {
+      "id": "q013",
+      "chapterSection": "4.2.4",
+      "questionText": "During state transition testing, attempting an invalid transition (Login from LoggedIn) caused a system crash instead of proper error handling. How should this finding influence your coverage strategy?",
+      "options": [
+        "Focus exclusively on valid transitions since invalid transitions represent atypical user behavior outside standard system scope",
+        "Adopt all transitions coverage to systematically include valid and invalid transitions, enhancing system robustness",
+        "Switch to all states coverage as transition-based testing is unsuitable for an unstable system",
+        "Add experience-based exploratory testing to complement state testing rather than adjusting coverage requirements"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All transitions coverage includes both valid and invalid transitions. Detecting crashes on invalid transitions shows the importance of testing these paths, as all transitions coverage is designed to uncover error-handling defects and improve robustness."
+    },
+    {
+      "id": "q014",
+      "chapterSection": "4.2.4",
+      "questionText": "A safety-critical medical device has 8 states and 20 valid transitions. The test manager requests guidance on minimum coverage for testing. What is the best recommendation according to syllabus guidance?",
+      "options": [
+        "All states coverage is adequate since safety-critical systems mainly require state validation rather than full transition testing",
+        "Valid transitions coverage offers a balance between thoroughness and execution efficiency for safety-critical domains",
+        "Experience-based testing is optimal because safety-critical systems benefit more from expert knowledge than systematic coverage",
+        "All transitions coverage is required as a minimum because safety-critical systems must test every valid and invalid transition"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "For safety-critical systems, all transitions coverage is recommended as a minimum to guarantee that every state and transition, including invalid ones, is tested, ensuring robust handling of all possible system behaviors."
+    },
+    {
+      "id": "q015",
+      "chapterSection": "4.1",
+      "questionText": "A legacy system undergoes major architectural changes but retains the same external interfaces and functionality. Which test techniques will be most affected by these implementation changes?",
+      "options": [
+        "Black-box and experience-based techniques, since they depend on external behavior or tester intuition rather than code structure",
+        "White-box and experience-based techniques, since structural changes affect design-based testing and knowledge-based exploratory approaches",
+        "Only white-box techniques, because black-box and experience-based testing rely solely on external specifications and observations",
+        "All three techniques equally, as any system change mandates comprehensive revision of all test approaches"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "White-box techniques depend on code and design structure, while experience-based techniques rely on tester knowledge of the system internals. Both are significantly affected by architectural changes, while black-box testing remains valid since functional behavior has not changed."
+    },
+    {
+      "id": "q016",
+      "chapterSection": "4.2.1",
+      "questionText": "A web form validates email addresses: must contain '@', domain 2-4 characters, no spaces, maximum 50 characters. A tester creates partitions: valid emails, emails missing '@', emails with invalid domains, emails with spaces, emails exceeding 50 characters. What is the main issue with this partitioning approach?",
+      "options": [
+        "Partitions overlap because a single email can violate multiple rules, violating the non-overlapping requirement for equivalence partitioning",
+        "Invalid partitions exceed valid ones, leading to unbalanced coverage and potential focus on rare error conditions",
+        "Partitions are excessively granular and should be simplified into just valid and invalid categories for efficiency",
+        "No issues exist; the partitioning correctly reflects distinct equivalence classes for comprehensive testing"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Equivalence partitions must be mutually exclusive and non-empty. Some emails can simultaneously violate multiple rules (e.g., contain spaces and exceed 50 characters), creating overlapping partitions, which is invalid according to syllabus guidance."
+    },
+    {
+      "id": "q017",
+      "chapterSection": "4.2.2",
+      "questionText": "A temperature monitoring system triggers alerts based on ranges: Cold (<10°C), Normal (10-30°C), Warm (30-50°C), Hot (>50°C). Using 3-value boundary value analysis, which temperatures should be tested for the Normal range boundaries?",
+      "options": [
+        "Test 9, 10, 11 for the lower boundary and 29, 30, 31 for the upper boundary to cover each boundary and its neighbors",
+        "Test 10, 20, 30 representing only the minimum, midpoint, and maximum of the Normal range for basic coverage",
+        "Test 10, 30 for boundaries and 20 as midpoint to include essential representative values for the range",
+        "Test 8, 9, 10, 30, 31, 32 to provide extended neighbor coverage beyond standard boundary analysis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "3-value BVA requires testing each boundary plus both immediate neighbors. For Normal range, lower boundary is 10°C (neighbors 9 and 11) and upper boundary is 30°C (neighbors 29 and 31), ensuring complete boundary analysis."
+    },
+    {
+      "id": "q018",
+      "chapterSection": "4.2.3",
+      "questionText": "A loan approval system has conditions: Credit Score (Good/Poor), Income (High/Low), Collateral (Yes/No), First-time Buyer (Yes/No). Regulation mandates that first-time buyers with good credit are approved regardless of other factors. How should this affect decision table structure?",
+      "options": [
+        "Create 16 columns for all combinations, marking first-time buyer + good credit combinations with approval actions",
+        "Use extended-entry format to efficiently manage the regulatory override condition instead of standard boolean columns",
+        "Minimize the table by merging columns where first-time buyer = Yes and credit score = Good make income and collateral irrelevant",
+        "Split into separate decision tables for first-time and existing buyers since rules differ fundamentally"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Columns where first-time buyer = Yes and credit score = Good make other conditions irrelevant due to regulatory override. These columns can be merged using the '-' notation, simplifying the table without losing coverage for relevant conditions."
+    },
+    {
+      "id": "q019",
+      "chapterSection": "4.2.4",
+      "questionText": "An e-commerce order state machine includes payment timeout transitions that occur only under specific system load conditions. How should these transitions be treated in coverage measurement?",
+      "options": [
+        "Exclude them from coverage since they are exceptional conditions outside normal operation and irrelevant for testing",
+        "Include them as valid transitions while documenting the environmental constraints needed for execution in testing plans",
+        "Treat them as invalid transitions because they cannot be reliably executed in the current test environment",
+        "Simulate the transitions using mocks to achieve coverage without depending on actual load conditions"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Valid transitions coverage includes all defined system behaviors. Even if some transitions are difficult to reproduce, they must be counted in coverage, with documentation of constraints and strategies like simulation or controlled load testing to ensure they are exercised."
+    },
+    {
+      "id": "q020",
+      "chapterSection": "4.1",
+      "questionText": "A testing team uses equivalence partitioning (black-box), statement coverage (white-box), and exploratory testing (experience-based) on a complex financial module. What is the main advantage of combining these techniques?",
+      "options": [
+        "Redundant coverage ensures that multiple techniques will detect the same defects and improve confidence in results",
+        "Comprehensive coverage, since each technique targets different defect types that might be missed by the others",
+        "Efficient resource allocation by allowing testers to select the most appropriate technique for each scenario",
+        "Simplified test management because multiple techniques can be executed simultaneously without coordination overhead"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Combining techniques provides complementary coverage: black-box tests requirements, white-box tests implementation, and experience-based testing detects defects missed by systematic approaches. This ensures more comprehensive defect detection across all perspectives."
+    },
+    {
+      "id": "q021",
+      "chapterSection": "4.2.1",
+      "questionText": "A system processes student grades with ranges A-F and Invalid. A tester claims only valid versus invalid partitions are needed. Why is this reasoning flawed in testing equivalence classes?",
+      "options": [
+        "It assumes numeric validity alone defines partitions, ignoring differences in how each grade range triggers specific processing or calculations in the system",
+        "It does not account for boundary values, which can reveal errors when inputs sit at the limits of each grade range during testing",
+        "Different grade ranges trigger distinct processing logic such as GPA or letter assignment, requiring separate partitions for accurate equivalence class testing",
+        "It oversimplifies validation rules and ignores that multiple distinct grade categories require separate partitions to reflect the system’s expected behavior"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Even though grades 0-100 are numerically valid, each grade range triggers different processing like letter assignment and GPA calculations. Equivalence partitions must reflect these differences."
+    },
+    {
+      "id": "q022",
+      "chapterSection": "4.2.2",
+      "questionText": "A date function accepts years 1900-2100, but February 29 is only valid in leap years. How does this conditional rule complicate boundary value analysis for February dates?",
+      "options": [
+        "It makes standard boundary value analysis difficult because the technique assumes fixed boundaries for each input variable without external conditions affecting them",
+        "February 28/29 boundaries change based on the year, creating context-dependent conditions that must be analyzed separately for leap and non-leap years carefully",
+        "Boundary value analysis alone cannot fully account for conditional logic based on year, forcing a switch to decision table testing for correct validation",
+        "The leap year rule defines clear partitions, separating leap year and non-leap year scenarios, but complicates analysis since the boundaries vary dynamically by year"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Leap years change February’s valid boundaries (28 vs 29), so BVA must consider multiple scenarios. The boundary values shift based on the year, requiring separate analysis."
+    },
+    {
+      "id": "q023",
+      "chapterSection": "4.2.3",
+      "questionText": "A decision table for insurance claims grows to 64 columns due to 6 conditions. How can test effectiveness be maintained while reducing the total number of test cases?",
+      "options": [
+        "Use risk-based testing to focus on the most important combinations while reducing execution effort without compromising overall effectiveness of testing activities",
+        "Convert the table to extended-entry format to efficiently represent multiple condition values and reduce the overall number of redundant boolean decision rules",
+        "Minimize the table by merging columns where some conditions do not affect the resulting actions, reducing the number of tests required without losing coverage",
+        "Split the table into smaller functional groups or sub-tables to make it manageable while maintaining coverage of all necessary decision logic systematically"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Risk-based testing focuses on the most important conditions, reducing test case volume while preserving coverage of high-impact decision rules."
+    },
+    {
+      "id": "q024",
+      "chapterSection": "4.2.4",
+      "questionText": "In a state transition diagram, one event from 'Processing' fails consistently, leaving the system stuck. How does this failure affect valid transitions coverage measurement?",
+      "options": [
+        "Coverage remains accurate because attempted transitions count toward measurement even if the system fails to execute the expected state change successfully",
+        "All states coverage is affected since the target state for the failed event cannot be reached during testing, which prevents full state coverage",
+        "Coverage calculation is invalid because the stuck state indicates fundamental flaws in the state machine design that prevent proper measurement",
+        "Valid transitions coverage decreases since one expected transition is never executed successfully, reducing the percentage of exercised valid transitions in testing"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Valid transitions coverage measures executed transitions. If a transition consistently fails, it is not exercised, so coverage decreases. Failed transitions reduce the percentage of valid transitions covered."
+    },
+    {
+      "id": "q025",
+      "chapterSection": "4.2.1",
+      "questionText": "ZIP code input '12345' triggers different shipping logic from '90210', though both are valid. How should equivalence partitions handle this scenario?",
+      "options": [
+        "Both are valid format-wise and could belong in a single partition if only format is tested, ignoring differences in business processing logic entirely",
+        "Same partition for format validation, but separate partitions are needed for business logic to reflect the differences in shipping cost calculations correctly",
+        "Different partitions should be used because each ZIP code triggers unique shipping cost calculations and is processed differently by the system",
+        "Different partitions only if ZIP code validation explicitly checks geography; otherwise, format-based partitioning is sufficient for basic testing purposes"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Even if inputs meet format requirements, they are processed differently (shipping costs), so they belong in separate equivalence partitions."
+    },
+    {
+      "id": "q026",
+      "chapterSection": "4.3.1",
+      "questionText": "A module with 50 statements executes 45, but one critical division is never tested with zero denominator. What can be concluded about testing completeness?",
+      "options": [
+        "Statement coverage of 90% is sufficient since the critical calculation executed, indicating the code works correctly under typical input conditions",
+        "Coverage of 90% may still miss data-dependent defects like division by zero, which requires specific test inputs to reveal potential runtime errors",
+        "Statement coverage is incomplete at 90%, so reliable conclusions about code quality require reaching full 100% coverage first to ensure defect detection",
+        "90% coverage exceeds typical industry standards, suggesting the remaining untested statements are likely unreachable and pose minimal risk to the system"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Statement coverage alone cannot reveal data-dependent defects. The division statement was executed but not tested for zero denominator, leaving potential defects unexposed."
+    },
+    {
+      "id": "q027",
+      "chapterSection": "4.3.1",
+      "questionText": "A developer claims 100% statement coverage proves no defects exist. What is the flaw in this logic?",
+      "options": [
+        "Statement coverage only measures how often code is executed and does not verify the correctness of logic or calculations performed in executed statements",
+        "Coverage ignores non-executable statements that could contain critical errors in declarations, configurations, or setup affecting overall system behavior indirectly",
+        "Statement coverage is static and cannot guarantee that all runtime conditions or interactions between modules are exercised during testing of the module",
+        "Achieving full statement coverage does not ensure all branch or decision logic paths were executed, leaving defects in conditional paths undetected by tests"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "100% statement coverage does not guarantee that all decision paths or branches are executed, leaving logic defects undetected."
+    },
+    {
+      "id": "q028",
+      "chapterSection": "4.3.2",
+      "questionText": "A function has 1 if-statement and a switch with 4 cases, totaling 8 branches. Your tests execute the 'if' path, 3 switch cases, plus all unconditional transfers. What is branch coverage?",
+      "options": [
+        "75% because 6 out of 8 total branches were exercised including both conditional and unconditional transfers during the executed test cases",
+        "87.5% since 7 of 8 branches were exercised including the if path, 3 switch cases, and all unconditional transfers as defined in the control flow",
+        "62.5% because only conditional branches are considered and 5 out of the 8 conditional branches were executed during the current set of tests",
+        "Branch coverage cannot be accurately calculated without separating conditional and unconditional branches and counting each one exercised during testing"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Branch coverage includes conditional and unconditional branches. 7 out of 8 executed gives 87.5% coverage."
+    },
+    {
+      "id": "q029",
+      "chapterSection": "4.3.2",
+      "questionText": "A module achieves 100% branch coverage but a defect occurs only when three consecutive if-statements are executed in a specific combination. Why was this defect not detected?",
+      "options": [
+        "Branch coverage was measured incorrectly, since true defects indicate some branches or sequences were not actually exercised by the test cases",
+        "Branch coverage focuses on conditional logic but cannot detect defects in sequences of unconditional or straight-line code executed in a particular order",
+        "Branch coverage alone is insufficient for complex modules; supplementing with statement coverage or path testing would have revealed the defect scenario",
+        "It tests individual branches but cannot ensure specific paths requiring multiple branch sequences are executed, leaving path-dependent defects undetected"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Branch coverage ensures individual branches are tested but does not guarantee all specific sequences of branches are executed, so path-dependent defects remain undetected."
+    },
+    {
+      "id": "q030",
+      "chapterSection": "4.3.2",
+      "questionText": "Branch coverage is 85% and statement coverage is 95% for the same module. A colleague expects them to match. What explains the discrepancy?",
+      "options": [
+        "The measurements are incorrect because branch coverage should always equal or exceed statement coverage, so a lower percentage indicates a reporting error",
+        "This is impossible because the syllabus states branch coverage inherently subsumes statement coverage, making statement coverage higher theoretically invalid",
+        "Some statements were executed without exercising all associated branches, which shows a misinterpretation of coverage metrics rather than a calculation error",
+        "Branch coverage cannot exceed statement coverage, so 95% statement coverage with 85% branch coverage indicates a measurement or calculation mistake"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Branch coverage subsumes statement coverage. Statement coverage exceeding branch coverage is impossible, indicating a calculation or measurement error."
+    },
+    {
+      "id": "q031",
+      "chapterSection": "4.3.3",
+      "questionText": "A legacy system has outdated documentation but available source code. The test manager proposes using only white-box testing. What is the main risk of this approach?",
+      "options": [
+        "White-box testing requires executable code, so missing or unimplemented features may go undetected despite code being available for inspection",
+        "White-box testing cannot measure coverage objectively when specifications are incomplete, leaving gaps in testing that might affect system quality",
+        "White-box testing focuses only on implemented logic, so missing functionality or omitted requirements may remain undetected by the tests",
+        "White-box testing can be complex for legacy systems and may not be feasible compared to simpler experience-based or exploratory testing approaches"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "White-box testing validates what is implemented, but cannot detect missing requirements or functionality that should have been implemented but wasn’t."
+    },
+    {
+      "id": "q032",
+      "chapterSection": "4.3.3",
+      "questionText": "A team wants to review pseudocode and high-level logic before implementation. Which white-box technique is most appropriate for pre-implementation validation?",
+      "options": [
+        "Use statement coverage to verify that all pseudocode statements are accounted for and correctly designed for potential execution paths",
+        "Apply branch coverage analysis to ensure all decision points and alternative paths are identified in the pseudocode prior to coding",
+        "Use static white-box testing with control flow graph modeling to analyze the logic and possible paths of the pseudocode effectively",
+        "Use dynamic white-box testing to simulate pseudocode execution with test data before actual code implementation takes place"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Static white-box testing using control flow graph modeling is ideal for reviewing pseudocode before it is executable, ensuring all logic paths are considered."
+    },
+    {
+      "id": "q033",
+      "chapterSection": "4.3.1",
+      "questionText": "A safety-critical system has 1,000 statements. Your tests cover 980. Regulatory requirements mandate testing all statements. What should you do next?",
+      "options": [
+        "Analyze the 20 uncovered statements to determine reachability and create additional tests for those that can actually be executed",
+        "Document the 98% coverage as sufficient because it exceeds industry norms for typical code coverage in less critical systems",
+        "Focus on branch coverage next, since statement coverage alone does not provide full validation for safety-critical systems",
+        "Add black-box testing to complement white-box testing, ensuring all functional requirements are verified even if coverage is incomplete"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Safety-critical systems require 100% statement coverage. Any uncovered statements must be analyzed and tested or justified as unreachable code."
+    },
+    {
+      "id": "q034",
+      "chapterSection": "4.3.2",
+      "questionText": "A module contains nested loops and multiple switches totaling 45 branches. What branch coverage level ensures all decision outcomes are tested at least once?",
+      "options": [
+        "50% coverage may test major paths but leaves many decisions unverified and risks missing important outcomes in the logic",
+        "75% coverage balances practical testing effort and risk but still leaves some branches, loops, and cases untested in the control flow",
+        "100% coverage is necessary to ensure every decision outcome, including loop exits and switch cases, is executed by at least one test",
+        "Coverage percentage is less important than focusing on critical branches, so testing priority should be based on business logic impact"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "100% branch coverage ensures all conditional and unconditional branches are exercised, guaranteeing that every decision outcome is tested at least once."
+    },
+    {
+      "id": "q035",
+      "chapterSection": "4.3.3",
+      "questionText": "Black-box tests based on requirements are combined with white-box tests for coverage. White-box tests reveal code paths not exercised by black-box tests. What does this indicate?",
+      "options": [
+        "Black-box tests are insufficient to cover all code paths and should be expanded to match white-box coverage for completeness",
+        "White-box tests have identified implementation details that exist in the code but may not correspond directly to specified requirements",
+        "Both test approaches overlap and are redundant, indicating duplication of effort that should be eliminated in future projects",
+        "Combining black-box and white-box testing is inappropriate, as the methods should be applied independently in different projects"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "White-box testing can detect code paths not captured by requirements-based black-box tests. These may represent implementation details or unlisted functionality."
+    },
+    {
+      "id": "q036",
+      "chapterSection": "4.3.1",
+      "questionText": "During statement coverage, 15 statements in a 200-statement module are never executed. They handle old edge cases not in current requirements. How should you proceed?",
+      "options": [
+        "Create test cases to execute these statements since they exist in the code and represent actual functionality that could affect system behavior",
+        "Mark them as unreachable code and exclude from coverage metrics, assuming the old design scenarios are irrelevant for current functionality",
+        "Focus on the 185 reachable statements and ignore the edge case statements as they likely represent obsolete or deprecated functionality",
+        "Document them as technical debt and prioritize their removal in future development cycles without testing their current execution"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "All executable statements should be tested, regardless of documentation, because they exist in the code and could impact system behavior if left untested."
+    },
+    {
+      "id": "q037",
+      "chapterSection": "4.3.2",
+      "questionText": "A complex function has nested if-statements and a large switch block. The developer claims all lines are executed. What additional analysis is recommended?",
+      "options": [
+        "Verify statement coverage metrics to confirm the reported line execution is accurate and mathematically validated",
+        "Perform branch coverage analysis to ensure all decision outcomes and possible paths through conditional logic are tested adequately",
+        "Apply boundary value analysis to input parameters to complement existing coverage and check edge conditions that may trigger defects",
+        "Use static analysis to identify potential defects that may not be revealed through dynamic execution of existing test cases"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Statement coverage alone does not guarantee all decision outcomes are tested. Branch coverage is necessary for functions with multiple nested decisions."
+    },
+    {
+      "id": "q038",
+      "chapterSection": "4.4.1",
+      "questionText": "A mobile banking app has past security incidents from input validation failures. For a new transfer feature, which error guessing approach is most systematic?",
+      "options": [
+        "Create a list of known input validation vulnerabilities and design specific tests for each potential fault systematically",
+        "Apply random error injection across all fields to simulate unpredictable usage and uncover hidden defects in input handling",
+        "Focus on boundary value analysis since most input validation errors occur at parameter limits or edge cases in the application",
+        "Rely on intuitive testing based on general knowledge of common failures without structured planning or systematic preparation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Fault attacks are a methodical approach to error guessing, where testers create a systematic list of potential errors and design tests to detect each one."
+    },
+    {
+      "id": "q039",
+      "chapterSection": "4.4.1",
+      "questionText": "During error guessing on a web app, six potential issue categories are identified. A team member suggests focusing only on past defect areas. What is the limitation?",
+      "options": [
+        "Historical defects may not reflect current practices and could miss new error types introduced by recent development changes",
+        "Ignoring systematic fault attacks means some categories or error types could be overlooked if focusing only on historical failures",
+        "Error guessing should remain intuitive and flexible rather than constrained strictly by past defect patterns or categories",
+        "The six identified categories are incomplete and should be expanded to include performance, security, and other testing considerations"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Focusing only on previous defects may miss newly introduced error patterns, especially if development practices or technologies have changed."
+    },
+    {
+      "id": "q040",
+      "chapterSection": "4.4.2",
+      "questionText": "A startup is developing a social media prototype with unclear requirements and tight deadlines. Which testing approach is most appropriate initially?",
+      "options": [
+        "Develop systematic black-box test cases to ensure coverage despite unclear requirements, analyzing each function independently",
+        "Focus on white-box testing to understand implementation details, since unreliable requirements make specification-based testing difficult",
+        "Apply exploratory testing to simultaneously learn the application behavior and identify defects under time constraints and requirement ambiguity",
+        "Delay testing until requirements are clarified, because effective testing requires well-defined specifications and test conditions before execution"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Exploratory testing is effective when specifications are inadequate or time is limited, allowing testers to learn the system while detecting defects."
+    },
+    {
+      "id": "q041",
+      "chapterSection": "4.4.2",
+      "questionText": "During a 2-hour exploratory session, the tester finds browser-specific behavior differences but cannot test all combinations. How should this be handled in session-based testing?",
+      "options": [
+        "Extend the session beyond the time-box to complete comprehensive browser testing since the discovery is critical for quality assurance",
+        "Switch to formal test case design for browser testing, as exploratory testing is insufficient for systematic compatibility verification",
+        "Abandon the current session and start a new one focused specifically on testing browser compatibility thoroughly",
+        "Document the browser compatibility findings in session sheets and plan subsequent sessions to cover full browser testing"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Session-based exploratory testing is time-boxed. Discoveries should be documented and used to guide subsequent sessions for systematic coverage."
+    },
+    {
+      "id": "q042",
+      "chapterSection": "4.4.2",
+      "questionText": "A senior tester with domain experience and a junior tester with strong analytical skills perform exploratory testing. How is their effectiveness likely to differ?",
+      "options": [
+        "Both testers should perform equally well since exploratory testing relies on systematic application rather than experience differences",
+        "The junior tester may outperform the senior because they approach the system without preconceptions about expected behavior",
+        "The senior tester is likely more effective due to domain knowledge, while the junior may find different issue types",
+        "Effectiveness depends entirely on the application domain rather than individual tester experience or analytical skill differences"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Experienced testers with domain knowledge are generally more effective, but less experienced testers can still find different issues due to fresh analytical perspectives."
+    },
+    {
+      "id": "q043",
+      "chapterSection": "4.4.2",
+      "questionText": "A test manager suggests using exploratory testing as the primary technique for a safety-critical medical device. What is the main concern with this approach?",
+      "options": [
+        "Exploratory testing lacks systematic coverage and documentation required for regulatory compliance in safety-critical systems",
+        "Exploratory testing is too time-consuming for safety-critical systems requiring rapid deployment of verified functionality",
+        "Exploratory testing cannot integrate other testing techniques needed for comprehensive validation of critical functionality",
+        "Exploratory testing requires excessive expertise which may not be available for specialized medical device projects"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Safety-critical systems require documented, systematic testing approaches for regulatory compliance. Exploratory testing alone lacks formal coverage and traceability."
+    },
+    {
+      "id": "q044",
+      "chapterSection": "4.4.3",
+      "questionText": "A usability checklist contains items like 'user-friendly,' 'navigation intuitive,' and 'performance acceptable.' What is the main problem with this approach?",
+      "options": [
+        "The checklist items are too general and subjective to provide actionable guidance or measurable evaluation criteria",
+        "The checklist emphasizes non-functional areas while functional defects may remain undetected during testing",
+        "The checklist contains items that are better suited for automated validation rather than manual inspection",
+        "The checklist lacks technical detail about system architecture necessary for comprehensive testing coverage"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Checklist items must be specific and measurable. Subjective terms like 'user-friendly' or 'intuitive' do not provide actionable guidance for testing."
+    },
+    {
+      "id": "q045",
+      "chapterSection": "4.4.3",
+      "questionText": "After six months using a functional checklist, fewer defects are found in previously covered areas, while new high-severity defects appear elsewhere. What action is appropriate?",
+      "options": [
+        "Expand the checklist to include all functional areas to avoid future oversight of defects in any module",
+        "Replace checklist-based testing with more systematic black-box techniques for guaranteed comprehensive coverage",
+        "Update the checklist by removing less effective items and adding new entries based on recent defect analysis",
+        "Maintain the current checklist since the drop in defect detection indicates improved quality rather than checklist limitations"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Checklists should evolve based on defect patterns. Remove obsolete items and add new ones reflecting recent high-severity defects to maintain effectiveness."
+    },
+    {
+      "id": "q046",
+      "chapterSection": "4.4.3",
+      "questionText": "A project has detailed tests for core functionality but lacks edge case testing. The test manager suggests supplementing with checklist-based testing. What is the main benefit?",
+      "options": [
+        "Checklist testing provides rigorous coverage metrics and quantitative analysis compared to standard test execution",
+        "Checklist testing can be automated to reduce manual effort for edge cases and error handling scenarios",
+        "Checklist testing removes reliance on tester experience or domain knowledge by providing fully structured guidance",
+        "Checklist testing offers structured guidance for areas not covered by detailed test cases while allowing variability in testing"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Checklists supplement detailed test cases by providing guidance for areas like edge cases or error handling, while still allowing variability in testing execution."
+    },
+    {
+      "id": "q047",
+      "chapterSection": "4.4.1",
+      "questionText": "A team struggles with interface defects, particularly parameter mismatches and type incompatibilities. When applying error guessing to a new integration module, which errors should be prioritized?",
+      "options": [
+        "Input validation and output formatting errors since interfaces primarily handle data transformation between modules",
+        "Logic and computation errors as integration modules typically contain complex business rule calculations",
+        "Interface-specific errors such as parameter mismatches and type incompatibilities based on the team's historical defect patterns",
+        "All error categories equally to ensure systematic coverage without bias from historical defect trends"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Error guessing focuses on likely defect types based on experience. Since the team has historically faced interface defects, these should be prioritized."
+    },
+    {
+      "id": "q048",
+      "chapterSection": "4.5.1",
+      "questionText": "A user story states: 'As a user, I want the system to work fast so I can be productive.' What is the main concern according to INVEST criteria?",
+      "options": [
+        "The story is not independent as it relies on other system components that cannot be developed separately",
+        "The story is not valuable because it fails to specify which user role benefits from the performance improvement",
+        "The story is not testable or estimable since terms like 'fast' and 'productive' are subjective and unmeasurable",
+        "The story is too large because performance optimization typically requires multiple iterations and development effort"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "User stories must be testable. Subjective terms like 'fast' or 'productive' do not provide measurable acceptance criteria, making testing and estimation unreliable."
+    },
+    {
+      "id": "q049",
+      "chapterSection": "4.5.1",
+      "questionText": "During collaborative user story creation, stakeholders, developers, and testers contribute different perspectives. What is the primary value of this multi-perspective approach?",
+      "options": [
+        "Each perspective brings expertise preventing defects in their respective areas during development",
+        "Collaboration reduces the need for formal documentation since verbal communication suffices for clarity",
+        "Different viewpoints create conflict that encourages innovation and competitive solution development",
+        "Multiple perspectives ensure comprehensive coverage addressing business value, implementation reality, and quality risks together"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Collaboration ensures a shared vision encompassing business value, technical feasibility, and quality considerations, leading to more comprehensive understanding and coverage."
+    },
+    {
+      "id": "q050",
+      "chapterSection": "4.5.2",
+      "questionText": "A mobile banking user story includes acceptance criteria for successful transfers and scenarios like insufficient funds, invalid accounts, or network failures. Why include negative scenarios?",
+      "options": [
+        "Negative scenarios ensure robust testing by validating that error handling and recovery mechanisms work correctly under failure conditions",
+        "Negative scenarios define scope boundaries by identifying functionality excluded from the user story explicitly",
+        "Negative scenarios help produce realistic effort estimates by accounting for extra complexity in handling exceptions",
+        "Negative scenarios show stakeholder awareness of potential system limitations and constraints that could affect usage"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acceptance criteria should cover positive and negative scenarios. Including failure scenarios ensures error handling and exception cases are properly tested."
+    },
+    {
+      "id": "q051",
+      "chapterSection": "4.5.2",
+      "questionText": "Two teams use different formats for acceptance criteria: Given/When/Then and bullet-point lists. How should you explain these differences?",
+      "options": [
+        "Given/When/Then is superior for BDD and automation purposes in structured testing frameworks",
+        "Bullet-point lists are more efficient, requiring less documentation and enabling faster development iterations",
+        "Both formats are acceptable if the acceptance criteria are well-defined and unambiguous for the team context",
+        "Consistency across teams is critical for organizational standards and maintaining effective communication"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Acceptance criteria can use either format, or custom ones, as long as they are clear, unambiguous, and fit the team's context."
+    },
+    {
+      "id": "q052",
+      "chapterSection": "4.5.3",
+      "questionText": "During an ATDD workshop, a user story has unclear requirements and conflicting stakeholder expectations. How should this be handled?",
+      "options": [
+        "Proceed with test creation based on standard password reset patterns and best practices from the industry",
+        "Postpone the workshop until stakeholders provide complete and consistent requirements documentation",
+        "Resolve all incompleteness, ambiguities, and conflicts collaboratively during the workshop before creating tests",
+        "Create multiple test variations to cover all stakeholder perspectives and let implementation determine the final behavior"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "ATDD workshops resolve ambiguities and conflicts collaboratively before test creation, ensuring shared understanding among team members."
+    },
+    {
+      "id": "q053",
+      "chapterSection": "4.5.3",
+      "questionText": "An ATDD team sequences tests: first positive, then negative, then performance. What principle guides this sequence?",
+      "options": [
+        "Risk-based prioritization ensures critical functionality is tested first before edge cases or exceptions",
+        "Progressive complexity builds understanding from simple success paths through error handling to quality attributes",
+        "Development efficiency allows implementation of core functionality before handling exceptions and optimization",
+        "Stakeholder engagement ensures focus on primary use cases before addressing technical and performance concerns"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "ATDD recommends building understanding progressively: start with positive tests, then negative, then non-functional attributes."
+    },
+    {
+      "id": "q054",
+      "chapterSection": "4.5.3",
+      "questionText": "A team writes ATDD test cases beyond the user story scope. They argue it provides better coverage. What is the main issue?",
+      "options": [
+        "Extended coverage increases maintenance effort and adds unnecessary complexity for automation execution",
+        "Comprehensive testing is inefficient because it duplicates effort that belongs in separate user stories",
+        "Extra test cases indicate poorly written stories that should anticipate all needed functionality",
+        "Additional testing violates ATDD principles since tests must cover the story without exceeding its scope"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "ATDD test cases must align exactly with the user story scope to maintain traceability and validate only the specified requirements."
+    },
+    {
+      "id": "q055",
+      "chapterSection": "4.5.1",
+      "questionText": "A story reads: 'As an admin, I want better error handling so users don't get confused.' Which 3 C's aspect is most missing?",
+      "options": [
+        "Card - the story format does not follow the proper role/goal/business value structure",
+        "Confirmation - the acceptance criteria lack measurable conditions for acceptable error handling",
+        "Conversation - insufficient dialogue exists about how error handling should actually function in practice",
+        "All three C's are missing since the story lacks sufficient detail for meaningful implementation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The primary issue is missing Conversation. The story is vague, lacking dialogue on how error handling should behave in practice."
+    },
+    {
+      "id": "q056",
+      "chapterSection": "4.5.3",
+      "questionText": "During ATDD, some acceptance tests require complex data and environment setup that's hard to automate. How should the team proceed?",
+      "options": [
+        "Modify acceptance criteria to avoid complex scenarios that are difficult to automate",
+        "Focus only on unit tests for complex scenarios since ATDD automation suits simpler criteria",
+        "Delay implementation until automation infrastructure supports all test scenarios fully",
+        "Implement automation gradually, starting with simple tests and using manual execution for complex cases"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Tests can be executed manually or automated. Complex scenarios can be maintained manually while automating simpler cases progressively."
+    },
+    {
+      "id": "q057",
+      "chapterSection": "4.5.2",
+      "questionText": "A stakeholder argues acceptance criteria should cover only the 'happy path' and leave error handling to technical tests. What's flawed here?",
+      "options": [
+        "Business value includes user experience during errors, so negative scenarios are essential",
+        "Acceptance criteria must be comprehensive to serve as the complete basis for story acceptance testing",
+        "Technical tests cannot validate business rules or user experience for error conditions adequately",
+        "Separating positive and negative scenarios risks leaving defects in production by creating coverage gaps"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Acceptance criteria serve as the basis for acceptance testing and must cover both positive and negative scenarios to ensure the story meets stakeholder expectations."
+    }
+  ]
+}

@@ -2,6 +2,7 @@ export { default as HomePage } from "./HomePage";
 export { default as QuizPage } from "./QuizPage";
 export { default as QuizQuestionsPage } from "./QuizQuestionsPage";
 export { default as ExamPage } from "./ExamPage";
+export { default as ExamReviewPage } from "./ExamReviewPage";
 export { default as QuizReviewPage } from "./QuizReviewPage";
 export { default as MindVaultPage } from "./MindVaultPage";
 export { default as MindVaultQuestionsPage } from "./MindVaultQuestionsPage";

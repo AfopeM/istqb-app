@@ -2,8 +2,8 @@
   "exams": [
     {
       "id": "exam-1",
-      "title": "Exam A",
-      "description": "Learn the core principles and fundamentals of software testing",
+      "title": "Exam 1",
+      "description": "A comprehensive set of 40 ISTQB practice questions covering testing principles, QA/QC, lifecycle models, test design techniques, review processes, metrics, automation, and risk-based testing.",
       "duration": 60,
       "numberOfQuestions": 40
     }

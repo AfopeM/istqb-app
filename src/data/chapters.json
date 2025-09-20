@@ -25,14 +25,14 @@
       "id": "chapter-4",
       "title": "Test Analysis and Design",
       "img": "home_card_image_4.jpg",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "description": "Learn systematic approaches to test case design"
     },
     {
       "id": "chapter-5",
       "title": "Managing the Test Activities",
       "img": "home_card_image_5.jpg",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "description": "Explore test planning, monitoring and control strategies"
     },
     {

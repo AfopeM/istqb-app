@@ -1,5 +1,6 @@
-import { Button, Tagline } from "../ui";
+import { Button, Tagline, MindVaultButton } from "../ui";
 import type { Question } from "../../types/quiz";
+import { useLocation } from "react-router-dom";
 
 interface ReviewCardProps {
   questions: Question[];
@@ -18,11 +19,28 @@ export default function ReviewCard({
   handlePrev,
   handleNext,
 }: ReviewCardProps) {
+  const location = useLocation();
+  const isExamReview = location.pathname.includes("/exam-review/");
+
   const currentQuestion = questions[currentIndex];
   const currentResult = results.find(
     (r) => r.questionId === currentQuestion.id,
   );
   const selectedAnswer = currentResult?.selectedIndex;
+
+  // Get exam ID from URL if it's an exam review
+  const getExamId = () => {
+    if (!isExamReview) return undefined;
+    const matches = location.pathname.match(/\/exam-review\/(exam-\d+)/);
+    const examId = matches ? matches[1] : undefined;
+    console.log("EXAM DEBUG - ReviewCard getExamId:", {
+      pathname: location.pathname,
+      matches,
+      examId,
+      isExamReview,
+    });
+    return examId;
+  };
 
   //  get option styles
   const getOptionStyles = (index: number) => {
@@ -82,12 +100,29 @@ export default function ReviewCard({
         </div>
 
         {/* SECTION TITLE */}
-        <Tagline>section {currentQuestion.chapterSection}</Tagline>
+        <div className="flex items-center gap-2">
+          <Tagline>section {currentQuestion.chapterSection}</Tagline>
+          {isExamReview ? (
+            <MindVaultButton
+              questionId={currentQuestion.id}
+              examId={getExamId()}
+              source="exam"
+              className="-mt-3"
+            />
+          ) : (
+            <MindVaultButton
+              questionId={currentQuestion.id}
+              chapterId={`chapter-${currentQuestion.chapterSection.split(".")[0]}`}
+              source="chapter"
+              className="-mt-3"
+            />
+          )}
+        </div>
 
         {/* QUESTION TEXT */}
         <div className="mb-6 font-bold whitespace-pre-line">
           {currentQuestion.questionText
-            .split(".")
+            .split(/(?<=[.:])/)
             .filter(Boolean)
             .map((line, index, arr) => (
               <p key={index} className="mb-4 text-lg leading-6 md:text-xl">

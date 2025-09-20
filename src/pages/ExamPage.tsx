@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import type { Question } from "../types/quiz";
 import { BackButton, ProgressBar, Button } from "../components/ui";
 import { Timer } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { toast } from "sonner";
 
 interface ExamState {
   currentQuestionIndex: number;
@@ -11,6 +13,25 @@ interface ExamState {
   isCompleted: boolean;
   score?: number;
 }
+
+// MindVault interfaces
+interface BaseMindVaultItem {
+  questionId: string;
+  source: "chapter" | "exam";
+}
+
+interface ExamMindVaultItem extends BaseMindVaultItem {
+  source: "exam";
+  examId: string;
+}
+
+type MindVaultItem =
+  | ExamMindVaultItem
+  | {
+      source: "chapter";
+      chapterId: string;
+      questionId: string;
+    };
 
 export default function ExamPage() {
   const { examId } = useParams();
@@ -22,6 +43,102 @@ export default function ExamPage() {
     timeRemaining: 60 * 60,
     isCompleted: false,
   });
+
+  // MindVault state
+  const [mindVault, setMindVault] = useLocalStorage<MindVaultItem[]>(
+    "MindVault",
+    [],
+  );
+
+  // Function to add failed questions to MindVault
+  const addFailedQuestionsToMindVault = useCallback(
+    (failedQuestions: Question[]) => {
+      if (!examId || failedQuestions.length === 0) return;
+
+      const newMindVaultItems: ExamMindVaultItem[] = failedQuestions.map(
+        (question) => ({
+          source: "exam" as const,
+          examId,
+          questionId: question.id,
+        }),
+      );
+
+      // Filter out duplicates by checking if the question is already in MindVault
+      const uniqueNewItems = newMindVaultItems.filter(
+        (newItem) =>
+          !mindVault.some(
+            (existingItem) =>
+              existingItem.source === "exam" &&
+              existingItem.questionId === newItem.questionId &&
+              (existingItem as ExamMindVaultItem).examId === newItem.examId,
+          ),
+      );
+
+      if (uniqueNewItems.length > 0) {
+        setMindVault((prev) => [...prev, ...uniqueNewItems]);
+        console.log(
+          `Added ${uniqueNewItems.length} failed questions to MindVault`,
+        );
+        toast.success(
+          `Added ${uniqueNewItems.length} failed question${uniqueNewItems.length > 1 ? "s" : ""} to your MindVault for review`,
+          { duration: 4000 },
+        );
+      }
+    },
+    [examId, mindVault, setMindVault],
+  );
+
+  const handleSubmitExam = useCallback(
+    (timerExpired: boolean = false) => {
+      // Calculate results
+      const results = questions.map((question, index) => ({
+        questionId: question.id,
+        selectedIndex: examState.answers[index] ?? -1,
+        isCorrect: examState.answers[index] === question.correctAnswerIndex,
+      }));
+
+      const score = results.filter((r) => r.isCorrect).length;
+
+      // Get failed questions to add to MindVault
+      const failedQuestions = questions.filter(
+        (_, index) =>
+          examState.answers[index] !== questions[index].correctAnswerIndex,
+      );
+
+      // Add failed questions to MindVault
+      if (failedQuestions.length > 0) {
+        console.log(
+          `Found ${failedQuestions.length} failed questions to add to MindVault`,
+        );
+        addFailedQuestionsToMindVault(failedQuestions);
+      } else {
+        console.log("No failed questions to add to MindVault - perfect score!");
+      }
+
+      setExamState((prev) => ({
+        ...prev,
+        isCompleted: true,
+        score: score,
+      }));
+
+      // Navigate to performance page with exam results
+      navigate(`/performance/${examId}`, {
+        state: {
+          questions,
+          results,
+          isExam: true,
+          timerExpired,
+        },
+      });
+    },
+    [
+      examId,
+      navigate,
+      questions,
+      examState.answers,
+      addFailedQuestionsToMindVault,
+    ],
+  );
 
   useEffect(() => {
     // Load exam questions
@@ -38,18 +155,24 @@ export default function ExamPage() {
   }, [examId, navigate]);
 
   useEffect(() => {
-    // Timer countdown
-    if (!examState.isCompleted && examState.timeRemaining > 0) {
-      const timer = setInterval(() => {
+    // Timer countdown and auto-submit logic
+    const handleTimerTick = () => {
+      if (!examState.isCompleted && examState.timeRemaining > 0) {
         setExamState((prev) => ({
           ...prev,
           timeRemaining: prev.timeRemaining - 1,
         }));
-      }, 1000);
+      }
+    };
 
+    if (!examState.isCompleted && examState.timeRemaining > 0) {
+      const timer = setInterval(handleTimerTick, 1000);
       return () => clearInterval(timer);
+    } else if (!examState.isCompleted && examState.timeRemaining <= 0) {
+      // Auto-submit when timer expires
+      handleSubmitExam(true);
     }
-  }, [examState.isCompleted, examState.timeRemaining]);
+  }, [examState.isCompleted, examState.timeRemaining, handleSubmitExam]);
 
   const handleAnswerSelect = (answerIndex: number) => {
     setExamState((prev) => {
@@ -75,20 +198,6 @@ export default function ExamPage() {
         currentQuestionIndex: prev.currentQuestionIndex - 1,
       }));
     }
-  };
-
-  const handleSubmitExam = () => {
-    const score = examState.answers.reduce((total, answer, index) => {
-      return total + (answer === questions[index].correctAnswerIndex ? 1 : 0);
-    }, 0);
-
-    setExamState((prev) => ({
-      ...prev,
-      isCompleted: true,
-      score: score,
-    }));
-
-    // TODO: Save exam results
   };
 
   const formatTime = (seconds: number) => {
@@ -141,7 +250,15 @@ export default function ExamPage() {
           {/* QUESTIONS */}
           <div className="mb-8">
             <h2 className="mb-6 text-xl font-bold text-gray-900">
-              {currentQuestion.questionText}
+              {currentQuestion.questionText
+                .split(/(?<=[.:])/)
+                .filter(Boolean)
+                .map((line, index, arr) => (
+                  <p key={index} className="mb-4 text-lg leading-6 md:text-xl">
+                    {line.trim()}
+                    {index < arr.length - 1 ? "." : ""}
+                  </p>
+                ))}
             </h2>
 
             {/* OPTIONS */}
@@ -176,7 +293,19 @@ export default function ExamPage() {
             </Button>
             {examState.currentQuestionIndex === questions.length - 1 ? (
               <Button
-                onClick={handleSubmitExam}
+                onClick={() => {
+                  const unanswered = examState.answers.filter(
+                    (a) => a === undefined,
+                  ).length;
+                  const confirmMessage =
+                    unanswered > 0
+                      ? `You have ${unanswered} unanswered questions. Are you sure you want to submit the exam?`
+                      : "Are you sure you want to submit the exam?";
+
+                  if (window.confirm(confirmMessage)) {
+                    handleSubmitExam(false);
+                  }
+                }}
                 className="font-medium tracking-wider capitalize"
               >
                 Submit Exam

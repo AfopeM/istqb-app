@@ -1,7 +1,8 @@
-{"question":[
+{
+  "question": [
     {
       "id": "q001",
-      "chapterSection": "FL-1.2.1",
+      "chapterSection": "1.2.1",
       "questionText": "Which of the following is an example of why testing is necessary?",
       "options": [
         "Dynamic testing increases quality by causing test objects to fail in ways that could never be achieved by the users",
@@ -10,11 +11,11 @@
         "Reviews increase the quality of requirements specifications and lead to fewer changes being needed in derived work products"
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Reviews improve the quality of requirements and reduce downstream changes, demonstrating why testing and related activities are necessary (ISTQB FL-1.2.1)."
+      "explanation": "Reviews improve the quality of requirements and reduce downstream changes, demonstrating why testing and related activities are necessary (ISTQB 1.2.1)."
     },
     {
       "id": "q002",
-      "chapterSection": "FL-1.2.2",
+      "chapterSection": "1.2.2",
       "questionText": "Which of the following statements about quality assurance (QA) and/or quality control (QC) is correct?",
       "options": [
         "QA is performed as part of testing",
@@ -23,11 +24,11 @@
         "Testing is performed as part of QA"
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Quality control involves checking work products against requirements. Testing is a QC activity, not QA (ISTQB FL-1.2.2)."
+      "explanation": "Quality control involves checking work products against requirements. Testing is a QC activity, not QA (ISTQB 1.2.2)."
     },
     {
       "id": "q003",
-      "chapterSection": "FL-1.3.1",
+      "chapterSection": "1.3.1",
       "questionText": "One of the ‘principles of testing’ states that exhaustive testing is impossible. Which of the following is an example of addressing this principle in practice?",
       "options": [
         "Creating test cases that cover every possible specified output",
@@ -36,11 +37,11 @@
         "Using equivalence partitioning and boundary value analysis to generate test cases"
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Equivalence partitioning and boundary value analysis reduce the number of tests while maintaining effectiveness, addressing the impossibility of exhaustive testing (ISTQB FL-1.3.1)."
+      "explanation": "Equivalence partitioning and boundary value analysis reduce the number of tests while maintaining effectiveness, addressing the impossibility of exhaustive testing (ISTQB 1.3.1)."
     },
     {
       "id": "q004",
-      "chapterSection": "FL-1.4.1",
+      "chapterSection": "1.4.1",
       "questionText": "Which test activity involves working with test data requirements, test conditions, test environment requirements and test cases?",
       "options": [
         "Test design",
@@ -49,11 +50,11 @@
         "Test implementation"
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Test design defines test conditions, data, and environment requirements before implementation or execution (ISTQB FL-1.4.1)."
+      "explanation": "Test design defines test conditions, data, and environment requirements before implementation or execution (ISTQB 1.4.1)."
     },
     {
       "id": "q005",
-      "chapterSection": "FL-1.4.2",
+      "chapterSection": "1.4.2",
       "questionText": "Which of the following is MOST likely to impact how testing is performed for a given test object?",
       "options": [
         "The average level of experience of the organization’s marketing team",
@@ -62,11 +63,11 @@
         "The end user’s organizational structure for a commercial music streaming application"
       ],
       "correctAnswerIndex": 2,
-      "explanation": "The test team’s experience level directly affects how testing is planned and executed (ISTQB FL-1.4.2)."
+      "explanation": "The test team’s experience level directly affects how testing is planned and executed (ISTQB 1.4.2)."
     },
     {
       "id": "q006",
-      "chapterSection": "FL-1.4.4",
+      "chapterSection": "1.4.4",
       "questionText": "Which of the following statements is a CORRECT example of the value of traceability?",
       "options": [
         "Traceability between the mitigated risks and passing test cases provides a means of determining the level of residual risk",
@@ -75,11 +76,11 @@
         "Traceability between the identified risks and written test conditions provides a means of determining which risks are worth testing"
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Linking user requirements to test execution results helps track project progress toward business goals (ISTQB FL-1.4.4)."
+      "explanation": "Linking user requirements to test execution results helps track project progress toward business goals (ISTQB 1.4.4)."
     },
     {
       "id": "q007",
-      "chapterSection": "FL-1.5.1",
+      "chapterSection": "1.5.1",
       "questionText": "Which of the following is MOST likely to be an example of a tester using a generic skill when testing?",
       "options": [
         "The tester’s deep knowledge of a variety of computer games meant that they got on well with one of the developers who was also into gaming",
@@ -88,11 +89,11 @@
         "The tester was very careful not to make mistakes when they methodically generated test cases prior to starting their exploratory testing session"
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Domain knowledge from being a pilot helps understand requirements, a generic skill that aids testing (ISTQB FL-1.5.1)."
+      "explanation": "Domain knowledge from being a pilot helps understand requirements, a generic skill that aids testing (ISTQB 1.5.1)."
     },
     {
       "id": "q008",
-      "chapterSection": "FL-1.5.2",
+      "chapterSection": "1.5.2",
       "questionText": "Which of the following is an advantage of the whole-team approach?",
       "options": [
         "It allows team members to take on any role at any time",
@@ -101,11 +102,11 @@
         "It generates a team synergy that benefits the entire project"
       ],
       "correctAnswerIndex": 3,
-      "explanation": "The whole-team approach encourages collaboration and synergy, improving quality across the project (ISTQB FL-1.5.2)."
+      "explanation": "The whole-team approach encourages collaboration and synergy, improving quality across the project (ISTQB 1.5.2)."
     },
     {
       "id": "q009",
-      "chapterSection": "FL-2.1.1",
+      "chapterSection": "2.1.1",
       "questionText": "Which of the following statements about the chosen software development lifecycle is CORRECT?",
       "options": [
         "If agile software development is used, system test automation replaces the need for regression testing",
@@ -114,11 +115,11 @@
         "If an incremental development model is used, then static testing is done in early increments and dynamic testing in later increments"
       ],
       "correctAnswerIndex": 1,
-      "explanation": "In a sequential (waterfall) lifecycle, dynamic testing usually starts in later phases after development is complete (ISTQB FL-2.1.1)."
+      "explanation": "In a sequential (waterfall) lifecycle, dynamic testing usually starts in later phases after development is complete (ISTQB 2.1.1)."
     },
     {
       "id": "q010",
-      "chapterSection": "FL-2.1.2",
+      "chapterSection": "2.1.2",
       "questionText": "Which of the following is a good testing practice that applies to all software development lifecycles?",
       "options": [
         "Testers should review work products as part of the next development phase",
@@ -127,398 +128,378 @@
         "Testers should review work products immediately after they are published"
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Early reviews catch defects sooner and apply to all lifecycles, so reviewing as soon as drafts exist is best practice (ISTQB FL-2.1.2)."
+      "explanation": "Early reviews catch defects sooner and apply to all lifecycles, so reviewing as soon as drafts exist is best practice (ISTQB 2.1.2)."
     },
     {
-        "id": "q011",
-        "chapterSection": "FL-2.1.3",
-        "questionText": "Which of the following is an example of a test-first approach to development?",
-        "options": [
-          "Test-Driven Development",
-          "Coverage-Driven Development",
-          "Quality-Driven Development",
-          "Feature-Driven Development"
-        ],
-        "correctAnswerIndex": 0,
-        "explanation": "Test-Driven Development creates tests before writing production code, which is the essence of a test-first approach (ISTQB FL-2.1.3)."
-      },
-      {
-        "id": "q012",
-        "chapterSection": "FL-2.1.4",
-        "questionText": "Which of the following statements about DevOps is CORRECT?",
-        "options": [
-          "To speed up releases, continuous integration is used to encourage developers to submit code quickly without the need to complete component testing",
-          "To be able to update and release systems on a more frequent basis, many automated regression tests are required to reduce the danger of regression",
-          "To treat both developers and operations equally, the testers will allocate more effort to release testing by operations using a shift-right approach",
-          "To create increased synergy between testers, developers and operations, the testing must become fully automated with no manual testing"
-        ],
-        "correctAnswerIndex": 1,
-        "explanation": "Frequent releases in DevOps require extensive automated regression tests to maintain quality (ISTQB FL-2.1.4)."
-      },
-      {
-        "id": "q013",
-        "chapterSection": "FL-2.2.1",
-        "questionText": "Which of the following is MOST likely to be performed as part of system testing?",
-        "options": [
-          "Security testing of a credit management system by an independent test team",
-          "Testing the interface of a currency exchange system with an external banking system",
-          "Beta testing of a remote learning system by courseware developers",
-          "Testing interactions between the user interface and database of a human resources system"
-        ],
-        "correctAnswerIndex": 0,
-        "explanation": "Independent security testing of the whole system is a typical system testing activity (ISTQB FL-2.2.1)."
-      },
-      {
-        "id": "q014",
-        "chapterSection": "FL-2.2.3",
-        "questionText": "Which of the following statements is CORRECT?",
-        "options": [
-          "Regression tests increase in number as the project progresses, whereas the number of confirmation tests decreases as the project progresses",
-          "Regression tests are created and run when the test object is fixed, whereas confirmation tests are run whenever the test object is enhanced",
-          "Regression testing is concerned with checking that the operational environment remains unchanged, whereas confirmation testing is concerned with testing changes to the test object",
-          "Regression testing is concerned with adverse effects in unchanged code, whereas confirmation testing is concerned with testing changed code"
-        ],
-        "correctAnswerIndex": 3,
-        "explanation": "Regression testing looks for side effects in unchanged code, while confirmation testing verifies that fixes or changes work as intended (ISTQB FL-2.2.3)."
-      },
-      {
-        "id": "q015",
-        "chapterSection": "FL-3.1.3",
-        "questionText": "Which of the following is an example of a defect that can be found by static testing but NOT by dynamic testing?",
-        "options": [
-          "Lack of usability provided through the user interface",
-          "Code with no path that reaches it",
-          "Poor response times for most of the expected users",
-          "Required features that are not implemented in the code"
-        ],
-        "correctAnswerIndex": 1,
-        "explanation": "Static analysis can reveal dead code with no execution path, which dynamic testing would not execute (ISTQB FL-3.1.3)."
-      },
-      {
-        "id": "q016",
-        "chapterSection": "FL-3.2.1",
-        "questionText": "Which of the following is a benefit of early and frequent stakeholder feedback?",
-        "options": [
-          "Managers are aware of which developers are less productive",
-          "It allows project managers to prioritize their stakeholder interactions",
-          "It facilitates early communication of potential quality issues",
-          "End users better understand why the delivery of the work product is delayed"
-        ],
-        "correctAnswerIndex": 2,
-        "explanation": "Frequent feedback enables early detection and communication of potential quality issues (ISTQB FL-3.2.1)."
-      },
-      {
-        "id": "q017",
-        "chapterSection": "FL-3.2.2",
-        "questionText": "Given the following task descriptions:\n1. The quality characteristics to be evaluated and the exit criteria are selected\n2. Everyone has access to the work product\n3. Anomalies are identified in the work product\n4. Anomalies are discussed\nAnd the following review activities\nA. Individual review\nB. Review initiation\nC. Planning\nD. Communication and analysis\nWhich of the following BEST matches the task descriptions and activities?",
-        "options": [
-          "1B, 2C, 3D, 4A",
-          "1B, 2D, 3C, 4A",
-          "1C, 2A, 3B, 4D",
-          "1C, 2B, 3A, 4D"
-        ],
-        "correctAnswerIndex": 3,
-        "explanation": "Planning includes selecting quality characteristics, review initiation gives access, individual review finds anomalies, and communication/analysis discusses them (ISTQB FL-3.2.2)."
-      },
-      {
-        "id": "q018",
-        "chapterSection": "FL-3.2.3",
-        "questionText": "Given the following roles in reviews:\n1. Scribe\n2. Review leader\n3. Facilitator\n4. Manager\nAnd the following responsibilities in reviews:\nA. Ensures the effective running of review meetings and the setting up a safe review environment\nB. Records review information, such as decisions and new anomalies found during the review meeting\nC. Decides what is to be reviewed and provides resources, such as staff and time for the review\nD. Takes overall responsibility for the review such as organizing when and where the review will take place\nWhich of the following BEST matches the roles and responsibilities?",
-        "options": [
-          "1A, 2B, 3D, 4C",
-          "1A, 2C, 3B, 4D",
-          "1B, 2D, 3A, 4C",
-          "1B, 2D, 3C, 4A"
-        ],
-        "correctAnswerIndex": 2,
-        "explanation": "Scribe records information, review leader organizes and takes responsibility, facilitator ensures meetings run effectively, and manager provides resources (ISTQB FL-3.2.3)."
-      },
-      {
-        "id": "q019",
-        "chapterSection": "FL-4.1.1",
-        "questionText": "Which of the following statements BEST describes the difference between decision table testing and branch testing?",
-        "options": [
-          "In decision table testing, the test cases are derived from the decision statements in the code. In branch testing, the test cases are derived from knowledge of the control flow of the test object.",
-          "In decision table testing, the test cases are derived from the specification that describes the business logic. In branch testing the test cases are based on anticipation of potential defects in the source code.",
-          "In decision table testing, the test cases are derived from knowledge of the control flow of the test object. In branch testing, test cases are derived from the specification that describes the business logic.",
-          "In decision table testing, the test cases are independent of how the software is implemented. In branch testing, test cases can be created only after the design or implementation of the code."
-        ],
-        "correctAnswerIndex": 3,
-        "explanation": "Decision table testing is specification-based and independent of implementation, while branch testing requires knowledge of code structure (ISTQB FL-4.1.1)."
-      },
-      {
-        "id": "q020",
-        "chapterSection": "FL-4.2.1",
-        "questionText": "Customers of the TestWash car wash chain have cards with a record of the number of washes they have bought so far. The initial value is 0. After entering the car wash, the system increases the number on the card by one. This value represents the number of the current wash. Based on this number the system decides what discount the customer is entitled to.\nFor every tenth wash the system gives a 10% discount, and for every twentieth wash, the system gives a further 40% discount (i.e., a 50% discount in total).\nWhich of the following sets of input data (understood as the numbers of the current wash) achieves the highest equivalence partition coverage?",
-        "options": [
-          "19, 20, 30",
-          "11, 12, 20",
-          "1, 10, 50",
-          "10, 29, 30, 31"
-        ],
-        "correctAnswerIndex": 0,
-        "explanation": "The set 19, 20, 30 covers normal, 10% discount, and 50% discount partitions, giving the best equivalence partition coverage (ISTQB FL-4.2.1)."
-      },
-        {
-          "id": "q021",
-          "chapterSection": "FL-4.2.2",
-          "questionText": "Which of the following BEST describes the main purpose of boundary value analysis?",
-          "options": [
-            "To ensure every decision outcome in the code is tested at least once",
-            "To exercise input conditions that have been combined in decision tables",
-            "To test inputs and outputs at the edges of valid and invalid partitions",
-            "To check that all statements in the code have been executed"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Boundary value analysis targets values at the limits of valid and invalid input ranges, which is its main purpose (ISTQB FL-4.2.2)."
-        },
-        {
-          "id": "q022",
-          "chapterSection": "FL-4.2.3",
-          "questionText": "Which of the following BEST describes the relationship between equivalence partitioning and decision table testing?",
-          "options": [
-            "Decision table testing tests all boundary values, equivalence partitioning does not",
-            "Equivalence partitioning covers single condition outcomes, decision table testing covers combinations of conditions",
-            "Decision table testing is used for code-based testing, equivalence partitioning is for specification-based testing",
-            "Equivalence partitioning and decision table testing are both used for structural coverage of the code"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Equivalence partitioning targets individual condition outcomes, while decision table testing checks combinations of conditions (ISTQB FL-4.2.3)."
-        },
-        {
-          "id": "q023",
-          "chapterSection": "FL-4.2.4",
-          "questionText": "Which of the following BEST describes when state transition testing is most appropriate?",
-          "options": [
-            "When testing combinations of inputs that trigger different business rules",
-            "When testing a system that responds differently to the same input depending on its current status",
-            "When testing boundaries between valid and invalid inputs",
-            "When testing to achieve maximum statement coverage"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "State transition testing is suited to systems where the same input leads to different behavior based on the current state (ISTQB FL-4.2.4)."
-        },
-        {
-          "id": "q024",
-          "chapterSection": "FL-4.3.1",
-          "questionText": "Which of the following is a key characteristic of exploratory testing?",
-          "options": [
-            "It is primarily focused on meeting exit criteria",
-            "It is fully scripted before execution",
-            "It emphasizes learning and adapting tests during execution",
-            "It requires detailed test case documentation"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Exploratory testing involves learning, test design and execution happening simultaneously, adapting as information is discovered (ISTQB FL-4.3.1)."
-        },
-        {
-          "id": "q025",
-          "chapterSection": "FL-4.3.2",
-          "questionText": "Which of the following is MOST likely to be an example of an experience-based testing technique?",
-          "options": [
-            "Decision table testing",
-            "Boundary value analysis",
-            "Error guessing",
-            "State transition testing"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Error guessing relies on tester experience and intuition rather than formal test design, making it experience-based (ISTQB FL-4.3.2)."
-        },
-        {
-          "id": "q026",
-          "chapterSection": "FL-4.4.2",
-          "questionText": "You are testing a payment gateway that must handle input of amounts up to $9999.99. Which TWO of the following are valid reasons to use both equivalence partitioning and boundary value analysis?",
-          "options": [
-            "They ensure every code branch is executed",
-            "They reduce the number of required test cases while maintaining coverage of critical input ranges",
-            "They validate user acceptance criteria from the business owner",
-            "They focus on the logical conditions in decision statements",
-            "They ensure values at and around critical limits are tested"
-          ],
-          "correctAnswerIndex": [1,4],
-          "explanation": "Equivalence partitioning reduces the test set while maintaining coverage, and boundary value analysis ensures limits are thoroughly tested (ISTQB FL-4.4.2)."
-        },
-        {
-          "id": "q027",
-          "chapterSection": "FL-4.4.3",
-          "questionText": "Which of the following is the BEST example of when to apply pairwise testing?",
-          "options": [
-            "When testing requires exhaustive coverage of all input value combinations",
-            "When testing a single boundary input with high criticality",
-            "When testing combinations of multiple input parameters efficiently",
-            "When testing an algorithm with complex internal logic"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Pairwise testing reduces combinations by ensuring all pairs of parameter values are tested, making it efficient for multi-parameter input (ISTQB FL-4.4.3)."
-        },
-        {
-          "id": "q028",
-          "chapterSection": "FL-4.5.2",
-          "questionText": "Which of the following is MOST characteristic of a good test case?",
-          "options": [
-            "It requires detailed domain expertise to understand",
-            "It has clear objectives and defined expected results",
-            "It can be executed only by the original author",
-            "It covers as many conditions as possible in a single step"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "A good test case is clear, has a specific objective and includes defined expected results (ISTQB FL-4.5.2)."
-        },
-        {
-          "id": "q029",
-          "chapterSection": "FL-4.5.3",
-          "questionText": "Which of the following BEST describes the purpose of test coverage metrics?",
-          "options": [
-            "To demonstrate that all possible defects have been found",
-            "To prove that the software is free from defects",
-            "To measure the extent to which testing has exercised specific elements of a test object",
-            "To determine whether all test cases have been executed"
-          ],
-          "correctAnswerIndex": 2,
-          "explanation": "Coverage metrics indicate how much of a particular item (requirements, code, etc.) has been tested, not that all defects are found (ISTQB FL-4.5.3)."
-        },
-        {
-          "id": "q030",
-          "chapterSection": "FL-5.1.3",
-          "questionText": "Which of the following is a valid reason to prioritize certain tests for early execution?",
-          "options": [
-            "They are easier to automate than others",
-            "They are expected to find more defects or have higher impact on risk",
-            "They have the highest estimated execution effort",
-            "They depend on completion of low-priority features"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Tests that address higher risk or have higher defect detection potential should be executed first to reduce overall project risk (ISTQB FL-5.1.3)."
-        },
-        {
-            "id": "q031",
-            "chapterSection": "FL-5.1.4",
-            "questionText": "You want to estimate the test effort for a new project using estimation based on ratios. You calculate the test-to-development effort ratio using averaged data from four historical projects. The estimated development effort for the new project is $800,000. What is your estimate of the test effort?",
-            "options": [
-              "$40,000",
-              "$80,000",
-              "$81,250",
-              "$82,500"
-            ],
-            "correctAnswerIndex": 1,
-            "explanation": "By calculating the average test-to-development effort ratio from historical projects and applying it to the new project's development effort, the estimated test effort is $80,000 (ISTQB FL-5.1.4)."
-          },
-          {
-            "id": "q032",
-            "chapterSection": "FL-5.1.5",
-            "questionText": "You have prepared five test cases with priorities and dependencies. Which test case should be executed as the fourth one?",
-            "options": [
-              "TC3",
-              "TC1",
-              "TC2",
-              "TC4"
-            ],
-            "correctAnswerIndex": 0,
-            "explanation": "Considering the dependencies and priorities: SEARCH → VIEW → ADD → ORDER. TC3 (ADD product B) should be executed fourth (ISTQB FL-5.1.5)."
-          },
-          {
-            "id": "q033",
-            "chapterSection": "FL-5.1.7",
-            "questionText": "According to the testing quadrants model, which of the following falls into quadrant Q1 (“technology facing” and “support the team”)?",
-            "options": [
-              "Usability testing",
-              "Functional testing",
-              "User acceptance testing",
-              "Component integration testing"
-            ],
-            "correctAnswerIndex": 3,
-            "explanation": "Quadrant Q1 focuses on technology-facing tests that support the team, such as unit and component integration testing (ISTQB FL-5.1.7)."
-          },
-          {
-            "id": "q034",
-            "chapterSection": "FL-5.2.4",
-            "questionText": "Given the following risks and mitigation activities, which matches BEST?\nRisks: 1. Ineffective loop implementation causes long system responses\n2. Consumers change their preferences\n3. Flooding of the server room\n4. Patients above a certain age receive inaccurate reports\nMitigations: A. Risk acceptance B. Performance testing C. Using boundary value analysis as the test technique D. Risk transfer",
-            "options": [
-              "1C, 2D, 3A, 4B",
-              "1B, 2D, 3A, 4C",
-              "1B, 2A, 3D, 4C",
-              "1C, 2A, 3D, 4B"
-            ],
-            "correctAnswerIndex": 1,
-            "explanation": "Performance testing mitigates performance-related risk (1B), changing consumer preferences are transferred (2D), server flooding is accepted (3A), and boundary value analysis addresses patient age limits (4C) (ISTQB FL-5.2.4)."
-          },
-          {
-            "id": "q035",
-            "chapterSection": "FL-5.3.1",
-            "questionText": "Which of the following is a product quality metric?",
-            "options": [
-              "Mean time to failure",
-              "Number of defects found",
-              "Requirements coverage",
-              "Defect detection percentage"
-            ],
-            "correctAnswerIndex": 0,
-            "explanation": "Mean time to failure measures product reliability, which is a product quality metric (ISTQB FL-5.3.1)."
-          },
-          {
-            "id": "q036",
-            "chapterSection": "FL-5.3.3",
-            "questionText": "You are a member of a test team located in North America, developing a product for a client in Europe. Which is the LEAST effective way to communicate test progress?",
-            "options": [
-              "Face-to-face",
-              "Dashboards",
-              "Email",
-              "Video conferencing"
-            ],
-            "correctAnswerIndex": 2,
-            "explanation": "Email is the least effective for communicating progress in a distributed agile/DevOps team due to delayed feedback and lack of real-time interaction (ISTQB FL-5.3.3)."
-          },
-          {
-            "id": "q037",
-            "chapterSection": "FL-5.4.1",
-            "questionText": "Which of the following BEST describes an example of how configuration management (CM) supports testing?",
-            "options": [
-              "Having the version number of the environment, the CM tool can retrieve the version numbers of libraries, stubs and drivers used in that environment",
-              "Having a record of the values of the test inputs, the CM tool can execute the test cases for these configurations and calculate test coverage",
-              "Having data about the date of purchase of a software license, the CM tool automatically generates information about the fact that the product license is coming to an end",
-              "Having the version number of the test case, the CM tool can automatically generate test data for this test case"
-            ],
-            "correctAnswerIndex": 0,
-            "explanation": "CM allows testers to track versions of the environment, libraries, stubs, and drivers, supporting reproducible testing (ISTQB FL-5.4.1)."
-          },
-          {
-            "id": "q038",
-            "chapterSection": "FL-5.5.1",
-            "questionText": "You are testing a sort function. The log shows that TC3, TC4, and TC5 failed. Which of the following BEST describes the failure for a defect report?",
-            "options": [
-              "The system fails to sort several sets of numbers. Reference: TC3, TC4, TC5.",
-              "The system seems to disregard duplicates while sorting. Reference: TC3, TC4, TC5.",
-              "The system fails to sort negative numbers. Reference: TC4, TC5.",
-              "TC3, TC4 and TC5 have defects (duplicate input data) and should be corrected."
-            ],
-            "correctAnswerIndex": 1,
-            "explanation": "The failures indicate that duplicates are not handled correctly, which is a valid defect description (ISTQB FL-5.5.1)."
-          },
-          {
-            "id": "q039",
-            "chapterSection": "FL-6.1.1",
-            "questionText": "Given the following descriptions:\n1. Support workflow tracking\n2. Facilitate communication\n3. Virtual machines\n4. Support reviews\nAnd test tool categories:\nA. Static testing tools\nB. Tools supporting scalability and deployment standardization\nC. DevOps tools\nD. Collaboration tools\nWhich of the following BEST matches descriptions to tool categories?",
-            "options": [
-              "1A, 2B, 3C, 4D",
-              "1B, 2D, 3C, 4A",
-              "1C, 2D, 3B, 4A",
-              "1D, 2C, 3A, 4B"
-            ],
-            "correctAnswerIndex": 2,
-            "explanation": "Support workflow tracking uses DevOps tools (1C), facilitate communication uses collaboration tools (2D), virtual machines use deployment tools (3B), support reviews uses static testing tools (4A) (ISTQB FL-6.1.1)."
-          },
-          {
-            "id": "q040",
-            "chapterSection": "FL-6.2.1",
-            "questionText": "Which of the following is MOST likely to be a benefit of test automation?",
-            "options": [
-              "It provides coverage measures that are too complicated for humans to derive",
-              "It shares responsibility for the testing with the tool vendor",
-              "It removes the need for critical thinking when analyzing test results",
-              "It generates test cases from an analysis of the program code"
-            ],
-            "correctAnswerIndex": 0,
-            "explanation": "Test automation can provide coverage metrics that would be impractical for humans to manually calculate (ISTQB FL-6.2.1)."
-          }
+      "id": "q011",
+      "chapterSection": "2.1.3",
+      "questionText": "Which of the following is an example of a test-first approach to development?",
+      "options": [
+        "Test-Driven Development",
+        "Coverage-Driven Development",
+        "Quality-Driven Development",
+        "Feature-Driven Development"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Test-Driven Development creates tests before writing production code, which is the essence of a test-first approach (ISTQB 2.1.3)."
+    },
+    {
+      "id": "q012",
+      "chapterSection": "2.1.4",
+      "questionText": "Which of the following statements about DevOps is CORRECT?",
+      "options": [
+        "To speed up releases, continuous integration is used to encourage developers to submit code quickly without the need to complete component testing",
+        "To be able to update and release systems on a more frequent basis, many automated regression tests are required to reduce the danger of regression",
+        "To treat both developers and operations equally, the testers will allocate more effort to release testing by operations using a shift-right approach",
+        "To create increased synergy between testers, developers and operations, the testing must become fully automated with no manual testing"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Frequent releases in DevOps require extensive automated regression tests to maintain quality (ISTQB 2.1.4)."
+    },
+    {
+      "id": "q013",
+      "chapterSection": "2.2.1",
+      "questionText": "Which of the following is MOST likely to be performed as part of system testing?",
+      "options": [
+        "Security testing of a credit management system by an independent test team",
+        "Testing the interface of a currency exchange system with an external banking system",
+        "Beta testing of a remote learning system by courseware developers",
+        "Testing interactions between the user interface and database of a human resources system"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Independent security testing of the whole system is a typical system testing activity (ISTQB 2.2.1)."
+    },
+    {
+      "id": "q014",
+      "chapterSection": "2.2.3",
+      "questionText": "Which of the following statements is CORRECT?",
+      "options": [
+        "Regression tests increase in number as the project progresses, whereas the number of confirmation tests decreases as the project progresses",
+        "Regression tests are created and run when the test object is fixed, whereas confirmation tests are run whenever the test object is enhanced",
+        "Regression testing is concerned with checking that the operational environment remains unchanged, whereas confirmation testing is concerned with testing changes to the test object",
+        "Regression testing is concerned with adverse effects in unchanged code, whereas confirmation testing is concerned with testing changed code"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Regression testing looks for side effects in unchanged code, while confirmation testing verifies that fixes or changes work as intended (ISTQB 2.2.3)."
+    },
+    {
+      "id": "q015",
+      "chapterSection": "3.1.3",
+      "questionText": "Which of the following is an example of a defect that can be found by static testing but NOT by dynamic testing?",
+      "options": [
+        "Lack of usability provided through the user interface",
+        "Code with no path that reaches it",
+        "Poor response times for most of the expected users",
+        "Required features that are not implemented in the code"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Static analysis can reveal dead code with no execution path, which dynamic testing would not execute (ISTQB 3.1.3)."
+    },
+    {
+      "id": "q016",
+      "chapterSection": "3.2.1",
+      "questionText": "Which of the following is a benefit of early and frequent stakeholder feedback?",
+      "options": [
+        "Managers are aware of which developers are less productive",
+        "It allows project managers to prioritize their stakeholder interactions",
+        "It facilitates early communication of potential quality issues",
+        "End users better understand why the delivery of the work product is delayed"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Frequent feedback enables early detection and communication of potential quality issues (ISTQB 3.2.1)."
+    },
+    {
+      "id": "q017",
+      "chapterSection": "3.2.2",
+      "questionText": "Given the following task descriptions:The quality characteristics to be evaluated and the exit criteria are selected.2) Everyone has access to the work product.3) Anomalies are identified in the work product.4) Anomalies are discussed. And the following review activities.A) Individual review.B) Review initiation.C) Planning.D) Communication and analysisWhich of the following BEST matches the task descriptions and activities?",
+      "options": [
+        "1B, 2C, 3D, 4A",
+        "1B, 2D, 3C, 4A",
+        "1C, 2A, 3B, 4D",
+        "1C, 2B, 3A, 4D"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Planning includes selecting quality characteristics, review initiation gives access, individual review finds anomalies, and communication/analysis discusses them (ISTQB 3.2.2)."
+    },
+    {
+      "id": "q018",
+      "chapterSection": "3.2.3",
+      "questionText": "Given the following roles in reviews:1) Scribe.2) Review leader.3) Facilitator.4) Manager.And the following responsibilities in reviews:A) Ensures the effective running of review meetings and the setting up a safe review environment.B) Records review information, such as decisions and new anomalies found during the review meeting.C) Decides what is to be reviewed and provides resources, such as staff and time for the review.D) Takes overall responsibility for the review such as organizing when and where the review will take place. Which of the following BEST matches the roles and responsibilities?",
+      "options": [
+        "1A, 2B, 3D, 4C",
+        "1A, 2C, 3B, 4D",
+        "1B, 2D, 3A, 4C",
+        "1B, 2D, 3C, 4A"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Scribe records information, review leader organizes and takes responsibility, facilitator ensures meetings run effectively, and manager provides resources (ISTQB 3.2.3)."
+    },
+    {
+      "id": "q019",
+      "chapterSection": "4.1.1",
+      "questionText": "Which of the following statements BEST describes the difference between decision table testing and branch testing?",
+      "options": [
+        "In decision table testing, the test cases are derived from the decision statements in the code. In branch testing, the test cases are derived from knowledge of the control flow of the test object.",
+        "In decision table testing, the test cases are derived from the specification that describes the business logic. In branch testing the test cases are based on anticipation of potential defects in the source code.",
+        "In decision table testing, the test cases are derived from knowledge of the control flow of the test object. In branch testing, test cases are derived from the specification that describes the business logic.",
+        "In decision table testing, the test cases are independent of how the software is implemented. In branch testing, test cases can be created only after the design or implementation of the code."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Decision table testing is specification-based and independent of implementation, while branch testing requires knowledge of code structure (ISTQB 4.1.1)."
+    },
+    {
+      "id": "q020",
+      "chapterSection": "4.2.1",
+      "questionText": "Customers of the TestWash car wash chain have cards with a record of the number of washes they have bought so far. The initial value is 0. After entering the car wash, the system increases the number on the card by one. This value represents the number of the current wash. Based on this number the system decides what discount the customer is entitled to.For every tenth wash the system gives a 10% discount, and for every twentieth wash, the system gives a further 40% discount (ie, a 50% discount in total).Which of the following sets of input data (understood as the numbers of the current wash) achieves the highest equivalence partition coverage?",
+      "options": ["19, 20, 30", "11, 12, 20", "1, 10, 50", "10, 29, 30, 31"],
+      "correctAnswerIndex": 0,
+      "explanation": "The set 19, 20, 30 covers normal, 10% discount, and 50% discount partitions, giving the best equivalence partition coverage (ISTQB 4.2.1)."
+    },
+    {
+      "id": "q021",
+      "chapterSection": "4.2.2",
+      "questionText": "Which of the following BEST describes the main purpose of boundary value analysis?",
+      "options": [
+        "To ensure every decision outcome in the code is tested at least once",
+        "To exercise input conditions that have been combined in decision tables",
+        "To test inputs and outputs at the edges of valid and invalid partitions",
+        "To check that all statements in the code have been executed"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Boundary value analysis targets values at the limits of valid and invalid input ranges, which is its main purpose (ISTQB 4.2.2)."
+    },
+    {
+      "id": "q022",
+      "chapterSection": "4.2.3",
+      "questionText": "Which of the following BEST describes the relationship between equivalence partitioning and decision table testing?",
+      "options": [
+        "Decision table testing tests all boundary values, equivalence partitioning does not",
+        "Equivalence partitioning covers single condition outcomes, decision table testing covers combinations of conditions",
+        "Decision table testing is used for code-based testing, equivalence partitioning is for specification-based testing",
+        "Equivalence partitioning and decision table testing are both used for structural coverage of the code"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Equivalence partitioning targets individual condition outcomes, while decision table testing checks combinations of conditions (ISTQB 4.2.3)."
+    },
+    {
+      "id": "q023",
+      "chapterSection": "4.2.4",
+      "questionText": "Which of the following BEST describes when state transition testing is most appropriate?",
+      "options": [
+        "When testing combinations of inputs that trigger different business rules",
+        "When testing a system that responds differently to the same input depending on its current status",
+        "When testing boundaries between valid and invalid inputs",
+        "When testing to achieve maximum statement coverage"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "State transition testing is suited to systems where the same input leads to different behavior based on the current state (ISTQB 4.2.4)."
+    },
+    {
+      "id": "q024",
+      "chapterSection": "4.3.1",
+      "questionText": "Which of the following is a key characteristic of exploratory testing?",
+      "options": [
+        "It is primarily focused on meeting exit criteria",
+        "It is fully scripted before execution",
+        "It emphasizes learning and adapting tests during execution",
+        "It requires detailed test case documentation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Exploratory testing involves learning, test design and execution happening simultaneously, adapting as information is discovered (ISTQB 4.3.1)."
+    },
+    {
+      "id": "q025",
+      "chapterSection": "4.3.2",
+      "questionText": "Which of the following is MOST likely to be an example of an experience-based testing technique?",
+      "options": [
+        "Decision table testing",
+        "Boundary value analysis",
+        "Error guessing",
+        "State transition testing"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Error guessing relies on tester experience and intuition rather than formal test design, making it experience-based (ISTQB 4.3.2)."
+    },
+    {
+      "id": "q026",
+      "chapterSection": "4.4.2",
+      "questionText": "You are testing a payment gateway that must handle input of amounts up to $9999.99. Which TWO of the following are valid reasons to use both equivalence partitioning and boundary value analysis?",
+      "options": [
+        "They ensure every code branch is executed",
+        "They reduce the number of required test cases while maintaining coverage of critical input ranges",
+        "They validate user acceptance criteria from the business owner",
+        "They focus on the logical conditions in decision statements",
+        "They ensure values at and around critical limits are tested"
+      ],
+      "correctAnswerIndex": [1, 4],
+      "explanation": "Equivalence partitioning reduces the test set while maintaining coverage, and boundary value analysis ensures limits are thoroughly tested (ISTQB 4.4.2)."
+    },
+    {
+      "id": "q027",
+      "chapterSection": "4.4.3",
+      "questionText": "Which of the following is the BEST example of when to apply pairwise testing?",
+      "options": [
+        "When testing requires exhaustive coverage of all input value combinations",
+        "When testing a single boundary input with high criticality",
+        "When testing combinations of multiple input parameters efficiently",
+        "When testing an algorithm with complex internal logic"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Pairwise testing reduces combinations by ensuring all pairs of parameter values are tested, making it efficient for multi-parameter input (ISTQB 4.4.3)."
+    },
+    {
+      "id": "q028",
+      "chapterSection": "4.5.2",
+      "questionText": "Which of the following is MOST characteristic of a good test case?",
+      "options": [
+        "It requires detailed domain expertise to understand",
+        "It has clear objectives and defined expected results",
+        "It can be executed only by the original author",
+        "It covers as many conditions as possible in a single step"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A good test case is clear, has a specific objective and includes defined expected results (ISTQB 4.5.2)."
+    },
+    {
+      "id": "q029",
+      "chapterSection": "4.5.3",
+      "questionText": "Which of the following BEST describes the purpose of test coverage metrics?",
+      "options": [
+        "To demonstrate that all possible defects have been found",
+        "To prove that the software is free from defects",
+        "To measure the extent to which testing has exercised specific elements of a test object",
+        "To determine whether all test cases have been executed"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Coverage metrics indicate how much of a particular item (requirements, code, etc.) has been tested, not that all defects are found (ISTQB 4.5.3)."
+    },
+    {
+      "id": "q030",
+      "chapterSection": "5.1.3",
+      "questionText": "Which of the following is a valid reason to prioritize certain tests for early execution?",
+      "options": [
+        "They are easier to automate than others",
+        "They are expected to find more defects or have higher impact on risk",
+        "They have the highest estimated execution effort",
+        "They depend on completion of low-priority features"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Tests that address higher risk or have higher defect detection potential should be executed first to reduce overall project risk (ISTQB 5.1.3)."
+    },
+    {
+      "id": "q031",
+      "chapterSection": "5.1.4",
+      "questionText": "You want to estimate the test effort for a new project using estimation based on ratios. You calculate the test-to-development effort ratio using averaged data from four historical projects. The estimated development effort for the new project is $800,000. What is your estimate of the test effort?",
+      "options": ["$40,000", "$80,000", "$81,250", "$82,500"],
+      "correctAnswerIndex": 1,
+      "explanation": "By calculating the average test-to-development effort ratio from historical projects and applying it to the new project's development effort, the estimated test effort is $80,000 (ISTQB 5.1.4)."
+    },
+    {
+      "id": "q032",
+      "chapterSection": "5.1.5",
+      "questionText": "You have prepared five test cases with priorities and dependencies. Which test case should be executed as the fourth one?",
+      "options": ["TC3", "TC1", "TC2", "TC4"],
+      "correctAnswerIndex": 0,
+      "explanation": "Considering the dependencies and priorities: SEARCH → VIEW → ADD → ORDER. TC3 (ADD product B) should be executed fourth (ISTQB 5.1.5)."
+    },
+    {
+      "id": "q033",
+      "chapterSection": "5.1.7",
+      "questionText": "According to the testing quadrants model, which of the following falls into quadrant Q1 (“technology facing” and “support the team”)?",
+      "options": [
+        "Usability testing",
+        "Functional testing",
+        "User acceptance testing",
+        "Component integration testing"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Quadrant Q1 focuses on technology-facing tests that support the team, such as unit and component integration testing (ISTQB 5.1.7)."
+    },
+    {
+      "id": "q034",
+      "chapterSection": "5.2.4",
+      "questionText": "Given the following risks and mitigation activities, which matches BEST?\nRisks: 1) Ineffective loop implementation causes long system responses.2) Consumers change their preferences.3) Flooding of the server room.4) Patients above a certain age receive inaccurate reports.Mitigations: A) Risk acceptance.B) Performance testing.C) Using boundary value analysis as the test technique.D) Risk transfer",
+      "options": [
+        "1C, 2D, 3A, 4B",
+        "1B, 2D, 3A, 4C",
+        "1B, 2A, 3D, 4C",
+        "1C, 2A, 3D, 4B"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Performance testing mitigates performance-related risk (1B), changing consumer preferences are transferred (2D), server flooding is accepted (3A), and boundary value analysis addresses patient age limits (4C) (ISTQB 5.2.4)."
+    },
+    {
+      "id": "q035",
+      "chapterSection": "5.3.1",
+      "questionText": "Which of the following is a product quality metric?",
+      "options": [
+        "Mean time to failure",
+        "Number of defects found",
+        "Requirements coverage",
+        "Defect detection percentage"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Mean time to failure measures product reliability, which is a product quality metric (ISTQB 5.3.1)."
+    },
+    {
+      "id": "q036",
+      "chapterSection": "5.3.3",
+      "questionText": "You are a member of a test team located in North America, developing a product for a client in Europe. Which is the LEAST effective way to communicate test progress?",
+      "options": ["Face-to-face", "Dashboards", "Email", "Video conferencing"],
+      "correctAnswerIndex": 2,
+      "explanation": "Email is the least effective for communicating progress in a distributed agile/DevOps team due to delayed feedback and lack of real-time interaction (ISTQB 5.3.3)."
+    },
+    {
+      "id": "q037",
+      "chapterSection": "5.4.1",
+      "questionText": "Which of the following BEST describes an example of how configuration management (CM) supports testing?",
+      "options": [
+        "Having the version number of the environment, the CM tool can retrieve the version numbers of libraries, stubs and drivers used in that environment",
+        "Having a record of the values of the test inputs, the CM tool can execute the test cases for these configurations and calculate test coverage",
+        "Having data about the date of purchase of a software license, the CM tool automatically generates information about the fact that the product license is coming to an end",
+        "Having the version number of the test case, the CM tool can automatically generate test data for this test case"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "CM allows testers to track versions of the environment, libraries, stubs, and drivers, supporting reproducible testing (ISTQB 5.4.1)."
+    },
+    {
+      "id": "q038",
+      "chapterSection": "5.5.1",
+      "questionText": "You are testing a sort function. The log shows that TC3, TC4, and TC5 failed. Which of the following BEST describes the failure for a defect report?",
+      "options": [
+        "The system fails to sort several sets of numbers. Reference: TC3, TC4, TC5.",
+        "The system seems to disregard duplicates while sorting. Reference: TC3, TC4, TC5.",
+        "The system fails to sort negative numbers. Reference: TC4, TC5.",
+        "TC3, TC4 and TC5 have defects (duplicate input data) and should be corrected."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The failures indicate that duplicates are not handled correctly, which is a valid defect description (ISTQB 5.5.1)."
+    },
+    {
+      "id": "q039",
+      "chapterSection": "6.1.1",
+      "questionText": "Given the following descriptions:1) Support workflow tracking.2) Facilitate communication.3) Virtual machines.4) Support reviews.And test tool categories:A) Static testing tools.B) Tools supporting scalability and deployment standardization.C) DevOps tools.D) Collaboration tools. Which of the following BEST matches descriptions to tool categories?",
+      "options": [
+        "1A, 2B, 3C, 4D",
+        "1B, 2D, 3C, 4A",
+        "1C, 2D, 3B, 4A",
+        "1D, 2C, 3A, 4B"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Support workflow tracking uses DevOps tools (1C), facilitate communication uses collaboration tools (2D), virtual machines use deployment tools (3B), support reviews uses static testing tools (4A) (ISTQB 6.1.1)."
+    },
+    {
+      "id": "q040",
+      "chapterSection": "6.2.1",
+      "questionText": "Which of the following is MOST likely to be a benefit of test automation?",
+      "options": [
+        "It provides coverage measures that are too complicated for humans to derive",
+        "It shares responsibility for the testing with the tool vendor",
+        "It removes the need for critical thinking when analyzing test results",
+        "It generates test cases from an analysis of the program code"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Test automation can provide coverage metrics that would be impractical for humans to manually calculate (ISTQB 6.2.1)."
+    }
   ]
-}  
+}

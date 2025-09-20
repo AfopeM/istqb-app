@@ -3,6 +3,7 @@ import {
   HomePage,
   QuizPage,
   ExamPage,
+  ExamReviewPage,
   QuizReviewPage,
   QuizQuestionsPage,
   MindVaultPage,
@@ -40,6 +41,7 @@ export default function App() {
 
         {/* EXAM */}
         <Route path="/exam/:examId" element={<ExamPage />} />
+        <Route path="/exam-review/:examId" element={<ExamReviewPage />} />
       </Routes>
     </main>
   );
