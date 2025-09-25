@@ -10,7 +10,7 @@
         "Hold collaborative workshops with all stakeholders to define criteria",
         "Compare previous stories to extract reusable acceptance patterns"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Collaborative workshops align developers, testers, and stakeholders to define clear, testable acceptance criteria before coding, reducing ambiguities and defects."
     },
     {
@@ -23,7 +23,7 @@
         "Systematic acceptance testing in production-like environments continuously",
         "Early detection of code quality issues and vulnerabilities before execution"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 3,
       "explanation": "Static analysis identifies potential defects and vulnerabilities before code execution, enabling early corrective actions and better overall code quality."
     },
     {
@@ -62,7 +62,7 @@
         "Static testing identifies ambiguous requirements early to prevent rework later",
         "Static testing removes the need for any regression or follow-up testing phases"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Static reviews detect ambiguities in requirements early, reducing errors and unnecessary rework during development and testing."
     },
     {
@@ -127,7 +127,7 @@
         "Prevents miscommunication and costly defects by resolving issues early",
         "Ensures 100% code coverage automatically without manual review effort"
       ],
-      "correctAnswerIndex": 3,
+      "correctAnswerIndex": 2,
       "explanation": "Early detection allows clarification of ambiguous requirements, avoiding misinterpretation and expensive defects during development."
     },
     {
@@ -135,12 +135,12 @@
       "chapterSection": "3.1.2",
       "questionText": "A technical design for a complex system must meet stakeholder expectations for performance, security, and compliance. Which static testing approach ensures validation before implementation?",
       "options": [
-        "Review design with stakeholders to validate alignment with all requirements",
         "Test component interactions under realistic operational conditions first",
         "Execute unit tests on individual modules to confirm functional correctness",
+        "Review design with stakeholders to validate alignment with all requirements",
         "Benchmark system performance using realistic production-like datasets"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Static reviews involving stakeholders validate design correctness and alignment with requirements prior to coding, reducing risk of expensive changes."
     },
     {
@@ -265,12 +265,12 @@
       "chapterSection": "3.1.3",
       "questionText": "Your security team wants to prevent buffer overflow vulnerabilities in C++ code before deployment. Why is static testing more effective for early detection than dynamic testing?",
       "options": [
-        "Static analysis identifies unsafe coding patterns without needing specific inputs",
         "Dynamic testing cannot simulate realistic user input scenarios effectively",
         "Static testing validates security by executing code in isolated environments",
-        "Dynamic testing can only detect buffer overflows after deployment"
+        "Dynamic testing can only detect buffer overflows after deployment",
+        "Static analysis identifies unsafe coding patterns without needing specific inputs"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 3,
       "explanation": "Static analysis flags unsafe constructs like buffer overflows early, reducing risk before any code execution or deployment."
     },
     {
@@ -283,7 +283,7 @@
         "When detecting defects in non-executable products and rarely executed code",
         "When aiming to guarantee all functional test scenarios will pass automatically"
       ],
-      "correctAnswerIndex": 3,
+      "correctAnswerIndex": 2,
       "explanation": "Static analysis is most valuable for non-executable work products or rarely executed code paths, providing early and cost-effective defect detection."
     },
     {
@@ -356,12 +356,12 @@
       "chapterSection": "3.2.2",
       "questionText": "During planning for a critical requirements review involving multiple stakeholders, which activity is most essential to ensure meaningful outcomes?",
       "options": [
-        "Establish clear exit criteria and define the review's scope precisely",
         "Execute unit tests on all software modules before review",
         "Implement stress testing to validate system performance",
+        "Establish clear exit criteria and define the review's scope precisely",
         "Coordinate production deployment for realistic evaluation"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Defining scope, exit criteria, and focus areas ensures the review achieves its intended purpose and provides actionable outcomes."
     },
     {
@@ -395,12 +395,12 @@
       "chapterSection": "3.2.2",
       "questionText": "A participant suggests a usability improvement that is not a defect but requires effort. How should the team handle this during the review?",
       "options": [
-        "Document the suggestion formally and engage stakeholders in discussion",
         "Dismiss it immediately since it is not a defect",
         "Postpone consideration until after deployment and user feedback",
+        "Document the suggestion formally and engage stakeholders in discussion",
         "Implement improvement immediately without further analysis"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Non-defect recommendations are valuable inputs; discussing them ensures informed decisions and potential improvements."
     },
     {
@@ -413,7 +413,7 @@
         "Review processes may be split into multiple focused sessions",
         "Dynamic testing can substitute for reviewing large work products"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Breaking large work products into focused review sessions ensures effective coverage and better identification of anomalies."
     },
     {
@@ -452,7 +452,7 @@
         "Document each inconsistency as anomaly with recommendations",
         "Wait for system testing to identify potential implementation issues"
       ],
-      "correctAnswerIndex": 3,
+      "correctAnswerIndex": 2,
       "explanation": "Identifying anomalies during individual review ensures structured discussion and collective resolution in the review meeting."
     },
     {
@@ -569,7 +569,7 @@
         "Structured technical review for decisions and anomaly detection",
         "Comprehensive inspection identifying risks and suggesting improvements"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Structured technical reviews focus on reaching decisions while identifying issues in the work product."
     },
     {
@@ -621,7 +621,7 @@
         "Review small, manageable portions of the work product",
         "Replace manual reviews with automated dynamic testing"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Segmented reviews prevent fatigue and improve focus, ensuring comprehensive evaluation."
     },
     {
@@ -647,7 +647,7 @@
         "Systematic feedback enables meaningful improvement of work products and capabilities",
         "Detailed feedback documentation serves compliance and audit purposes"
       ],
-      "correctAnswerIndex": 3,
+      "correctAnswerIndex": 2,
       "explanation": "Feedback primarily helps authors and stakeholders improve the work product and review practices."
     },
     {
@@ -660,7 +660,7 @@
         "Educational programs ensure each participant understands their role and responsibilities",
         "Training activities restrict review participation to management personnel only"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Training ensures participants understand their roles, leading to more effective and consistent reviews."
     },
     {
@@ -686,7 +686,7 @@
         "Effective meeting facilitation that creates a safe environment for participation",
         "Clear definition of review exit criteria and success metrics"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Facilitation ensures a safe, productive environment where all participants can contribute."
     }
   ]

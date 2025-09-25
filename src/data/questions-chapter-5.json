@@ -10,7 +10,7 @@
         "Test plans provide detailed instructions that prevent testers from making decisions during execution, ensuring consistency across all activities",
         "Test planning guarantees that all stakeholders receive updates using standardized documentation templates for progress tracking and reporting purposes"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 1,
       "explanation": "Test planning guides thinking and forces testers to anticipate risks, schedules, resources, and effort, preventing problems instead of just documenting or reporting."
     },
     {
@@ -19,9 +19,9 @@
       "questionText": "During a test plan review, a stakeholder notices deviations from the organizational standard test strategy. How should these deviations be handled according to ISTQB?",
       "options": [
         "The test plan must be revised immediately to fully align with organizational standards without allowing any exceptions under any circumstances",
-        "Deviations should be documented in the plan with clear reasoning, explaining why the chosen approach is necessary for the project",
         "Deviations are allowed only if approved by senior management using a formal change control or governance process documentation",
-        "The organizational test strategy should be updated to reflect the current project’s approach so future plans remain consistent and comparable"
+        "The organizational test strategy should be updated to reflect the current project’s approach so future plans remain consistent and comparable",
+        "Deviations should be documented in the plan with clear reasoning, explaining why the chosen approach is necessary for the project"
       ],
       "correctAnswerIndex": 3,
       "explanation": "Test plans either adhere to the organizational strategy or explain deviations. Deviations are acceptable when justified and documented, ensuring clarity and alignment."
@@ -33,8 +33,8 @@
       "options": [
         "Testers should focus only on execution tasks and leave planning and story analysis entirely to developers or product owners",
         "Detailed questions about testing should be postponed until iteration start to avoid delaying planning and decision-making discussions",
-        "Tester analysis of story testability and task breakdown is essential for accurate iteration planning and resource allocation decisions",
-        "Testing concerns should only be raised during release planning, not during individual iteration planning sessions to avoid interruptions"
+        "Testing concerns should only be raised during release planning, not during individual iteration planning sessions to avoid interruptions",
+        "Tester analysis of story testability and task breakdown is essential for accurate iteration planning and resource allocation decisions"
       ],
       "correctAnswerIndex": 3,
       "explanation": "Testers participate in iteration planning to analyze risks, assess testability, break down stories, and estimate effort. Their involvement ensures proper planning and risk mitigation."
@@ -309,7 +309,7 @@
         "Medium likelihood with high impact as 15% failure rate is moderate and losing customer trust has severe business consequences",
         "High likelihood with medium impact since failure frequency is concerning but only affects larger transactions and fewer users"
       ],
-      "correctAnswerIndex": 0,
+      "correctAnswerIndex": 2,
       "explanation": "Risk is based on likelihood and impact. A 15% failure rate is moderate, while losing customer trust has significant business impact, so combined risk is high."
     },
     {
